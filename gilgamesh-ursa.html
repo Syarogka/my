@@ -90,7 +90,7 @@ html[data-theme="pink"] {
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -103,6 +103,7 @@ body {
   font-size: 17px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 a { color: var(--oxblood); text-decoration: none; }
@@ -117,17 +118,25 @@ a:hover { color: var(--oxblood-br); text-decoration: underline; text-underline-o
   backdrop-filter: blur(8px);
   border-bottom: 2px solid var(--ink);
 }
-.site-head .wrap { display: flex; align-items: center; gap: 18px; height: 62px; }
+.site-head .wrap { display: flex; align-items: center; gap: 12px; height: 62px; flex-wrap: nowrap; position: relative; }
 .brand {
   font-family: var(--font-display); font-weight: 700; font-size: 19px;
-  letter-spacing: 0.02em; color: var(--ink); white-space: nowrap;
+  letter-spacing: 0.02em; color: var(--ink); white-space: nowrap; flex-shrink: 0; margin-right: auto;
 }
 .brand b { color: var(--oxblood); }
-.nav { display: flex; gap: 22px; margin-left: auto; flex-wrap: wrap; }
-.nav a {
-  color: var(--ink-soft); font-size: 13px; letter-spacing: 0.08em;
-  text-transform: uppercase; font-weight: 600; font-family: var(--font-mono);
+.nav {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 40;
+  display: none; flex-direction: column; align-items: stretch; gap: 0;
+  background: var(--parchment); border-bottom: 2px solid var(--ink);
+  box-shadow: var(--shadow-card); padding: 4px 22px 12px;
 }
+.nav.open { display: flex; }
+.nav a {
+  color: var(--ink-soft); font-size: 14px; letter-spacing: 0.08em;
+  text-transform: uppercase; font-weight: 600; font-family: var(--font-mono);
+  padding: 13px 2px; border-bottom: 1px solid var(--rule-soft);
+}
+.nav a:last-child { border-bottom: none; }
 .nav a:hover { color: var(--oxblood); text-decoration: none; }
 .nav a.active { color: var(--oxblood); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; text-decoration-color: var(--gold-leaf); }
 
@@ -371,9 +380,52 @@ section:first-of-type { border-top: 0; }
 .pink-toggle.active { background: var(--oxblood); color: #fff; border-color: var(--oxblood); }
 .pink-toggle.active:hover, .pink-toggle.active:active { background: var(--oxblood-br); color: #fff; border-color: var(--oxblood-br); }
 
+/* Закреплённая зона кнопок тем (не уезжает при листании меню) */
+.head-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.head-actions .theme-toggle { margin-left: 0; }
+
+/* Бургер-кнопка + раскрытие меню; на десктопе меню в строку */
+.menu-toggle { display: inline-flex; }
+.build-layout, .build-body, .toc-wrap, main, section { min-width: 0; }
+@media (min-width: 760px) {
+  .menu-toggle { display: none; }
+  .nav {
+    position: static; display: flex; flex-direction: row; align-items: center;
+    gap: 22px; background: none; border-bottom: none; box-shadow: none; padding: 0;
+  }
+  .nav a { padding: 0; border-bottom: none; font-size: 13px; }
+}
+
+/* ===========================================================
+   Палитры и иконки классов
+   =========================================================== */
+.cls-gilgamesh    { --class-accent: #C0392B; --class-accent-2: #8E2A20; }
+.cls-heretic      { --class-accent: #7E4BB0; --class-accent-2: #5B3486; }
+.cls-realmshifter { --class-accent: #2C8C9E; --class-accent-2: #1F6675; }
+.cls-summoner     { --class-accent: #3A6EA5; --class-accent-2: #27517D; }
+
+/* Карточки классов на главной — в цвете класса + иконка */
+.card[class*="cls-"] { position: relative; overflow: hidden; border-left-color: var(--class-accent); }
+.card[class*="cls-"]:hover { border-left-color: var(--class-accent); }
+.card[class*="cls-"] h3 { color: var(--class-accent); }
+.card .cls-icon { position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; color: var(--class-accent); opacity: .9; }
+.card .cls-icon svg { width: 100%; height: 100%; display: block; }
+
+/* Страница класса: общий фоновый водяной знак с иконкой */
+.class-watermark { position: fixed; right: -6vw; bottom: -5vw; width: min(56vw, 380px); color: var(--class-accent); opacity: .08; pointer-events: none; z-index: 0; }
+.class-watermark svg { width: 100%; height: auto; display: block; }
+.crumbs, main, .site-foot { position: relative; z-index: 1; }
+
+/* Акценты страницы класса в цвете класса */
+body[class*="cls-"] .hero .tag { background: var(--class-accent); }
+body[class*="cls-"] .hero h1 .accent { color: var(--class-accent); }
+body[class*="cls-"] .eyebrow { color: var(--class-accent); }
+body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--class-accent); }
+
 </style>
 </head>
-<body>
+<body class="cls-gilgamesh">
+<div class="class-watermark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="44" rx="14" ry="12"/><circle cx="15" cy="27" r="6"/><circle cx="26" cy="18" r="6"/><circle cx="38" cy="18" r="6"/><circle cx="49" cy="27" r="6"/></svg></div>
 
 <header class="site-head">
   <div class="wrap">
@@ -384,9 +436,12 @@ section:first-of-type { border-top: 0; }
       <a href="index.html#mekhaniki">Механики</a>
       <a href="index.html#gir">Гир</a>
       <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="head-actions">
+      <button class="theme-toggle menu-toggle" id="menuToggle" type="button" aria-label="Меню" aria-expanded="false">&#9776;</button>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Сменить тему">&#9790;</button>
       <button class="theme-toggle pink-toggle" id="pinkToggle" type="button" aria-label="Розовая тема">&#10048;</button>
-    </nav>
+    </div>
   </div>
 </header>
 
@@ -713,6 +768,18 @@ section:first-of-type { border-top: 0; }
     Object.keys(map).forEach(function(id){ map[id].classList.toggle('active',id===best); });
   },{rootMargin:'-80px 0px -68% 0px',threshold:0});
   targets.forEach(function(t){obs.observe(t);});
+})();
+</script>
+
+<script>
+(function(){
+  var mt=document.getElementById("menuToggle");
+  var nav=document.querySelector(".nav");
+  if(!mt||!nav)return;
+  function close(){nav.classList.remove("open");mt.setAttribute("aria-expanded","false");}
+  mt.addEventListener("click",function(e){e.stopPropagation();var o=nav.classList.toggle("open");mt.setAttribute("aria-expanded",o?"true":"false");});
+  nav.addEventListener("click",function(e){if(e.target.tagName==="A")close();});
+  document.addEventListener("click",function(e){if(nav.classList.contains("open")&&!nav.contains(e.target)&&!mt.contains(e.target))close();});
 })();
 </script>
 </body>
