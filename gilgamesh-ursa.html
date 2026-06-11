@@ -459,6 +459,9 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--class-accent); }
 .chain-node:nth-child(3) .t,
 body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
 
+/* Кнопка языка RU/EN */
+.lang-toggle { font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; }
+
 </style>
 </head>
 <body class="cls-gilgamesh">
@@ -478,6 +481,7 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
       <button class="theme-toggle menu-toggle" id="menuToggle" type="button" aria-label="Меню" aria-expanded="false">&#9776;</button>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Сменить тему">&#9790;</button>
       <button class="theme-toggle pink-toggle" id="pinkToggle" type="button" aria-label="Розовая тема">&#10048;</button>
+      <button class="theme-toggle lang-toggle" id="langToggle" type="button" aria-label="Язык / Language">EN</button>
     </div>
   </div>
 </header>
@@ -817,6 +821,36 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
   mt.addEventListener("click",function(e){e.stopPropagation();var o=nav.classList.toggle("open");mt.setAttribute("aria-expanded",o?"true":"false");});
   nav.addEventListener("click",function(e){if(e.target.tagName==="A")close();});
   document.addEventListener("click",function(e){if(nav.classList.contains("open")&&!nav.contains(e.target)&&!mt.contains(e.target))close();});
+})();
+</script>
+
+<script>
+(function(){
+  var DICT = {"КОДЕКС": "CODEX", "Классы": "Classes", "Билды": "Builds", "Механики": "Mechanics", "Гир": "Gear", "● ЭНДГЕЙМ · ПАТЧИ 32–33": "● ENDGAME · PATCHES 32–33", "База знаний по": "Knowledge base for", "Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.": "Breakdowns of endgame classes, working builds and mechanics rarely collected in one place. No fluff — only what changes damage, survivability and clear speed.", "основа": "foundation", "Негативная защита": "Negative defense", "Снижаем защиту цели в минус.": "Push the target's defense below zero.", "срабатывание": "trigger", "Коллатеральный крит": "Collateral crit", "Одиночный крит бьёт по площади.": "A single crit hits an area.", "результат": "result", "Зачистка хорды": "Horde cleared", "Толпа складывается с одного удара.": "The pack drops from one hit.", "Флагманский билд": "Flagship build", "Gilgamesh Ursa — «Коллатеральные криты»": "Gilgamesh Ursa — Collateral Crits", "Стеклянная пушка на спеке Rudiarius и оружии Astromolot. Полный разбор: концепт, гир, статы, ротация и подводные камни.": "A glass cannon on the Rudiarius spec and Astromolot weapon. Full breakdown: concept, gear, stats, rotation and pitfalls.", "Билд · готов": "Build · ready", "Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.": "Collateral damage, negative defense, crit nukes. Identical to Gallia Ursa.", "Класс · в работе": "Class · WIP", "Скоро: разбор спеков и ротаций.": "Soon: specs and rotations.", "Скоро: механики и сборка.": "Soon: mechanics and build.", "Скоро: саммоны и приоритеты.": "Soon: summons and priorities.", "Разделы кодекса": "Codex sections", "Что внутри": "What's inside", "01 · Классы": "01 · Classes", "Эндгейм-классы": "Endgame classes", "Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.": "Gilgamesh, Heretic, Realmshifter, Grand Summoner — strengths and weaknesses.", "02 · Механики": "02 · Mechanics", "Как считается урон": "How damage works", "Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.": "Collateral damage, negative defense, crit on multi-hits, Ward priority.", "03 · Гир": "03 · Gear", "Гир по тирам": "Gear by tier", "Лучшие предметы T10, сеты, талисманы и адорны под конкретные сборки.": "Best T10 items, sets, charms and adornments for specific builds.", "04 · FAQ": "04 · FAQ", "Для новичков": "For newcomers", "Базовые вопросы по эндгейму и частые ошибки в сборках.": "Basic endgame questions and common build mistakes.", "Три правила, на которых всё держится": "Three rules it all rests on", "Коллатеральный урон": "Collateral damage", "Масштабируется от негативной защиты": "Scales with negative defense", " и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.": " and lets you clear packs with single crits — one hit on a target splashes to the rest.", "Крит и мультихит": "Crit vs multi-hit", "Скиллы с несколькими ударами имеют": "Multi-hit skills have", "0% шанс крита": "0% crit chance", ". Под крит-сборку берут одиночные удары.": ". A crit build uses single-hit skills.", "Ядро урона — крит": "Damage core — crit", "Крит удваивает удар (": "Crit doubles the hit (", "), а Collateral разносит его по своре.": "), and Collateral spreads it across the pack.", "усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.": "amplifies the chain: it eats ward but boosts attack, agility and Collateral speed.", "Полный разбор механик на примере Gilgamesh Ursa →": "Full mechanics breakdown on the Gilgamesh Ursa page →", "Опорные предметы T10": "Core T10 items", "Талисман ×2": "Charm ×2", "Оберег Тревельяна": "Trevelyan's Charm", "Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.": "Near-ideal for two-handed builds: zero defense, +10% two-handed weapon power — two slots give +20%.", "Броня · сет": "Armor · set", "Восставший Тыквобезголовый": "Risen Pumpkinhead", "Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.": "Body + legs: HP, agility, crit and resistance instead of defense.", "Шлем": "Helmet", "Шлем досадного разочарования": "Helm of Bitter Disappointment", "−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.": "−273 defense: pushes the total negative for Collateral. Plus +18% crit and +500 agility.", "Полный лут под Gilgamesh Ursa →": "Full loadout for Gilgamesh Ursa →", "Коротко о главном": "The essentials", "Зачем уводить защиту в минус?": "Why push defense negative?", "Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.": "Collateral is stronger with negative defense. The −273 helmet keeps the total negative even with +210 defense from the weapon. The cost is low survivability: a ward skill (Frenzy) and the Chibi-Prometheus pet help.", "Gilgamesh Ursa и Gallia Ursa — это разное?": "Are Gilgamesh Ursa and Gallia Ursa different?", "Механически идентичны. Любой разбор по одному подходит к другому.": "Mechanically identical. Any breakdown of one applies to the other.", "ORNA КОДЕКС — независимая база знаний по Orna RPG.": "ORNA CODEX — an independent Orna RPG knowledge base.", "Данные: ornalegends.com · патчи 32–33.": "Data: ornalegends.com · patches 32–33."};
+  var html=document.documentElement;
+  var btn=document.getElementById("langToggle");
+  var nodes=[];
+  (function walk(node){
+    for(var n=node.firstChild;n;n=n.nextSibling){
+      if(n.nodeType===3){ if(n.nodeValue && n.nodeValue.trim()) nodes.push(n); }
+      else if(n.nodeType===1 && n.tagName!=="SCRIPT" && n.tagName!=="STYLE") walk(n);
+    }
+  })(document.body);
+  nodes.forEach(function(n){ n.__ru=n.nodeValue; });
+  function apply(lang){
+    nodes.forEach(function(n){
+      if(lang==="en"){
+        var k=n.__ru.trim();
+        if(DICT[k]!==undefined) n.nodeValue=n.__ru.replace(k,DICT[k]);
+      } else { n.nodeValue=n.__ru; }
+    });
+    html.setAttribute("lang", lang==="en"?"en":"ru");
+    if(btn) btn.textContent = lang==="en"?"RU":"EN";
+    try{localStorage.setItem("orna-lang",lang);}catch(e){}
+  }
+  var saved="ru"; try{saved=localStorage.getItem("orna-lang")||"ru";}catch(e){}
+  if(btn) btn.addEventListener("click",function(){ apply(html.getAttribute("lang")==="en"?"ru":"en"); });
+  apply(saved);
 })();
 </script>
 </body>
