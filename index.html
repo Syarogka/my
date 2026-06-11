@@ -451,6 +451,14 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--class-accent); }
 .card.featured { background: var(--vellum); }
 .verdict { background: var(--vellum); border-color: var(--rule); }
 
+/* Чёрные цифры ротации и чёрные заголовки цепочки (Крит, Collateral и пр.) */
+.steps li::before { color: var(--ink); }
+.chain-node .t,
+.chain-node:nth-child(1) .t,
+.chain-node:nth-child(2) .t,
+.chain-node:nth-child(3) .t,
+body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
+
 </style>
 </head>
 <body>
