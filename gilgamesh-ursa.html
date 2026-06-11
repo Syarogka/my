@@ -204,7 +204,7 @@ section:first-of-type { border-top: 0; }
 .statbar div + div { border-left: 1px solid var(--rule); }
 @media (min-width: 720px) { .statbar div { flex: 1 1 0; min-width: 0; } }
 .statbar .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
-.statbar .val { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--gold-leaf); margin-top: 4px; }
+.statbar .val { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--ink); margin-top: 4px; }
 
 /* ---------- Карточки гира ---------- */
 .gear-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
@@ -430,6 +430,26 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--class-accent); }
 
 /* «Разделы кодекса» — больше воздуха сверху */
 #klassy { padding-top: 100px; }
+
+/* Статы гира (сеты/осколки) — чёрным; таблицы единообразны по цвету */
+.gear .stat .v,
+.gear .stat.pos .v,
+.gear .stat.neg .v,
+.gear .stat.crit .v,
+.gear .stat.gold .v { color: var(--ink); }
+.cmp thead th,
+.cmp thead th:nth-child(2),
+.cmp thead th:nth-child(3) { color: var(--ink-soft); }
+
+/* Все карточки гира одинаковые: верхняя полоса в цвет фона карточки */
+.gear .top { background: var(--vellum); }
+.gear.key { border-color: var(--rule); }
+.gear.key .top { background: var(--vellum); color: var(--oxblood); }
+.gear.key .top .badge { color: var(--oxblood); border-color: var(--oxblood); }
+
+/* Единый фон везде: убрать оставшиеся контрастные подложки-выделения */
+.card.featured { background: var(--vellum); }
+.verdict { background: var(--vellum); border-color: var(--rule); }
 
 </style>
 </head>
