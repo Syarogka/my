@@ -469,6 +469,10 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
 .ldpanel { display: none; }
 .ldpanel.on { display: block; }
 
+/* Отметка «в работе» для пустых разделов */
+.wip { color: var(--ink-soft); font-style: italic; margin-top: 8px; }
+.wip-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-style: normal; color: var(--oxblood); border: 1px solid var(--oxblood); border-radius: 4px; padding: 3px 9px; margin-right: 10px; }
+
 </style>
 </head>
 <body>
@@ -505,115 +509,44 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
       <a class="card featured cls-gilgamesh" href="gilgamesh-ursa.html">
         <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="44" rx="14" ry="12"/><circle cx="15" cy="27" r="6"/><circle cx="26" cy="18" r="6"/><circle cx="38" cy="18" r="6"/><circle cx="49" cy="27" r="6"/></svg></span>
         <span class="k">Билд · готов</span>
-        <h3>Gilgamesh Ursa →</h3>
-        <p>Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.</p>
+        <h3>Gilgamesh →</h3>
       </a>
       <a class="card cls-heretic" href="#">
         <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor" fill-rule="evenodd"><path d="M32 6C19 6 10 15 10 28c0 7 3 12 7 15v8a4 4 0 0 0 4 4h22a4 4 0 0 0 4-4v-8c4-3 7-8 7-15C54 15 45 6 32 6Zm-9 17a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm18 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg></span>
         <span class="k">Класс · в работе</span>
         <h3>Heretic</h3>
-        <p>Скоро: разбор спеков и ротаций.</p>
       </a>
       <a class="card cls-realmshifter" href="#">
         <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M32 5 56 32 32 59 8 32Z"/><path d="M32 19 45 32 32 45 19 32Z"/></svg></span>
         <span class="k">Класс · в работе</span>
         <h3>Realmshifter</h3>
-        <p>Скоро: механики и сборка.</p>
       </a>
       <a class="card cls-summoner" href="#">
         <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M32 4l7.3 17.5L58 23 44 35.2 48.6 54 32 43.7 15.4 54 20 35.2 6 23l18.7-1.5z"/></svg></span>
         <span class="k">Класс · в работе</span>
         <h3>Grand Summoner</h3>
-        <p>Скоро: саммоны и приоритеты.</p>
       </a>
     </div>
   </section>
 
   <section id="klassy" class="wrap">
     <p class="eyebrow">Разделы кодекса</p>
-    <h2>Что внутри</h2>
-    <div class="grid">
-      <a class="card" href="gilgamesh-ursa.html">
-        <span class="k">01 · Классы</span>
-        <h3>Эндгейм-классы</h3>
-        <p>Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.</p>
-      </a>
-      <a class="card" href="#mekhaniki">
-        <span class="k">02 · Механики</span>
-        <h3>Как считается урон</h3>
-        <p>Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.</p>
-      </a>
-      <a class="card" href="#gir">
-        <span class="k">03 · Гир</span>
-        <h3>Гир по тирам</h3>
-        <p>Лучшие предметы T10, сеты, талисманы и украшения под конкретные сборки.</p>
-      </a>
-      <a class="card" href="#faq">
-        <span class="k">04 · FAQ</span>
-        <h3>Для новичков</h3>
-        <p>Базовые вопросы по эндгейму и частые ошибки в сборках.</p>
-      </a>
-    </div>
+    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
   </section>
 
   <section id="mekhaniki" class="wrap">
     <p class="eyebrow">Механики</p>
-    <h2>Три правила, на которых всё держится</h2>
-    <div class="note">
-      <span class="h">Коллатеральный урон</span>
-      <b>Масштабируется от негативной защиты</b> и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.
-    </div>
-    <div class="note">
-      <span class="h">Крит и мультихит</span>
-      Скиллы с несколькими ударами имеют <b>0% шанс крита</b>. Под крит-сборку берут одиночные удары.
-    </div>
-    <div class="note">
-      <span class="h">Ядро урона — крит</span>
-      Крит удваивает удар (<b>×2</b>), а Collateral разносит его по своре. <b>Frenzy</b> усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.
-    </div>
-    <p style="margin-top:24px"><a href="gilgamesh-ursa.html">Полный разбор механик на примере Gilgamesh Ursa →</a></p>
+    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
   </section>
 
   <section id="gir" class="wrap">
     <p class="eyebrow">Гир</p>
-    <h2>Опорные предметы T10</h2>
-    <div class="gear-grid">
-      <div class="gear key">
-        <div class="top">Талисман ×2</div>
-        <div class="body">
-          <p class="name">Оберег Тревельяна</p>
-          <p class="why">Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.</p>
-        </div>
-      </div>
-      <div class="gear key">
-        <div class="top">Броня · сет</div>
-        <div class="body">
-          <p class="name">Восставший Тыквобезголовый</p>
-          <p class="why">Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.</p>
-        </div>
-      </div>
-      <div class="gear">
-        <div class="top">Шлем</div>
-        <div class="body">
-          <p class="name">Шлем досадного разочарования</p>
-          <p class="why">−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.</p>
-        </div>
-      </div>
-    </div>
-    <p style="margin-top:24px"><a href="gilgamesh-ursa.html">Полный лут под Gilgamesh Ursa →</a></p>
+    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
   </section>
 
   <section id="faq" class="wrap">
     <p class="eyebrow">FAQ</p>
-    <h2>Коротко о главном</h2>
-    <div class="note">
-      <span class="h">Зачем уводить защиту в минус?</span>
-      Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.
-    </div>
-    <div class="note">
-      <span class="h">Gilgamesh Ursa и Gallia Ursa — это разное?</span>
-      Механически идентичны. Любой разбор по одному подходит к другому.
-    </div>
+    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
   </section>
 </main>
 
@@ -691,7 +624,7 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
 
 <script>
 (function(){
-  var DICT = {"КОДЕКС": "CODEX", "Классы": "Classes", "Билды": "Builds", "Механики": "Mechanics", "Гир": "Gear", "● ЭНДГЕЙМ · ПАТЧИ 32–33": "● ENDGAME · PATCHES 32–33", "База знаний по": "Knowledge base for", "Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.": "Breakdowns of endgame classes, working builds and mechanics rarely collected in one place. No fluff — only what changes damage, survivability and clear speed.", "основа": "foundation", "Негативная защита": "Negative defense", "Снижаем защиту цели в минус.": "Push the target's defense below zero.", "срабатывание": "trigger", "Коллатеральный крит": "Collateral crit", "Одиночный крит бьёт по площади.": "A single crit hits an area.", "результат": "result", "Зачистка хорды": "Horde cleared", "Толпа складывается с одного удара.": "The pack drops from one hit.", "Флагманский билд": "Flagship build", "Gilgamesh Ursa — «Коллатеральные криты»": "Gilgamesh Ursa — Collateral Crits", "Стеклянная пушка на спеке Rudiarius и оружии Astromolot. Полный разбор: концепт, гир, статы, ротация и подводные камни.": "A glass cannon on the Rudiarius spec and Astromolot weapon. Full breakdown: concept, gear, stats, rotation and pitfalls.", "Билд · готов": "Build · ready", "Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.": "Collateral damage, negative defense, crit nukes. Identical to Gallia Ursa.", "Класс · в работе": "Class · WIP", "Скоро: разбор спеков и ротаций.": "Soon: specs and rotations.", "Скоро: механики и сборка.": "Soon: mechanics and build.", "Скоро: саммоны и приоритеты.": "Soon: summons and priorities.", "Разделы кодекса": "Codex sections", "Что внутри": "What's inside", "01 · Классы": "01 · Classes", "Эндгейм-классы": "Endgame classes", "Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.": "Gilgamesh, Heretic, Realmshifter, Grand Summoner — strengths and weaknesses.", "02 · Механики": "02 · Mechanics", "Как считается урон": "How damage works", "Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.": "Collateral damage, negative defense, crit on multi-hits, Ward priority.", "03 · Гир": "03 · Gear", "Гир по тирам": "Gear by tier", "Лучшие предметы T10, сеты, талисманы и украшения под конкретные сборки.": "Best T10 items, sets, charms and adornments for specific builds.", "04 · FAQ": "04 · FAQ", "Для новичков": "For newcomers", "Базовые вопросы по эндгейму и частые ошибки в сборках.": "Basic endgame questions and common build mistakes.", "Три правила, на которых всё держится": "Three rules it all rests on", "Коллатеральный урон": "Collateral damage", "Масштабируется от негативной защиты": "Scales with negative defense", " и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.": " and lets you clear packs with single crits — one hit on a target splashes to the rest.", "Крит и мультихит": "Crit vs multi-hit", "Скиллы с несколькими ударами имеют": "Multi-hit skills have", "0% шанс крита": "0% crit chance", ". Под крит-сборку берут одиночные удары.": ". A crit build uses single-hit skills.", "Ядро урона — крит": "Damage core — crit", "Крит удваивает удар (": "Crit doubles the hit (", "), а Collateral разносит его по своре.": "), and Collateral spreads it across the pack.", "усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.": "amplifies the chain: it eats ward but boosts attack, agility and Collateral speed.", "Полный разбор механик на примере Gilgamesh Ursa →": "Full mechanics breakdown on the Gilgamesh Ursa page →", "Опорные предметы T10": "Core T10 items", "Талисман ×2": "Charm ×2", "Оберег Тревельяна": "Trevelyan's Charm", "Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.": "Near-ideal for two-handed builds: zero defense, +10% two-handed weapon power — two slots give +20%.", "Броня · сет": "Armor · set", "Восставший Тыквобезголовый": "Risen Pumpkinhead", "Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.": "Body + legs: HP, agility, crit and resistance instead of defense.", "Шлем": "Helmet", "Шлем досадного разочарования": "Helm of Bitter Disappointment", "−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.": "−273 defense: pushes the total negative for Collateral. Plus +18% crit and +500 agility.", "Полный лут под Gilgamesh Ursa →": "Full loadout for Gilgamesh Ursa →", "Коротко о главном": "The essentials", "Зачем уводить защиту в минус?": "Why push defense negative?", "Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.": "Collateral is stronger with negative defense. The −273 helmet keeps the total negative even with +210 defense from the weapon. The cost is low survivability: a ward skill (Frenzy) and the Chibi-Prometheus pet help.", "Gilgamesh Ursa и Gallia Ursa — это разное?": "Are Gilgamesh Ursa and Gallia Ursa different?", "Механически идентичны. Любой разбор по одному подходит к другому.": "Mechanically identical. Any breakdown of one applies to the other.", "ORNA КОДЕКС — независимая база знаний по Orna RPG.": "ORNA CODEX — an independent Orna RPG knowledge base.", "Данные: ornalegends.com · патчи 32–33.": "Data: ornalegends.com · patches 32–33."};
+  var DICT = {"в работе": "in progress", "Раздел скоро появится.": "Section coming soon.", "КОДЕКС": "CODEX", "Классы": "Classes", "Билды": "Builds", "Механики": "Mechanics", "Гир": "Gear", "● ЭНДГЕЙМ · ПАТЧИ 32–33": "● ENDGAME · PATCHES 32–33", "База знаний по": "Knowledge base for", "Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.": "Breakdowns of endgame classes, working builds and mechanics rarely collected in one place. No fluff — only what changes damage, survivability and clear speed.", "основа": "foundation", "Негативная защита": "Negative defense", "Снижаем защиту цели в минус.": "Push the target's defense below zero.", "срабатывание": "trigger", "Коллатеральный крит": "Collateral crit", "Одиночный крит бьёт по площади.": "A single crit hits an area.", "результат": "result", "Зачистка хорды": "Horde cleared", "Толпа складывается с одного удара.": "The pack drops from one hit.", "Флагманский билд": "Flagship build", "Gilgamesh Ursa — «Коллатеральные криты»": "Gilgamesh Ursa — Collateral Crits", "Стеклянная пушка на спеке Rudiarius и оружии Astromolot. Полный разбор: концепт, гир, статы, ротация и подводные камни.": "A glass cannon on the Rudiarius spec and Astromolot weapon. Full breakdown: concept, gear, stats, rotation and pitfalls.", "Билд · готов": "Build · ready", "Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.": "Collateral damage, negative defense, crit nukes. Identical to Gallia Ursa.", "Класс · в работе": "Class · WIP", "Скоро: разбор спеков и ротаций.": "Soon: specs and rotations.", "Скоро: механики и сборка.": "Soon: mechanics and build.", "Скоро: саммоны и приоритеты.": "Soon: summons and priorities.", "Разделы кодекса": "Codex sections", "Что внутри": "What's inside", "01 · Классы": "01 · Classes", "Эндгейм-классы": "Endgame classes", "Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.": "Gilgamesh, Heretic, Realmshifter, Grand Summoner — strengths and weaknesses.", "02 · Механики": "02 · Mechanics", "Как считается урон": "How damage works", "Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.": "Collateral damage, negative defense, crit on multi-hits, Ward priority.", "03 · Гир": "03 · Gear", "Гир по тирам": "Gear by tier", "Лучшие предметы T10, сеты, талисманы и украшения под конкретные сборки.": "Best T10 items, sets, charms and adornments for specific builds.", "04 · FAQ": "04 · FAQ", "Для новичков": "For newcomers", "Базовые вопросы по эндгейму и частые ошибки в сборках.": "Basic endgame questions and common build mistakes.", "Три правила, на которых всё держится": "Three rules it all rests on", "Коллатеральный урон": "Collateral damage", "Масштабируется от негативной защиты": "Scales with negative defense", " и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.": " and lets you clear packs with single crits — one hit on a target splashes to the rest.", "Крит и мультихит": "Crit vs multi-hit", "Скиллы с несколькими ударами имеют": "Multi-hit skills have", "0% шанс крита": "0% crit chance", ". Под крит-сборку берут одиночные удары.": ". A crit build uses single-hit skills.", "Ядро урона — крит": "Damage core — crit", "Крит удваивает удар (": "Crit doubles the hit (", "), а Collateral разносит его по своре.": "), and Collateral spreads it across the pack.", "усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.": "amplifies the chain: it eats ward but boosts attack, agility and Collateral speed.", "Полный разбор механик на примере Gilgamesh Ursa →": "Full mechanics breakdown on the Gilgamesh Ursa page →", "Опорные предметы T10": "Core T10 items", "Талисман ×2": "Charm ×2", "Оберег Тревельяна": "Trevelyan's Charm", "Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.": "Near-ideal for two-handed builds: zero defense, +10% two-handed weapon power — two slots give +20%.", "Броня · сет": "Armor · set", "Восставший Тыквобезголовый": "Risen Pumpkinhead", "Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.": "Body + legs: HP, agility, crit and resistance instead of defense.", "Шлем": "Helmet", "Шлем досадного разочарования": "Helm of Bitter Disappointment", "−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.": "−273 defense: pushes the total negative for Collateral. Plus +18% crit and +500 agility.", "Полный лут под Gilgamesh Ursa →": "Full loadout for Gilgamesh Ursa →", "Коротко о главном": "The essentials", "Зачем уводить защиту в минус?": "Why push defense negative?", "Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.": "Collateral is stronger with negative defense. The −273 helmet keeps the total negative even with +210 defense from the weapon. The cost is low survivability: a ward skill (Frenzy) and the Chibi-Prometheus pet help.", "Gilgamesh Ursa и Gallia Ursa — это разное?": "Are Gilgamesh Ursa and Gallia Ursa different?", "Механически идентичны. Любой разбор по одному подходит к другому.": "Mechanically identical. Any breakdown of one applies to the other.", "ORNA КОДЕКС — независимая база знаний по Orna RPG.": "ORNA CODEX — an independent Orna RPG knowledge base.", "Данные: ornalegends.com · патчи 32–33.": "Data: ornalegends.com · patches 32–33."};
   var html=document.documentElement;
   var btn=document.getElementById("langToggle");
   var nodes=[];
