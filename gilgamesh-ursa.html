@@ -462,6 +462,13 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
 /* Кнопка языка RU/EN */
 .lang-toggle { font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; }
 
+/* Вкладки лоадаутов */
+.ldtabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 22px; }
+.ldtab { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 16px; border: 1px solid var(--rule); border-radius: 6px; background: transparent; color: var(--ink-soft); cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background .15s, color .15s, border-color .15s; }
+.ldtab.on { color: var(--ink); border-color: var(--ink); background: var(--vellum); font-weight: 600; }
+.ldpanel { display: none; }
+.ldpanel.on { display: block; }
+
 </style>
 </head>
 <body class="cls-gilgamesh">
@@ -491,265 +498,7 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
 </div>
 
 <main class="wrap">
-
-  <section class="hero" style="padding:34px 0 40px">
-    <span class="tag">● Стеклянная пушка · готовый билд</span>
-    <h1>Gilgamesh Ursa<br><span class="accent">«Collateral Crits»</span></h1>
-    <p class="lead">Крит удваивает удар, Collateral разносит его по всей своре. В Orna почти нет настоящих AoE — урон по толпе ты создаёшь цепочкой, а не «массовым» скиллом.</p>
-
-    <div class="statbar">
-      <div><div class="lbl">Класс</div><div class="val">Ursa + Рудиарий</div></div>
-      <div><div class="lbl">Оружие</div><div class="val">Астромолот</div></div>
-      <div><div class="lbl">Крит</div><div class="val" style="color:var(--crimson)">48%</div></div>
-      <div><div class="lbl">Архетип</div><div class="val">Glass cannon</div></div>
-    </div>
-    <div class="chips">
-      <span class="chip neg">двуручка</span>
-      <span class="chip crit">одиночные криты</span>
-      <span class="chip">Collateral по своре</span>
-      <span class="chip">Frenzy</span>
-    </div>
-  </section>
-
-  <div class="build-layout">
-    <div class="toc-wrap">
-      <nav class="toc">
-        <p class="eyebrow">На странице</p>
-        <a href="#mech">Как это бьёт</a>
-        <a href="#gear">Сет</a>
-        <a href="#weapon">Оружие</a>
-        <a href="#stats">Статы</a>
-        <a href="#rotation">Ротация</a>
-        <a href="#compare">Крит vs Фармер</a>
-        <a href="#variants">Другие варианты</a>
-        <a href="#caveats">Заметки</a>
-      </nav>
-    </div>
-
-    <div class="build-body">
-
-      <section id="mech" style="padding-top:0;border:0">
-        <p class="eyebrow">01 · Механика</p>
-        <h2>Как это бьёт</h2>
-        <p>В Orna почти нет настоящих AoE-атак. Урон по толпе создаётся не «массовым» скиллом, а цепочкой: бьёшь одну цель → ловишь крит → Collateral плещет часть урона на остальных.</p>
-        <div class="chain" style="margin-top:28px">
-          <div class="chain-node">
-            <div class="n">удар по 1 цели</div>
-            <div class="t" style="color:var(--bone)">Астромолот</div>
-            <div class="d">Критующий одиночный удар по самой жирной цели в своре.</div>
-          </div>
-          <div class="chain-node">
-            <div class="n">срабатывание</div>
-            <div class="t">Крит ×2</div>
-            <div class="d">Критический удар удваивает урон. Крит навален со всех слотов.</div>
-          </div>
-          <div class="chain-node">
-            <div class="n">результат</div>
-            <div class="t">Collateral</div>
-            <div class="d">Сопутствующий урон переносит часть удара на остальных. Это и есть «AoE».</div>
-          </div>
-        </div>
-        <div class="note" style="margin-top:18px">
-          <span class="h">Frenzy — усилитель цепочки</span>
-          Жрёт вард, но поднимает атаку, ловкость и саму скорость Collateral. <b>Держи его все 5 ходов.</b>
-        </div>
-        <div class="note warn">
-          <span class="h">Важно</span>
-          Gilgamesh Ursa и <b>Gallia Ursa</b> механически идентичны — всё на странице применимо к обоим.
-        </div>
-      </section>
-
-      <section id="gear">
-        <p class="eyebrow">02 · Сет</p>
-        <h2>Гир</h2>
-        <p style="color:var(--bone-dim);margin-top:-6px">Glass-cannon на критах: минимум защиты (кормит Рудиария), крит и ловкость на каждом слоте, запас HP вместо варда.</p>
-        <div class="gear-grid" style="margin-top:18px">
-          <div class="gear key">
-            <div class="top">Оружие · ★10 <span class="badge">апгрейд</span></div>
-            <div class="body">
-              <p class="name">Астромолот</p>
-              <div class="stats">
-                <span class="stat pos">Атк <span class="v">+1545</span></span>
-                <span class="stat crit">Крит <span class="v">+48%</span></span>
-                <span class="stat pos">Вард <span class="v">+203%</span></span>
-                <span class="stat tag">двуручное</span>
-              </div>
-            </div>
-          </div>
-          <div class="gear">
-            <div class="top">Голова</div>
-            <div class="body">
-              <p class="name">Шлем досадного разочарования</p>
-              <div class="stats">
-                <span class="stat pos">Атк <span class="v">+180</span></span>
-                <span class="stat pos">Ловк <span class="v">+500</span></span>
-                <span class="stat crit">Крит <span class="v">+18%</span></span>
-                <span class="stat neg">Защ <span class="v">−273</span></span>
-              </div>
-            </div>
-          </div>
-          <div class="gear">
-            <div class="top">Тело · Аркана</div>
-            <div class="body">
-              <p class="name">Доспех восставшего Тыквобезголового</p>
-              <div class="stats">
-                <span class="stat pos">HP <span class="v">+1770</span></span>
-                <span class="stat pos">Ловк <span class="v">+456</span></span>
-                <span class="stat crit">Крит <span class="v">+14%</span></span>
-                <span class="stat pos">Сопр <span class="v">+539</span></span>
-              </div>
-            </div>
-          </div>
-          <div class="gear">
-            <div class="top">Ноги · Тьма</div>
-            <div class="body">
-              <p class="name">Краги восставшего Тыквобезголового</p>
-              <div class="stats">
-                <span class="stat pos">HP <span class="v">+2423</span></span>
-                <span class="stat pos">Ловк <span class="v">+433</span></span>
-                <span class="stat crit">Крит <span class="v">+14%</span></span>
-                <span class="stat pos">Сопр <span class="v">+737</span></span>
-              </div>
-            </div>
-          </div>
-          <div class="gear key">
-            <div class="top">Аксессуар ×2 <span class="badge">+20% к двуручке</span></div>
-            <div class="body">
-              <p class="name">Оберег Тревельяна</p>
-              <div class="stats">
-                <span class="stat gold">Мощь двуручей <span class="v">+10%</span></span>
-                <span class="stat tag">× 2 = +20%</span>
-              </div>
-            </div>
-          </div>
-          <div class="gear">
-            <div class="top">Осколок · Пет</div>
-            <div class="body">
-              <p class="name">Крит +40 · Чиби-Прометей</p>
-              <div class="stats">
-                <span class="stat crit">Осколок <span class="v">Крит +40</span></span>
-                <span class="stat pos">Пет <span class="v">вард-щит 67%</span></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="weapon">
-        <p class="eyebrow">03 · Оружие</p>
-        <h2>Астромолот</h2>
-        <p style="color:var(--bone-dim);margin-top:-6px">Главный нюк — критующий одиночный удар. Под крит-билд идеален: загоняет крит почти в кап.</p>
-        <div class="cmp" style="margin-top:16px">
-          <table>
-            <thead><tr><th>Параметр</th><th>Астромолот · ★10</th><th>Зачем</th></tr></thead>
-            <tbody>
-              <tr><td>Крит</td><td>+48%</td><td>ядро урона — ×2 по цели</td></tr>
-              <tr><td>Атака</td><td>+1545</td><td>прямой множитель удара</td></tr>
-              <tr><td>Вард</td><td>+203%</td><td>топливо для Frenzy</td></tr>
-              <tr><td>Магия</td><td>0</td><td>не нужна в этой сборке</td></tr>
-              <tr><td>Тип</td><td>астро</td><td>апается компонентами в Мастерской титанов</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="verdict">
-          <b>Почему он:</b> +48% крита и +1545 атаки кратно поднимают средний урон, а как астро-оружие он ещё и растёт от компонентов. Минус — +210 защиты слегка работает против Рудиария, но шлем (−273) держит итог в минусе. Главное: бей <b>критующим одиночным ударом</b> — мультихиты и заклинания не критуют, и 48% крита на них пропадут.
-        </div>
-      </section>
-
-      <section id="stats">
-        <p class="eyebrow">04 · Статы</p>
-        <h2>Приоритет статов</h2>
-        <div class="bars">
-          <div class="brow"><div class="btop"><span class="bname">Крит / крит-урон</span><span class="bnote">×2 урона — ядро</span></div><div class="track"><div class="fill f1" style="width:100%"></div></div></div>
-          <div class="brow"><div class="btop"><span class="bname">Атака</span><span class="bnote">Рудиарий + баффы</span></div><div class="track"><div class="fill f2" style="width:86%"></div></div></div>
-          <div class="brow"><div class="btop"><span class="bname">HP / Вард</span><span class="bnote">сустейн + топливо Frenzy</span></div><div class="track"><div class="fill f3" style="width:58%"></div></div></div>
-          <div class="brow"><div class="btop"><span class="bname">Ловкость</span><span class="bnote">точность, не мазать</span></div><div class="track"><div class="fill f4" style="width:44%"></div></div></div>
-        </div>
-      </section>
-
-      <section id="rotation">
-        <p class="eyebrow">05 · Ротация</p>
-        <h2>Ротация по своре</h2>
-        <ol class="steps">
-          <li><h3>Подними вард</h3><p>Оружие даёт 191–203%, при нужде добавь <span class="kbd">Барьер II</span> / <span class="kbd">Вард ортанита</span>. Это топливо для Frenzy.</p></li>
-          <li><h3>Frenzy</h3><p>Поднимает атаку, ловкость и скорость Collateral. Это твоя кнопка по толпе.</p></li>
-          <li><h3>Стак атаки</h3><p><span class="kbd">Стеклянная пушка</span> + <span class="kbd">Мощь медведя</span>. «Поступь» не вешай вслепую — роняет связанный стат на 90%.</p></li>
-          <li><h3>Нюк по жирной цели</h3><p>Бьёшь Астромолотом по самому толстому врагу → крит ×2.</p></li>
-          <li><h3>Collateral добивает свору</h3><p>Сплеш разносит удар по остальным. Следи, чтобы вард не обнулился — на нём держится Frenzy.</p></li>
-        </ol>
-      </section>
-
-      <section id="compare">
-        <p class="eyebrow">06 · Сравнение</p>
-        <h2>Крит-билд vs Фармер</h2>
-        <p style="color:var(--bone-dim);margin-top:-6px">Это не «кто сильнее» — билды под разные задачи. Крит-сет = максимум урона. Фармер (Baalinor) = максимум дропа за забег.</p>
-        <div class="cmp" style="margin-top:16px">
-          <table>
-            <thead><tr><th>Параметр</th><th>Крит-билд (Ursa)</th><th>Фармер (Baalinor)</th></tr></thead>
-            <tbody>
-              <tr><td>Цель</td><td>макс. урон за удар</td><td>макс. орны / золото / опыт</td></tr>
-              <tr><td>Гир</td><td>крит / атака / ловкость</td><td>дроп-бонусы (Band of Gods, Lost Helmet)</td></tr>
-              <tr><td>Спец</td><td>Рудиарий</td><td>Zwei-Fencer / Ranger / Cataphract</td></tr>
-              <tr><td>Выживаемость</td><td>низкая (−273 защ)</td><td>выше (вард, лайфстил, танк)</td></tr>
-              <tr><td>Свора</td><td>Collateral-сплеш с 1 цели</td><td>Ranger + Arrowstorm 2 = настоящая AoE</td></tr>
-              <tr><td>Лут</td><td>обычный</td><td>кратно больше</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="verdict">Держи оба через лоадауты: гир переключается <b>бесплатно</b> по вкладкам. Смена спеца стоит орны — реально выбираешь билд под сессию. Крит-сет на урон и боссов, отдельный фарм-лоадаут под долгий гринд.</div>
-      </section>
-
-      <section id="variants">
-        <p class="eyebrow">07 · Варианты</p>
-        <h2>Другие сборки Гильгамеша</h2>
-        <p style="color:var(--bone-dim);margin-top:-6px">Collateral Crits (Ursa + Рудиарий) разобран выше. Остальные рабочие сборки класса:</p>
-
-        <div class="variant" style="margin-top:18px">
-          <div class="vh"><span class="vn">Spiked Shield Raider</span><div class="vtags"><span class="chip">Hercules + Cataphract</span><span class="chip">рейды · боссы</span></div></div>
-          <p><b>Оружие:</b> Axe of Gilgamesh (альт. Fey Neman Havoc) + вард-щит, осколки 2× Ashen Ruby (2% вард).</p>
-          <p><b>Идея:</b> вард 120k+, атака 4–5k, мана 1500–2000. <span class="kbd">Spiked Shield 3</span> (с 240 ур.) конвертит вард в урон. Бафф варда (Ward of Ortanite, Divine Bastion 2) + Warcry / Gait of Gunnr → спам SS3, пока вард не упадёт до 50%.</p>
-        </div>
-
-        <div class="variant">
-          <div class="vh"><span class="vn">Swash дуал-вилд</span><div class="vtags"><span class="chip">Ursa + Swashbuckler</span><span class="chip">чистая атака</span></div></div>
-          <p><b>Оружие:</b> два одноручных (атака / крит / ловкость). Бонусы Урсы (+50% проки, авто-контры) работают и тут.</p>
-          <p><b>Под что:</b> дуал-вилд вместо двуручки, максимум атаки по одиночным целям (сборки на 18k+ атаки). Точный сет — в видео «Gilga Ursa Swash».</p>
-        </div>
-
-        <div class="variant">
-          <div class="vh"><span class="vn">Dungeon Farmer</span><div class="vtags"><span class="chip">Zwei-Fencer / Ranger</span><span class="chip">фарм дропа</span></div></div>
-          <p><b>Оружие (4 версии):</b> Trialling / Questing Axe — A 2H · B танк · C золото · D макс орны. <b>Гир:</b> 2× Band of Gods, Lost Helmet, Court Jester (бонус дропа). <b>Осколки:</b> Jewel of Creation, Ashen Ruby, Ferocious Eyes.</p>
-          <p><b>Под что:</b> быстрая зачистка и дроп (орны/золото/опыт). Для своры — версия Ranger + <span class="kbd">Arrowstorm 2</span> (настоящая AoE).</p>
-        </div>
-      </section>
-
-      <section id="caveats">
-        <p class="eyebrow">08 · Заметки</p>
-        <h2>Что важно понимать</h2>
-        <div class="note warn">
-          <span class="h">Крит-кап</span>
-          Мультихиты и заклинания <b>не критуют</b>. Бей одиночным критующим ударом (Астромолот), а <b>не</b> рассечением кинжалами (×3).
-        </div>
-        <div class="note">
-          <span class="h">Лоадауты</span>
-          Гир переключается между вкладками <b>бесплатно</b>. Смена специализации стоит <b>орны</b> — меняй её под сессию, а не постоянно.
-        </div>
-        <div class="note warn">
-          <span class="h">Glass-cannon</span>
-          −273 защ = низкая выживаемость. Один вард-скилл в слотах работает и как DPS (Frenzy), и как страховка от смерти.
-        </div>
-        <div class="note">
-          <span class="h">Питомец</span>
-          Чиби-Прометей даёт вард-щит (67%) и передаёт % атаки — компенсирует хлипкость Урсы.
-        </div>
-        <div class="note">
-          <span class="h">Источник и патч</span>
-          Формы и механики — кодекс playorna.com/codex; фарм-структура — гайды Baalinor на ornalegends.com (патч 32). Мета Orna меняется с патчами — конкретные предметы сверяй с актуальными источниками и Discord.
-        </div>
-      </section>
-
-    </div>
-  </div>
+  <section id="loadouts"><p class="eyebrow">Сборки · спец Рудиарий</p><h2>Рейды · ПвП · Подземелье</h2><p style="color:var(--ink-soft);margin-top:-6px">Три готовые сборки под спек Rudiarius. Класс-умение во всех — Frenzy. Переключай вкладки.</p><div class="ldtabs" style="margin-top:18px"><button class="ldtab on" type="button" data-ld="ld-raids">Рейды</button><button class="ldtab" type="button" data-ld="ld-pvp">ПвП</button><button class="ldtab" type="button" data-ld="ld-dungeon">Подземелье</button></div><div class="ldpanel on" id="ld-raids"><p class="lead" style="font-size:16px;font-style:normal;margin-bottom:14px">Двуручный глас-кэннон · урон через негативную защиту</p><div class="note"><span class="h">Class Ability · Frenzy</span>После 2 ходов в бою, когда Вард почти полон, каждый ход тратит Вард — повышая Атаку, Ловкость, темп Collateral Damage и эффективность скиллов, потребляющих Вард. Длится 5 ходов или пока Вард не кончится.</div><p class="eyebrow" style="margin-top:26px">Снаряжение</p><div class="gear-grid"><div class="gear"><div class="top">Голова</div><div class="body"><p class="name">Godforged Covyn's Porcelain Mask</p><p class="why">Уровень 13 · Anguished 25</p><div class="stats"><span class="stat">Атк <span class="v">18</span></span><span class="stat">Защ <span class="v">18</span></span><span class="stat">Ловк <span class="v">108</span></span><span class="stat">Вард <span class="v">69%</span></span><span class="stat">Крит <span class="v">9%</span></span></div></div></div><div class="gear"><div class="top">Оружие · двуручное</div><div class="body"><p class="name">Demonforged Arisen Labrys</p><p class="why">Уровень 12 · Anguished 1</p><p class="why" style="color:var(--oxblood)">▸ Ability: Upward Strike II</p><div class="stats"><span class="stat">Атк <span class="v">1 535</span></span><span class="stat">Маг <span class="v">42</span></span><span class="stat">Ловк <span class="v">346</span></span><span class="stat">Вард <span class="v">155%</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name">Godforged Arisen Pumpkinless Armor</p><p class="why">Уровень 13</p><div class="stats"><span class="stat">HP <span class="v">2 615</span></span><span class="stat">Атк <span class="v">24</span></span><span class="stat">Защ <span class="v">122</span></span><span class="stat">Сопр <span class="v">796</span></span><span class="stat">Ловк <span class="v">623</span></span><span class="stat">Вард <span class="v">29%</span></span><span class="stat">Обзор <span class="v">−111</span></span></div><div class="chips" style="margin-top:8px"><span class="chip">Аркана</span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name">— пусто (двуручка)</p></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name">Godforged Arisen Pumpkinless Leggings «196»</p><p class="why">Уровень 13 · Anguished 5</p><div class="stats"><span class="stat">HP <span class="v">3 135</span></span><span class="stat">Атк <span class="v">24</span></span><span class="stat">Защ <span class="v">142</span></span><span class="stat">Сопр <span class="v">954</span></span><span class="stat">Ловк <span class="v">623</span></span><span class="stat">Вард <span class="v">34%</span></span><span class="stat">Обзор <span class="v">−133</span></span></div><div class="chips" style="margin-top:8px"><span class="chip">Dark</span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name">Arisen Trevelyan's Charm</p><p class="why">Амулет</p><div class="stats"><span class="stat">Двуручный урон <span class="v">+%</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name">Arisen Trevelyan's Charm</p><p class="why">Амулет</p><div class="stats"><span class="stat">Двуручный урон <span class="v">+%</span></span></div></div></div><div class="gear"><div class="top">Питомец</div><div class="body"><p class="name">Восставший петриварг</p><p class="why">Скрытный · ★10 · животное · событие «Рагнарёк»</p><p class="why" style="margin-top:6px">Альтернатива — питомец с умением Ward of Ortanite (Вард ортанита)</p></div></div><div class="gear"><div class="top">Умения · Amity</div><div class="body"><p class="name">Collateral Damage &amp; Brittleness</p><p class="why" style="margin:4px 0">+ +12% шанс Collateral, +17% урона по цели</p><p class="why" style="margin:4px 0">+ Простые атаки наносят +40% урона</p><p class="why" style="margin:4px 0">− −15% к тёмному сопротивлению</p><p class="why" style="margin:4px 0">− 3% шанс за ход, что Вард не защитит</p></div></div><div class="gear"><div class="top">Украшения</div><div class="body"><p class="name">Оружие · Песчаная известь</p><p class="why">хорошее · Диковина ★8 · полностью</p><div class="stats"><span class="stat">Атк <span class="v">+5</span></span><span class="stat">Маг <span class="v">+4</span></span><span class="stat">Ловк <span class="v">+8</span></span><span class="stat">Рикошет <span class="v">+5%</span></span></div><p class="name" style="margin-top:12px">Вся броня · Орех</p><p class="why">Диковина ★6</p><div class="stats"><span class="stat">Атк <span class="v">+3</span></span><span class="stat">Защ <span class="v">+3</span></span><span class="stat">Ловк <span class="v">+18</span></span><span class="stat">Рикошет <span class="v">+3%</span></span></div></div></div></div><p class="eyebrow" style="margin-top:30px">Умения в сборке</p><div class="cmp"><table><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Spiked Shield III</b></td><td><b>40 029</b></td></tr><tr><td><b>Ultimastrikes ×2</b></td><td><b>10 741–32 224</b></td></tr><tr><td style="padding-left:20px;color:var(--ink-soft)">↳ PvP ×2</td><td style="color:var(--ink-soft)">8 056–24 168</td></tr><tr><td><b>Realm Strikes II ×4</b></td><td><b>6 444–9 309</b></td></tr><tr><td style="color:var(--ink-soft)">Mimic's Mischief</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Spiked Pauldrons</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Sharpen II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Wyrm's Song</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Divine Bastion II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Gait of Gunnr</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Слоты 10–12</td><td style="color:var(--ink-soft)">пусто</td></tr></tbody></table></div><p class="eyebrow" style="margin-top:30px">Итого по снаряжению</p><div class="chips"><span class="chip">Вард <b>287%</b></span><span class="chip">Защита <b>282</b></span><span class="chip">Ловкость <b>1 700</b></span><span class="chip">Сопрот. <b>1 750</b></span><span class="chip">Атака <b>1 601</b></span><span class="chip">HP <b>5 750</b></span></div><div class="note" style="margin-top:16px"><span class="h">Заметка</span>Защита аксессуаров = 0 (Trevelyan's Charm даёт только % к двуручному урону). Базовая защита от класса/уровня в сумму не входит — это вклад одного снаряжения. Скилл Spiked Pauldrons активно снижает защиту в бою под Collateral.</div></div><div class="ldpanel" id="ld-pvp"><p class="lead" style="font-size:16px;font-style:normal;margin-bottom:14px">Двуручный · максимум Варда под Frenzy (Арена / Войны королевств)</p><div class="note"><span class="h">Class Ability · Frenzy</span>После 2 ходов в бою, когда Вард почти полон, каждый ход тратит Вард — повышая Атаку, Ловкость, темп Collateral Damage и эффективность скиллов, потребляющих Вард. Длится 5 ходов или пока Вард не кончится.</div><p class="eyebrow" style="margin-top:26px">Снаряжение</p><div class="gear-grid"><div class="gear"><div class="top">Голова</div><div class="body"><p class="name">Godforged Covyn's Porcelain Mask</p><p class="why">Уровень 13 · Anguished 25</p><div class="stats"><span class="stat">Атк <span class="v">18</span></span><span class="stat">Защ <span class="v">18</span></span><span class="stat">Ловк <span class="v">108</span></span><span class="stat">Вард <span class="v">69%</span></span><span class="stat">Крит <span class="v">9%</span></span></div></div></div><div class="gear"><div class="top">Оружие · двуручное</div><div class="body"><p class="name">Celestial Hammer</p><p class="why">Уровень 20</p><div class="stats"><span class="stat">HP <span class="v">270</span></span><span class="stat">Атк <span class="v">1 230</span></span><span class="stat">Маг <span class="v">276</span></span><span class="stat">Защ <span class="v">210</span></span><span class="stat">Вард <span class="v">203%</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name">Godforged Arisen Pumpkinless Armor</p><p class="why">Уровень 13</p><div class="stats"><span class="stat">HP <span class="v">2 615</span></span><span class="stat">Атк <span class="v">24</span></span><span class="stat">Защ <span class="v">122</span></span><span class="stat">Сопр <span class="v">796</span></span><span class="stat">Ловк <span class="v">623</span></span><span class="stat">Вард <span class="v">29%</span></span><span class="stat">Обзор <span class="v">−111</span></span></div><div class="chips" style="margin-top:8px"><span class="chip">Аркана</span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name">— пусто (двуручка)</p></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name">Godforged Arisen Pumpkinless Leggings «196»</p><p class="why">Уровень 13 · Anguished 5</p><div class="stats"><span class="stat">HP <span class="v">3 135</span></span><span class="stat">Атк <span class="v">24</span></span><span class="stat">Защ <span class="v">142</span></span><span class="stat">Сопр <span class="v">954</span></span><span class="stat">Ловк <span class="v">623</span></span><span class="stat">Вард <span class="v">34%</span></span><span class="stat">Обзор <span class="v">−133</span></span></div><div class="chips" style="margin-top:8px"><span class="chip">Dark</span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name">Arisen Trevelyan's Charm</p><p class="why">Амулет</p><div class="stats"><span class="stat">Двуручный урон <span class="v">+%</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name">Arisen Trevelyan's Charm</p><p class="why">Амулет</p><div class="stats"><span class="stat">Двуручный урон <span class="v">+%</span></span></div></div></div><div class="gear"><div class="top">Питомец</div><div class="body"><p class="name">Великий осло</p><p class="why">Хранитель · ★10 · животное</p><p class="why" style="margin-top:6px">Громила из питомников гильдии конкистадоров — помогает в защите владений</p></div></div><div class="gear"><div class="top">Умения · Amity</div><div class="body"><p class="name">Fortitude &amp; Impurity</p><p class="why" style="margin:4px 0">+ Бой начинается с 5 ходами Варда</p><p class="why" style="margin:4px 0">+ 20% шанс защититься от удара на 95% макс. HP</p><p class="why" style="margin:4px 0">− −7% к водному сопротивлению</p><p class="why" style="margin:4px 0">− −15% к святому сопротивлению</p></div></div><div class="gear"><div class="top">Украшения</div><div class="body"><p class="name">Оружие · Лёгкие Океануса</p><p class="why">Диковина ★9 · полностью · многоходовые умения иногда занимают на ход меньше</p><div class="stats"><span class="stat">Маг <span class="v">+45</span></span><span class="stat">Снижение хода <span class="v">+15%</span></span></div><p class="name" style="margin-top:12px">Вся броня · Орех</p><p class="why">Диковина ★6</p><div class="stats"><span class="stat">Атк <span class="v">+3</span></span><span class="stat">Защ <span class="v">+3</span></span><span class="stat">Ловк <span class="v">+18</span></span><span class="stat">Рикошет <span class="v">+3%</span></span></div></div></div></div><p class="eyebrow" style="margin-top:30px">Умения в сборке</p><div class="cmp"><table><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Strikes of Ursa ×2</b></td><td><b>28 644–42 966</b></td></tr><tr><td style="color:var(--ink-soft)">Spiked Pauldrons</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Gait of Gunnr</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Остальные слоты</td><td style="color:var(--ink-soft)">пусто</td></tr></tbody></table></div><p class="eyebrow" style="margin-top:30px">Итого по снаряжению</p><div class="chips"><span class="chip">Вард <b>335%</b></span><span class="chip">Защита <b>492</b></span><span class="chip">Ловкость <b>1 354</b></span><span class="chip">Сопрот. <b>1 750</b></span><span class="chip">Атака <b>1 296</b></span><span class="chip">HP <b>6 020</b></span></div><div class="note" style="margin-top:16px"><span class="h">Заметка</span>Отличия от рейдового: оружие Celestial Hammer (Вард 203%), Amity-набор Fortitude &amp; Impurity, активный скилл — только Strikes of Ursa ×2. Защита аксессуаров = 0.</div></div><div class="ldpanel" id="ld-dungeon"><p class="lead" style="font-size:16px;font-style:normal;margin-bottom:14px">Двуручный · крит-зачистка под Frenzy</p><div class="note"><span class="h">Class Ability · Frenzy</span>После 2 ходов в бою, когда Вард почти полон, каждый ход тратит Вард — повышая Атаку, Ловкость, темп Collateral Damage и эффективность скиллов, потребляющих Вард. Длится 5 ходов или пока Вард не кончится.</div><p class="eyebrow" style="margin-top:26px">Снаряжение</p><div class="gear-grid"><div class="gear"><div class="top">Голова</div><div class="body"><p class="name">Godforged Covyn's Porcelain Mask</p><p class="why">Уровень 13 · Anguished 25</p><div class="stats"><span class="stat">Атк <span class="v">18</span></span><span class="stat">Защ <span class="v">18</span></span><span class="stat">Ловк <span class="v">108</span></span><span class="stat">Вард <span class="v">69%</span></span><span class="stat">Крит <span class="v">9%</span></span></div></div></div><div class="gear"><div class="top">Оружие · двуручное</div><div class="body"><p class="name">Godforged Yelmogus Greatsword</p><p class="why">Уровень 13 · Anguished 23</p><p class="why" style="color:var(--oxblood)">▸ Ability: Dragon-tail Sweep</p><div class="stats"><span class="stat">Мана <span class="v">880</span></span><span class="stat">Атк <span class="v">1 635</span></span><span class="stat">Маг <span class="v">177</span></span><span class="stat">Вард <span class="v">186%</span></span><span class="stat">Крит <span class="v">60%</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name">Godforged Arisen Pumpkinless Armor</p><p class="why">Уровень 13</p><div class="stats"><span class="stat">HP <span class="v">2 615</span></span><span class="stat">Атк <span class="v">24</span></span><span class="stat">Защ <span class="v">122</span></span><span class="stat">Сопр <span class="v">796</span></span><span class="stat">Ловк <span class="v">623</span></span><span class="stat">Вард <span class="v">29%</span></span><span class="stat">Обзор <span class="v">−111</span></span></div><div class="chips" style="margin-top:8px"><span class="chip">Аркана</span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name">— пусто (двуручка)</p></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name">Godforged Arisen Pumpkinless Leggings «196»</p><p class="why">Уровень 13 · Anguished 5</p><div class="stats"><span class="stat">HP <span class="v">3 135</span></span><span class="stat">Атк <span class="v">24</span></span><span class="stat">Защ <span class="v">142</span></span><span class="stat">Сопр <span class="v">954</span></span><span class="stat">Ловк <span class="v">623</span></span><span class="stat">Вард <span class="v">34%</span></span><span class="stat">Обзор <span class="v">−133</span></span></div><div class="chips" style="margin-top:8px"><span class="chip">Dark</span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name">Arisen Trevelyan's Charm</p><p class="why">Амулет</p><div class="stats"><span class="stat">Двуручный урон <span class="v">+%</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name">Arisen Trevelyan's Charm</p><p class="why">Амулет</p><div class="stats"><span class="stat">Двуручный урон <span class="v">+%</span></span></div></div></div><div class="gear"><div class="top">Питомец</div><div class="body"><p class="name">Восставший петриварг</p><p class="why">Скрытный · ★10 · животное · событие «Рагнарёк»</p><p class="why" style="margin-top:6px">Альтернатива — питомец с умением Ward of Ortanite (Вард ортанита)</p></div></div><div class="gear"><div class="top">Умения · Amity</div><div class="body"><p class="name">Opportunity &amp; Inability</p><p class="why" style="margin:4px 0">+ Криты на 40% эффективнее</p><p class="why" style="margin:4px 0">+ +10% урона при полном HP</p><p class="why" style="margin:4px 0">− +1% шанс промаха по противнику</p><p class="why" style="margin:4px 0">− −25% получаемого опыта</p></div></div><div class="gear"><div class="top">Украшения</div><div class="body"><p class="name">Оружие · Глаз свирепого быка</p><p class="why">полностью · Диковина ★9</p><div class="stats"><span class="stat">Мана <span class="v">+60</span></span><span class="stat">Атк <span class="v">+12</span></span><span class="stat">Маг <span class="v">+12</span></span><span class="stat">Крит <span class="v">+4%</span></span></div><p class="name" style="margin-top:12px">Вся броня · Орех</p><p class="why">Диковина ★6</p><div class="stats"><span class="stat">Атк <span class="v">+3</span></span><span class="stat">Защ <span class="v">+3</span></span><span class="stat">Ловк <span class="v">+18</span></span><span class="stat">Рикошет <span class="v">+3%</span></span></div></div></div></div><p class="eyebrow" style="margin-top:30px">Умения в сборке</p><div class="cmp"><table><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Spiked Shield III</b></td><td><b>401 476</b></td></tr><tr><td><b>Realm Strikes II ×4</b></td><td><b>15 976–23 077</b></td></tr><tr><td><b>Galestrike III</b></td><td><b>17 186</b></td></tr><tr><td style="color:var(--ink-soft)">Spiked Pauldrons</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Mimic's Mischief</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Wyvern Speed II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Wyrm's Song</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Ward of Ortanite</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Gait of Gunnr</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Остальные слоты</td><td style="color:var(--ink-soft)">пусто</td></tr></tbody></table></div><p class="eyebrow" style="margin-top:30px">Итого по снаряжению</p><div class="chips"><span class="chip">Вард <b>318%</b></span><span class="chip">Защита <b>282</b></span><span class="chip">Ловкость <b>1 354</b></span><span class="chip">Сопрот. <b>1 750</b></span><span class="chip">Атака <b>1 701</b></span><span class="chip">HP <b>5 750</b></span></div><div class="note" style="margin-top:16px"><span class="h">Заметка</span>Отличия: оружие Godforged Yelmogus Greatsword (Крит 60%, Вард 186%, скилл Dragon-tail Sweep), Amity-набор Opportunity &amp; Inability, активные скиллы Spiked Shield III + Realm Strikes II ×4 + Galestrike III. Защита аксессуаров = 0.</div></div></section>
 </main>
 
 <footer class="site-foot">
@@ -826,7 +575,7 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
 
 <script>
 (function(){
-  var DICT = {"КОДЕКС": "CODEX", "Классы": "Classes", "Билды": "Builds", "Механики": "Mechanics", "Гир": "Gear", "● ЭНДГЕЙМ · ПАТЧИ 32–33": "● ENDGAME · PATCHES 32–33", "База знаний по": "Knowledge base for", "Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.": "Breakdowns of endgame classes, working builds and mechanics rarely collected in one place. No fluff — only what changes damage, survivability and clear speed.", "основа": "foundation", "Негативная защита": "Negative defense", "Снижаем защиту цели в минус.": "Push the target's defense below zero.", "срабатывание": "trigger", "Коллатеральный крит": "Collateral crit", "Одиночный крит бьёт по площади.": "A single crit hits an area.", "результат": "result", "Зачистка хорды": "Horde cleared", "Толпа складывается с одного удара.": "The pack drops from one hit.", "Флагманский билд": "Flagship build", "Gilgamesh Ursa — «Коллатеральные криты»": "Gilgamesh Ursa — Collateral Crits", "Стеклянная пушка на спеке Rudiarius и оружии Astromolot. Полный разбор: концепт, гир, статы, ротация и подводные камни.": "A glass cannon on the Rudiarius spec and Astromolot weapon. Full breakdown: concept, gear, stats, rotation and pitfalls.", "Билд · готов": "Build · ready", "Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.": "Collateral damage, negative defense, crit nukes. Identical to Gallia Ursa.", "Класс · в работе": "Class · WIP", "Скоро: разбор спеков и ротаций.": "Soon: specs and rotations.", "Скоро: механики и сборка.": "Soon: mechanics and build.", "Скоро: саммоны и приоритеты.": "Soon: summons and priorities.", "Разделы кодекса": "Codex sections", "Что внутри": "What's inside", "01 · Классы": "01 · Classes", "Эндгейм-классы": "Endgame classes", "Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.": "Gilgamesh, Heretic, Realmshifter, Grand Summoner — strengths and weaknesses.", "02 · Механики": "02 · Mechanics", "Как считается урон": "How damage works", "Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.": "Collateral damage, negative defense, crit on multi-hits, Ward priority.", "03 · Гир": "03 · Gear", "Гир по тирам": "Gear by tier", "Лучшие предметы T10, сеты, талисманы и адорны под конкретные сборки.": "Best T10 items, sets, charms and adornments for specific builds.", "04 · FAQ": "04 · FAQ", "Для новичков": "For newcomers", "Базовые вопросы по эндгейму и частые ошибки в сборках.": "Basic endgame questions and common build mistakes.", "Три правила, на которых всё держится": "Three rules it all rests on", "Коллатеральный урон": "Collateral damage", "Масштабируется от негативной защиты": "Scales with negative defense", " и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.": " and lets you clear packs with single crits — one hit on a target splashes to the rest.", "Крит и мультихит": "Crit vs multi-hit", "Скиллы с несколькими ударами имеют": "Multi-hit skills have", "0% шанс крита": "0% crit chance", ". Под крит-сборку берут одиночные удары.": ". A crit build uses single-hit skills.", "Ядро урона — крит": "Damage core — crit", "Крит удваивает удар (": "Crit doubles the hit (", "), а Collateral разносит его по своре.": "), and Collateral spreads it across the pack.", "усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.": "amplifies the chain: it eats ward but boosts attack, agility and Collateral speed.", "Полный разбор механик на примере Gilgamesh Ursa →": "Full mechanics breakdown on the Gilgamesh Ursa page →", "Опорные предметы T10": "Core T10 items", "Талисман ×2": "Charm ×2", "Оберег Тревельяна": "Trevelyan's Charm", "Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.": "Near-ideal for two-handed builds: zero defense, +10% two-handed weapon power — two slots give +20%.", "Броня · сет": "Armor · set", "Восставший Тыквобезголовый": "Risen Pumpkinhead", "Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.": "Body + legs: HP, agility, crit and resistance instead of defense.", "Шлем": "Helmet", "Шлем досадного разочарования": "Helm of Bitter Disappointment", "−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.": "−273 defense: pushes the total negative for Collateral. Plus +18% crit and +500 agility.", "Полный лут под Gilgamesh Ursa →": "Full loadout for Gilgamesh Ursa →", "Коротко о главном": "The essentials", "Зачем уводить защиту в минус?": "Why push defense negative?", "Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.": "Collateral is stronger with negative defense. The −273 helmet keeps the total negative even with +210 defense from the weapon. The cost is low survivability: a ward skill (Frenzy) and the Chibi-Prometheus pet help.", "Gilgamesh Ursa и Gallia Ursa — это разное?": "Are Gilgamesh Ursa and Gallia Ursa different?", "Механически идентичны. Любой разбор по одному подходит к другому.": "Mechanically identical. Any breakdown of one applies to the other.", "ORNA КОДЕКС — независимая база знаний по Orna RPG.": "ORNA CODEX — an independent Orna RPG knowledge base.", "Данные: ornalegends.com · патчи 32–33.": "Data: ornalegends.com · patches 32–33."};
+  var DICT = {"КОДЕКС": "CODEX", "Классы": "Classes", "Билды": "Builds", "Механики": "Mechanics", "Гир": "Gear", "● ЭНДГЕЙМ · ПАТЧИ 32–33": "● ENDGAME · PATCHES 32–33", "База знаний по": "Knowledge base for", "Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.": "Breakdowns of endgame classes, working builds and mechanics rarely collected in one place. No fluff — only what changes damage, survivability and clear speed.", "основа": "foundation", "Негативная защита": "Negative defense", "Снижаем защиту цели в минус.": "Push the target's defense below zero.", "срабатывание": "trigger", "Коллатеральный крит": "Collateral crit", "Одиночный крит бьёт по площади.": "A single crit hits an area.", "результат": "result", "Зачистка хорды": "Horde cleared", "Толпа складывается с одного удара.": "The pack drops from one hit.", "Флагманский билд": "Flagship build", "Gilgamesh Ursa — «Коллатеральные криты»": "Gilgamesh Ursa — Collateral Crits", "Стеклянная пушка на спеке Rudiarius и оружии Astromolot. Полный разбор: концепт, гир, статы, ротация и подводные камни.": "A glass cannon on the Rudiarius spec and Astromolot weapon. Full breakdown: concept, gear, stats, rotation and pitfalls.", "Билд · готов": "Build · ready", "Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.": "Collateral damage, negative defense, crit nukes. Identical to Gallia Ursa.", "Класс · в работе": "Class · WIP", "Скоро: разбор спеков и ротаций.": "Soon: specs and rotations.", "Скоро: механики и сборка.": "Soon: mechanics and build.", "Скоро: саммоны и приоритеты.": "Soon: summons and priorities.", "Разделы кодекса": "Codex sections", "Что внутри": "What's inside", "01 · Классы": "01 · Classes", "Эндгейм-классы": "Endgame classes", "Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.": "Gilgamesh, Heretic, Realmshifter, Grand Summoner — strengths and weaknesses.", "02 · Механики": "02 · Mechanics", "Как считается урон": "How damage works", "Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.": "Collateral damage, negative defense, crit on multi-hits, Ward priority.", "03 · Гир": "03 · Gear", "Гир по тирам": "Gear by tier", "Лучшие предметы T10, сеты, талисманы и украшения под конкретные сборки.": "Best T10 items, sets, charms and adornments for specific builds.", "04 · FAQ": "04 · FAQ", "Для новичков": "For newcomers", "Базовые вопросы по эндгейму и частые ошибки в сборках.": "Basic endgame questions and common build mistakes.", "Три правила, на которых всё держится": "Three rules it all rests on", "Коллатеральный урон": "Collateral damage", "Масштабируется от негативной защиты": "Scales with negative defense", " и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.": " and lets you clear packs with single crits — one hit on a target splashes to the rest.", "Крит и мультихит": "Crit vs multi-hit", "Скиллы с несколькими ударами имеют": "Multi-hit skills have", "0% шанс крита": "0% crit chance", ". Под крит-сборку берут одиночные удары.": ". A crit build uses single-hit skills.", "Ядро урона — крит": "Damage core — crit", "Крит удваивает удар (": "Crit doubles the hit (", "), а Collateral разносит его по своре.": "), and Collateral spreads it across the pack.", "усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.": "amplifies the chain: it eats ward but boosts attack, agility and Collateral speed.", "Полный разбор механик на примере Gilgamesh Ursa →": "Full mechanics breakdown on the Gilgamesh Ursa page →", "Опорные предметы T10": "Core T10 items", "Талисман ×2": "Charm ×2", "Оберег Тревельяна": "Trevelyan's Charm", "Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.": "Near-ideal for two-handed builds: zero defense, +10% two-handed weapon power — two slots give +20%.", "Броня · сет": "Armor · set", "Восставший Тыквобезголовый": "Risen Pumpkinhead", "Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.": "Body + legs: HP, agility, crit and resistance instead of defense.", "Шлем": "Helmet", "Шлем досадного разочарования": "Helm of Bitter Disappointment", "−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.": "−273 defense: pushes the total negative for Collateral. Plus +18% crit and +500 agility.", "Полный лут под Gilgamesh Ursa →": "Full loadout for Gilgamesh Ursa →", "Коротко о главном": "The essentials", "Зачем уводить защиту в минус?": "Why push defense negative?", "Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.": "Collateral is stronger with negative defense. The −273 helmet keeps the total negative even with +210 defense from the weapon. The cost is low survivability: a ward skill (Frenzy) and the Chibi-Prometheus pet help.", "Gilgamesh Ursa и Gallia Ursa — это разное?": "Are Gilgamesh Ursa and Gallia Ursa different?", "Механически идентичны. Любой разбор по одному подходит к другому.": "Mechanically identical. Any breakdown of one applies to the other.", "ORNA КОДЕКС — независимая база знаний по Orna RPG.": "ORNA CODEX — an independent Orna RPG knowledge base.", "Данные: ornalegends.com · патчи 32–33.": "Data: ornalegends.com · patches 32–33."};
   var html=document.documentElement;
   var btn=document.getElementById("langToggle");
   var nodes=[];
@@ -852,6 +601,10 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
   if(btn) btn.addEventListener("click",function(){ apply(html.getAttribute("lang")==="en"?"ru":"en"); });
   apply(saved);
 })();
+</script>
+
+<script data-ldtab-init>
+(function(){var tabs=document.querySelectorAll(".ldtab");if(!tabs.length)return;tabs.forEach(function(t){t.addEventListener("click",function(){var id=t.getAttribute("data-ld");tabs.forEach(function(x){x.classList.remove("on")});t.classList.add("on");document.querySelectorAll(".ldpanel").forEach(function(p){p.classList.toggle("on",p.id===id)});});});})();
 </script>
 </body>
 </html>
