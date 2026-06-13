@@ -400,10 +400,12 @@ section:first-of-type { border-top: 0; }
 /* ===========================================================
    Палитры и иконки классов
    =========================================================== */
-.cls-gilgamesh    { --class-accent: #C0392B; --class-accent-2: #8E2A20; }
-.cls-heretic      { --class-accent: #7E4BB0; --class-accent-2: #5B3486; }
-.cls-realmshifter { --class-accent: #2C8C9E; --class-accent-2: #1F6675; }
+.cls-gilgamesh    { --class-accent: #8C2233; --class-accent-2: #6A1A28; }
+.cls-heretic      { --class-accent: #2C8C9E; --class-accent-2: #1F6675; }
+.cls-realmshifter { --class-accent: #7E4BB0; --class-accent-2: #5B3486; }
 .cls-summoner     { --class-accent: #3A6EA5; --class-accent-2: #27517D; }
+.cls-beowulf      { --class-accent: #7A5018; --class-accent-2: #573910; }
+.cls-deity        { --class-accent: #C8962B; --class-accent-2: #9C7016; }
 
 /* Карточки классов на главной — в цвете класса + иконка */
 .card[class*="cls-"] { position: relative; overflow: hidden; border-left-color: var(--class-accent); }
@@ -463,15 +465,23 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
 .lang-toggle { font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; }
 
 /* Вкладки лоадаутов */
-.ldtabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 22px; }
-.ldtab { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 16px; border: 1px solid var(--rule); border-radius: 6px; background: transparent; color: var(--ink-soft); cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background .15s, color .15s, border-color .15s; }
-.ldtab.on { color: var(--ink); border-color: var(--ink); background: var(--vellum); font-weight: 600; }
+.ldtabs { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 22px; }
+.ldtab { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.07em; text-transform: uppercase; padding: 11px 20px; border: 2px solid var(--rule); border-radius: 7px; background: var(--vellum); color: var(--ink); cursor: pointer; font-weight: 600; -webkit-tap-highlight-color: transparent; transition: background .15s, color .15s, border-color .15s; }
+.ldtab.on { color: var(--parchment); border-color: var(--ink); background: var(--ink); }
 .ldpanel { display: none; }
 .ldpanel.on { display: block; }
 
 /* Отметка «в работе» для пустых разделов */
 .wip { color: var(--ink-soft); font-style: italic; margin-top: 8px; }
 .wip-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-style: normal; color: var(--oxblood); border: 1px solid var(--oxblood); border-radius: 4px; padding: 3px 9px; margin-right: 10px; }
+
+/* Спек-вкладки (Рудиарий / Геркулес) — верхний уровень */
+.spectabs { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 26px; }
+.spectab { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.09em; text-transform: uppercase; padding: 14px 28px; border: 2px solid var(--ink); border-radius: 9px; background: var(--vellum); color: var(--ink); cursor: pointer; font-weight: 700; -webkit-tap-highlight-color: transparent; transition: background .15s, color .15s, border-color .15s, transform .08s, box-shadow .15s; }
+.spectab:active { transform: translateY(1px); }
+.spectab.on { color: #fff; background: var(--oxblood); border-color: var(--oxblood); box-shadow: 0 3px 0 rgba(0,0,0,0.14); }
+.specpanel { display: none; }
+.specpanel.on { display: block; }
 
 </style>
 </head>
@@ -498,7 +508,6 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
 
 <main>
   <section class="hero wrap">
-    <span class="tag">● Эндгейм · патчи 32–33</span>
     <h1>База знаний по <span class="accent">Orna RPG</span></h1>
     <p class="lead">Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.</p>
 
@@ -507,17 +516,17 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
   <section id="bildy" class="wrap">
     <div class="grid">
       <a class="card featured cls-gilgamesh" href="gilgamesh-ursa.html">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="44" rx="14" ry="12"/><circle cx="15" cy="27" r="6"/><circle cx="26" cy="18" r="6"/><circle cx="38" cy="18" r="6"/><circle cx="49" cy="27" r="6"/></svg></span>
+        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M32 4 36 42 28 42Z"/><rect x="17" y="42" width="30" height="5" rx="2"/><rect x="29" y="47" width="6" height="9"/><circle cx="32" cy="58" r="4"/></svg></span>
         <span class="k">Билд · готов</span>
         <h3>Gilgamesh →</h3>
       </a>
       <a class="card cls-heretic" href="#">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor" fill-rule="evenodd"><path d="M32 6C19 6 10 15 10 28c0 7 3 12 7 15v8a4 4 0 0 0 4 4h22a4 4 0 0 0 4-4v-8c4-3 7-8 7-15C54 15 45 6 32 6Zm-9 17a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm18 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg></span>
+        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M32 5 56 32 32 59 8 32Z"/><path d="M32 19 45 32 32 45 19 32Z"/></svg></span>
         <span class="k">Класс · в работе</span>
         <h3>Heretic</h3>
       </a>
       <a class="card cls-realmshifter" href="#">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M32 5 56 32 32 59 8 32Z"/><path d="M32 19 45 32 32 45 19 32Z"/></svg></span>
+        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor" fill-rule="evenodd"><path d="M32 6C19 6 10 15 10 28c0 7 3 12 7 15v8a4 4 0 0 0 4 4h22a4 4 0 0 0 4-4v-8c4-3 7-8 7-15C54 15 45 6 32 6Zm-9 17a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm18 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg></span>
         <span class="k">Класс · в работе</span>
         <h3>Realmshifter</h3>
       </a>
@@ -525,6 +534,16 @@ body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
         <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M32 4l7.3 17.5L58 23 44 35.2 48.6 54 32 43.7 15.4 54 20 35.2 6 23l18.7-1.5z"/></svg></span>
         <span class="k">Класс · в работе</span>
         <h3>Grand Summoner</h3>
+      </a>
+      <a class="card cls-beowulf" href="#">
+        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="44" rx="14" ry="12"/><circle cx="15" cy="27" r="6"/><circle cx="26" cy="18" r="6"/><circle cx="38" cy="18" r="6"/><circle cx="49" cy="27" r="6"/></svg></span>
+        <span class="k">Класс · в работе</span>
+        <h3>Beowulf</h3>
+      </a>
+      <a class="card cls-deity" href="#">
+        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="32" cy="32" r="10" fill="currentColor" stroke="none"/><path d="M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M52 12l-6 6M18 46l-6 6"/></svg></span>
+        <span class="k">Класс · в работе</span>
+        <h3>Deity</h3>
       </a>
     </div>
   </section>
