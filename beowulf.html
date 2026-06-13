@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>(function(){try{var t=localStorage.getItem("orna-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
-<title>Orna RPG — База знаний по эндгейму: билды, классы, механики</title>
-<meta name="description" content="Русскоязычная база знаний по Orna RPG: разборы эндгейм-классов, билдов, механик и гира по тирам. Гайды по Gilgamesh, Heretic, Realmshifter и Grand Summoner.">
-<meta property="og:title" content="Orna RPG — База знаний по эндгейму">
-<meta property="og:description" content="Билды, классы и механики Orna RPG на русском. Патчи 32–33.">
-<meta property="og:type" content="website">
+<title>Beowulf билд (рейды) — Orna RPG | ORNA КОДЕКС</title>
+<meta name="description" content="Билд Beowulf в Orna RPG: магический дуал-вилд на Зачарованных шпагах Финесса. Сборка для рейдов — снаряжение, осколок, умения и итоги по статам.">
+<meta property="og:title" content="Beowulf — магический дуал-вилд">
+<meta property="og:description" content="Две шпаги Финесса, двойной маг-урон. Рейдовая сборка Beowulf.">
+<meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -498,17 +498,18 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
 
 </style>
 </head>
-<body>
+<body class="cls-beowulf">
+<div class="class-watermark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="44" rx="14" ry="12"/><circle cx="15" cy="27" r="6"/><circle cx="26" cy="18" r="6"/><circle cx="38" cy="18" r="6"/><circle cx="49" cy="27" r="6"/></svg></div>
 
 <header class="site-head">
   <div class="wrap">
-    <span class="brand">ORNA <b>КОДЕКС</b></span>
+    <a class="brand" href="index.html">ORNA <b>КОДЕКС</b></a>
     <nav class="nav">
-      <a href="#klassy">Классы</a>
-      <a href="#bildy">Билды</a>
-      <a href="#mekhaniki">Механики</a>
-      <a href="#gir">Гир</a>
-      <a href="#faq">FAQ</a>
+      <a href="index.html#klassy">Классы</a>
+      <a href="index.html#bildy">Билды</a>
+      <a href="index.html#mekhaniki">Механики</a>
+      <a href="index.html#gir">Гир</a>
+      <a href="index.html#faq">FAQ</a>
     </nav>
     <div class="head-actions">
       <button class="theme-toggle menu-toggle" id="menuToggle" type="button" aria-label="Меню" aria-expanded="false">&#9776;</button>
@@ -519,73 +520,18 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
   </div>
 </header>
 
-<main>
-  <section class="hero wrap">
-    <h1>База знаний по <span class="accent">Orna RPG</span></h1>
-    <p class="lead">Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.</p>
+<div class="wrap crumbs">
+  <a href="index.html">Кодекс</a> / Билды / Beowulf
+</div>
 
-  </section>
-
-  <section id="bildy" class="wrap">
-    <div class="grid">
-      <a class="card featured cls-gilgamesh" href="gilgamesh-ursa.html">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M32 4 36 42 28 42Z"/><rect x="17" y="42" width="30" height="5" rx="2"/><rect x="29" y="47" width="6" height="9"/><circle cx="32" cy="58" r="4"/></svg></span>
-        <span class="k">Билд · готов</span>
-        <h3>Gilgamesh →</h3>
-      </a>
-      <a class="card cls-heretic" href="#">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M32 5 56 32 32 59 8 32Z"/><path d="M32 19 45 32 32 45 19 32Z"/></svg></span>
-        <span class="k">Класс · в работе</span>
-        <h3>Heretic</h3>
-      </a>
-      <a class="card cls-realmshifter" href="#">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor" fill-rule="evenodd"><path d="M32 6C19 6 10 15 10 28c0 7 3 12 7 15v8a4 4 0 0 0 4 4h22a4 4 0 0 0 4-4v-8c4-3 7-8 7-15C54 15 45 6 32 6Zm-9 17a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm18 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg></span>
-        <span class="k">Класс · в работе</span>
-        <h3>Realmshifter</h3>
-      </a>
-      <a class="card cls-summoner" href="#">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M32 4l7.3 17.5L58 23 44 35.2 48.6 54 32 43.7 15.4 54 20 35.2 6 23l18.7-1.5z"/></svg></span>
-        <span class="k">Класс · в работе</span>
-        <h3>Grand Summoner</h3>
-      </a>
-      <a class="card cls-beowulf" href="beowulf.html">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="44" rx="14" ry="12"/><circle cx="15" cy="27" r="6"/><circle cx="26" cy="18" r="6"/><circle cx="38" cy="18" r="6"/><circle cx="49" cy="27" r="6"/></svg></span>
-        <span class="k">Билд · рейды</span>
-        <h3>Beowulf →</h3>
-      </a>
-      <a class="card cls-deity" href="#">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="32" cy="32" r="10" fill="currentColor" stroke="none"/><path d="M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M52 12l-6 6M18 46l-6 6"/></svg></span>
-        <span class="k">Класс · в работе</span>
-        <h3>Deity</h3>
-      </a>
-    </div>
-  </section>
-
-  <section id="klassy" class="wrap">
-    <p class="eyebrow">Разделы кодекса</p>
-    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
-  </section>
-
-  <section id="mekhaniki" class="wrap">
-    <p class="eyebrow">Механики</p>
-    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
-  </section>
-
-  <section id="gir" class="wrap">
-    <p class="eyebrow">Гир</p>
-    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
-  </section>
-
-  <section id="faq" class="wrap">
-    <p class="eyebrow">FAQ</p>
-    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
-  </section>
+<main class="wrap">
+  <section id="loadouts"><p class="eyebrow">Сборка · класс Beowulf · спец. Хорономант</p><h2>Beowulf — Хорономант</h2><p style="color:var(--ink-soft);margin-top:-6px">Специализация Хорономант · магический дуал-вилд на Зачарованных шпагах Финесса. Класс-умения — Бездна, Трансференция, Обоюдоострая атака.</p><div class="ldtabs" style="margin-top:18px"><button class="ldtab on" type="button" data-ld="bw-raids">Рейды</button><button class="ldtab" type="button" data-ld="bw-arena">Арена</button><button class="ldtab" type="button" data-ld="bw-dungeon">Подземелье</button><button class="ldtab" type="button" data-ld="bw-tower">Башня</button></div><div class="ldpanel on" id="bw-raids"><p class="lead" style="font-size:16px;font-style:normal;margin-bottom:14px">Рейды · магический дуал-вилд на шпагах Финесса</p><div class="note"><span class="h">Особенность сборки</span>Дуал-вилд из двух Зачарованных шпаг Финесса даёт двойной магический урон; оффхенд несёт умение «Сдвоенное заклинание». Осколок — «Урон света 20%». Итоги ниже — сумма по снаряжению, без базовых статов персонажа.</div><p class="eyebrow" style="margin-top:26px">Снаряжение</p><div class="gear-grid"><div class="gear"><div class="top">Голова</div><div class="body"><p class="name">Корона восставшего Фомора про́клятых · «Стазис» (L)</p><p class="why">Уровень 10</p><div class="stats"><span class="stat">Защ <span class="v">340</span></span><span class="stat">Сопр <span class="v">340</span></span><span class="stat">Вард <span class="v">12%</span></span></div></div></div><div class="gear"><div class="top">Оружие</div><div class="body"><p class="name">Зачарованная шпага Финесса, закалённое (L)</p><p class="why">Уровень 12 · Настрадание 3</p><div class="stats"><span class="stat">Мана <span class="v">231</span></span><span class="stat">Атк <span class="v">508</span></span><span class="stat">Маг <span class="v">747</span></span><span class="stat">Ловк <span class="v">117</span></span><span class="stat">Вард <span class="v">16%</span></span><span class="stat">Крит <span class="v">14%</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name">Роба Иару восставших, травленое (L)</p><p class="why">Уровень 11</p><div class="stats"><span class="stat">Мана <span class="v">369</span></span><span class="stat">Защ <span class="v">699</span></span><span class="stat">Сопр <span class="v">883</span></span><span class="stat">Вард <span class="v">30%</span></span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name">Зачарованная шпага Финесса, закалённое (L)</p><p class="why">Уровень 12 · Настрадание 1</p><p class="why" style="color:var(--oxblood)">▸ Умение: Сдвоенное заклинание</p><div class="stats"><span class="stat">Мана <span class="v">187</span></span><span class="stat">Атк <span class="v">416</span></span><span class="stat">Маг <span class="v">604</span></span><span class="stat">Ловк <span class="v">117</span></span><span class="stat">Вард <span class="v">13%</span></span><span class="stat">Крит <span class="v">14%</span></span></div></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name">Сапоги восставшего короля Фомора про́клятых, эпичное (L)</p><p class="why">Уровень 10</p><div class="stats"><span class="stat">Защ <span class="v">−319</span></span><span class="stat">Сопр <span class="v">903</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name">Пояс Наггенина (L)</p><div class="stats"><span class="stat">Мана <span class="v">50</span></span><span class="stat">Ловк <span class="v">50</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name">Оберег беовульфа, орнатное (L)</p><div class="stats"><span class="stat">HP <span class="v">103</span></span><span class="stat">Мана <span class="v">103</span></span></div></div></div><div class="gear"><div class="top">Питомец</div><div class="body"><p class="name">Чиби-Прометей</p><p class="why">Хранитель · Титаны · ★10</p><p class="why" style="margin-top:6px">Умения: Рассечка, Руна Прометея, Вылазка, Сила титана, Удар титанов, Снос башни</p></div></div><div class="gear"><div class="top">Украшения</div><div class="body"><p class="name">Оружие · Душа Ахлис</p><p class="why">Диковина ★9</p><div class="stats"><span class="stat">Атк <span class="v">8</span></span><span class="stat">Крит <span class="v">2%</span></span><span class="stat">Урон тьмой <span class="v">+2%</span></span><span class="stat">Урон светом <span class="v">+2%</span></span></div><p class="name" style="margin-top:12px">Броня · Глаз Осириса</p><p class="why">Диковина ★6</p><div class="stats"><span class="stat">Хар-ки питомца <span class="v">+1%</span></span><span class="stat">Частота действий <span class="v">+1%</span></span><span class="stat">Хар-ки призванных <span class="v">+1%</span></span></div></div></div><div class="gear"><div class="top">Осколок</div><div class="body"><p class="name">Урон света 20%</p></div></div></div><p class="eyebrow" style="margin-top:30px">Умения в сборке</p><div class="cmp"><table><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Бездна II</b></td><td><b>4 976</b></td></tr><tr><td><b>Трансференция III</b></td><td><b>6 220</b></td></tr><tr><td><b>Обоюдоострая атака</b></td><td><b>3 356</b></td></tr><tr><td style="color:var(--ink-soft)">Поступь Снотры</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Прыть виверны II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Песнь виверны</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Уязвимость</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Раздумья</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Вард ортанита</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Стойкость голема</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Барьер II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Оплот богов II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Талант джинна</td><td style="color:var(--ink-soft)">0</td></tr></tbody></table></div><p class="eyebrow" style="margin-top:30px;color:var(--oxblood)">Итого по снаряжению</p><div class="statbars"><div class="sb"><span class="sb-l">Маг</span><span class="sb-track"><span class="sb-fill" style="width:64%;background:#7E4BB0"></span></span><span class="sb-v">1 351</span></div><div class="sb"><span class="sb-l">Атака</span><span class="sb-track"><span class="sb-fill" style="width:44%;background:#9E751F"></span></span><span class="sb-v">932</span></div><div class="sb"><span class="sb-l">Защита</span><span class="sb-track"><span class="sb-fill" style="width:34%;background:#8A6D3B"></span></span><span class="sb-v">720</span></div><div class="sb"><span class="sb-l">Сопрот.</span><span class="sb-track"><span class="sb-fill" style="width:100%;background:#5E7C8C"></span></span><span class="sb-v">2 126</span></div><div class="sb"><span class="sb-l">Ловкость</span><span class="sb-track"><span class="sb-fill" style="width:13%;background:#3F7D4E"></span></span><span class="sb-v">284</span></div><div class="sb"><span class="sb-l">Вард</span><span class="sb-track"><span class="sb-fill" style="width:71%;background:#2C8C9E"></span></span><span class="sb-v">71%</span></div><div class="sb"><span class="sb-l">Крит</span><span class="sb-track"><span class="sb-fill" style="width:30%;background:#8C2233"></span></span><span class="sb-v">30%</span></div></div></div><div class="ldpanel" id="bw-arena"><p style="color:var(--ink-soft);margin-top:20px">Сборка появится позже.</p></div><div class="ldpanel" id="bw-dungeon"><p style="color:var(--ink-soft);margin-top:20px">Сборка появится позже.</p></div><div class="ldpanel" id="bw-tower"><p style="color:var(--ink-soft);margin-top:20px">Сборка появится позже.</p></div></section>
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
-    <span>ORNA КОДЕКС — независимая база знаний по Orna RPG.</span>
-    <span>Данные: ornalegends.com · патчи 32–33.</span>
+    <span><a href="index.html">← Назад в кодекс</a></span>
+    <span>Сводка по билдам сообщества · не официальный гайд.</span>
   </div>
 </footer>
 
@@ -656,7 +602,7 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
 
 <script>
 (function(){
-  var DICT = {"в работе": "in progress", "Раздел скоро появится.": "Section coming soon.", "КОДЕКС": "CODEX", "Классы": "Classes", "Билды": "Builds", "Механики": "Mechanics", "Гир": "Gear", "● ЭНДГЕЙМ · ПАТЧИ 32–33": "● ENDGAME · PATCHES 32–33", "База знаний по": "Knowledge base for", "Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.": "Breakdowns of endgame classes, working builds and mechanics rarely collected in one place. No fluff — only what changes damage, survivability and clear speed.", "основа": "foundation", "Негативная защита": "Negative defense", "Снижаем защиту цели в минус.": "Push the target's defense below zero.", "срабатывание": "trigger", "Коллатеральный крит": "Collateral crit", "Одиночный крит бьёт по площади.": "A single crit hits an area.", "результат": "result", "Зачистка хорды": "Horde cleared", "Толпа складывается с одного удара.": "The pack drops from one hit.", "Флагманский билд": "Flagship build", "Gilgamesh Ursa — «Коллатеральные криты»": "Gilgamesh Ursa — Collateral Crits", "Стеклянная пушка на спеке Rudiarius и оружии Astromolot. Полный разбор: концепт, гир, статы, ротация и подводные камни.": "A glass cannon on the Rudiarius spec and Astromolot weapon. Full breakdown: concept, gear, stats, rotation and pitfalls.", "Билд · готов": "Build · ready", "Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.": "Collateral damage, negative defense, crit nukes. Identical to Gallia Ursa.", "Класс · в работе": "Class · WIP", "Скоро: разбор спеков и ротаций.": "Soon: specs and rotations.", "Скоро: механики и сборка.": "Soon: mechanics and build.", "Скоро: саммоны и приоритеты.": "Soon: summons and priorities.", "Разделы кодекса": "Codex sections", "Что внутри": "What's inside", "01 · Классы": "01 · Classes", "Эндгейм-классы": "Endgame classes", "Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.": "Gilgamesh, Heretic, Realmshifter, Grand Summoner — strengths and weaknesses.", "02 · Механики": "02 · Mechanics", "Как считается урон": "How damage works", "Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.": "Collateral damage, negative defense, crit on multi-hits, Ward priority.", "03 · Гир": "03 · Gear", "Гир по тирам": "Gear by tier", "Лучшие предметы T10, сеты, талисманы и украшения под конкретные сборки.": "Best T10 items, sets, charms and adornments for specific builds.", "04 · FAQ": "04 · FAQ", "Для новичков": "For newcomers", "Базовые вопросы по эндгейму и частые ошибки в сборках.": "Basic endgame questions and common build mistakes.", "Три правила, на которых всё держится": "Three rules it all rests on", "Коллатеральный урон": "Collateral damage", "Масштабируется от негативной защиты": "Scales with negative defense", " и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.": " and lets you clear packs with single crits — one hit on a target splashes to the rest.", "Крит и мультихит": "Crit vs multi-hit", "Скиллы с несколькими ударами имеют": "Multi-hit skills have", "0% шанс крита": "0% crit chance", ". Под крит-сборку берут одиночные удары.": ". A crit build uses single-hit skills.", "Ядро урона — крит": "Damage core — crit", "Крит удваивает удар (": "Crit doubles the hit (", "), а Collateral разносит его по своре.": "), and Collateral spreads it across the pack.", "усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.": "amplifies the chain: it eats ward but boosts attack, agility and Collateral speed.", "Полный разбор механик на примере Gilgamesh Ursa →": "Full mechanics breakdown on the Gilgamesh Ursa page →", "Опорные предметы T10": "Core T10 items", "Талисман ×2": "Charm ×2", "Оберег Тревельяна": "Trevelyan's Charm", "Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.": "Near-ideal for two-handed builds: zero defense, +10% two-handed weapon power — two slots give +20%.", "Броня · сет": "Armor · set", "Восставший Тыквобезголовый": "Risen Pumpkinhead", "Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.": "Body + legs: HP, agility, crit and resistance instead of defense.", "Шлем": "Helmet", "Шлем досадного разочарования": "Helm of Bitter Disappointment", "−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.": "−273 defense: pushes the total negative for Collateral. Plus +18% crit and +500 agility.", "Полный лут под Gilgamesh Ursa →": "Full loadout for Gilgamesh Ursa →", "Коротко о главном": "The essentials", "Зачем уводить защиту в минус?": "Why push defense negative?", "Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.": "Collateral is stronger with negative defense. The −273 helmet keeps the total negative even with +210 defense from the weapon. The cost is low survivability: a ward skill (Frenzy) and the Chibi-Prometheus pet help.", "Gilgamesh Ursa и Gallia Ursa — это разное?": "Are Gilgamesh Ursa and Gallia Ursa different?", "Механически идентичны. Любой разбор по одному подходит к другому.": "Mechanically identical. Any breakdown of one applies to the other.", "ORNA КОДЕКС — независимая база знаний по Orna RPG.": "ORNA CODEX — an independent Orna RPG knowledge base.", "Данные: ornalegends.com · патчи 32–33.": "Data: ornalegends.com · patches 32–33."};
+  var DICT = {"КОДЕКС": "CODEX", "Классы": "Classes", "Билды": "Builds", "Механики": "Mechanics", "Гир": "Gear", "● ЭНДГЕЙМ · ПАТЧИ 32–33": "● ENDGAME · PATCHES 32–33", "База знаний по": "Knowledge base for", "Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.": "Breakdowns of endgame classes, working builds and mechanics rarely collected in one place. No fluff — only what changes damage, survivability and clear speed.", "основа": "foundation", "Негативная защита": "Negative defense", "Снижаем защиту цели в минус.": "Push the target's defense below zero.", "срабатывание": "trigger", "Коллатеральный крит": "Collateral crit", "Одиночный крит бьёт по площади.": "A single crit hits an area.", "результат": "result", "Зачистка хорды": "Horde cleared", "Толпа складывается с одного удара.": "The pack drops from one hit.", "Флагманский билд": "Flagship build", "Gilgamesh Ursa — «Коллатеральные криты»": "Gilgamesh Ursa — Collateral Crits", "Стеклянная пушка на спеке Rudiarius и оружии Astromolot. Полный разбор: концепт, гир, статы, ротация и подводные камни.": "A glass cannon on the Rudiarius spec and Astromolot weapon. Full breakdown: concept, gear, stats, rotation and pitfalls.", "Билд · готов": "Build · ready", "Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.": "Collateral damage, negative defense, crit nukes. Identical to Gallia Ursa.", "Класс · в работе": "Class · WIP", "Скоро: разбор спеков и ротаций.": "Soon: specs and rotations.", "Скоро: механики и сборка.": "Soon: mechanics and build.", "Скоро: саммоны и приоритеты.": "Soon: summons and priorities.", "Разделы кодекса": "Codex sections", "Что внутри": "What's inside", "01 · Классы": "01 · Classes", "Эндгейм-классы": "Endgame classes", "Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.": "Gilgamesh, Heretic, Realmshifter, Grand Summoner — strengths and weaknesses.", "02 · Механики": "02 · Mechanics", "Как считается урон": "How damage works", "Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.": "Collateral damage, negative defense, crit on multi-hits, Ward priority.", "03 · Гир": "03 · Gear", "Гир по тирам": "Gear by tier", "Лучшие предметы T10, сеты, талисманы и украшения под конкретные сборки.": "Best T10 items, sets, charms and adornments for specific builds.", "04 · FAQ": "04 · FAQ", "Для новичков": "For newcomers", "Базовые вопросы по эндгейму и частые ошибки в сборках.": "Basic endgame questions and common build mistakes.", "Три правила, на которых всё держится": "Three rules it all rests on", "Коллатеральный урон": "Collateral damage", "Масштабируется от негативной защиты": "Scales with negative defense", " и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.": " and lets you clear packs with single crits — one hit on a target splashes to the rest.", "Крит и мультихит": "Crit vs multi-hit", "Скиллы с несколькими ударами имеют": "Multi-hit skills have", "0% шанс крита": "0% crit chance", ". Под крит-сборку берут одиночные удары.": ". A crit build uses single-hit skills.", "Ядро урона — крит": "Damage core — crit", "Крит удваивает удар (": "Crit doubles the hit (", "), а Collateral разносит его по своре.": "), and Collateral spreads it across the pack.", "усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.": "amplifies the chain: it eats ward but boosts attack, agility and Collateral speed.", "Полный разбор механик на примере Gilgamesh Ursa →": "Full mechanics breakdown on the Gilgamesh Ursa page →", "Опорные предметы T10": "Core T10 items", "Талисман ×2": "Charm ×2", "Оберег Тревельяна": "Trevelyan's Charm", "Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.": "Near-ideal for two-handed builds: zero defense, +10% two-handed weapon power — two slots give +20%.", "Броня · сет": "Armor · set", "Восставший Тыквобезголовый": "Risen Pumpkinhead", "Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.": "Body + legs: HP, agility, crit and resistance instead of defense.", "Шлем": "Helmet", "Шлем досадного разочарования": "Helm of Bitter Disappointment", "−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.": "−273 defense: pushes the total negative for Collateral. Plus +18% crit and +500 agility.", "Полный лут под Gilgamesh Ursa →": "Full loadout for Gilgamesh Ursa →", "Коротко о главном": "The essentials", "Зачем уводить защиту в минус?": "Why push defense negative?", "Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.": "Collateral is stronger with negative defense. The −273 helmet keeps the total negative even with +210 defense from the weapon. The cost is low survivability: a ward skill (Frenzy) and the Chibi-Prometheus pet help.", "Gilgamesh Ursa и Gallia Ursa — это разное?": "Are Gilgamesh Ursa and Gallia Ursa different?", "Механически идентичны. Любой разбор по одному подходит к другому.": "Mechanically identical. Any breakdown of one applies to the other.", "ORNA КОДЕКС — независимая база знаний по Orna RPG.": "ORNA CODEX — an independent Orna RPG knowledge base.", "Данные: ornalegends.com · патчи 32–33.": "Data: ornalegends.com · patches 32–33."};
   var html=document.documentElement;
   var btn=document.getElementById("langToggle");
   var nodes=[];
@@ -682,6 +628,14 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
   if(btn) btn.addEventListener("click",function(){ apply(html.getAttribute("lang")==="en"?"ru":"en"); });
   apply(saved);
 })();
+</script>
+
+<script data-ldtab-init>
+(function(){document.querySelectorAll(".ldtabs").forEach(function(group){var tabs=group.querySelectorAll(".ldtab");var box=group.parentNode;tabs.forEach(function(t){t.addEventListener("click",function(){var id=t.getAttribute("data-ld");tabs.forEach(function(x){x.classList.remove("on")});t.classList.add("on");Array.prototype.forEach.call(box.children,function(pp){if(pp.classList&&pp.classList.contains("ldpanel"))pp.classList.toggle("on",pp.id===id);});});});});})();
+</script>
+
+<script data-spectab-init>
+(function(){var t=document.querySelectorAll(".spectab");if(!t.length)return;t.forEach(function(b){b.addEventListener("click",function(){var id=b.getAttribute("data-spec");t.forEach(function(x){x.classList.remove("on")});b.classList.add("on");document.querySelectorAll(".specpanel").forEach(function(p){p.classList.toggle("on",p.id===id)});});});})();
 </script>
 </body>
 </html>
