@@ -532,8 +532,10 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
   <div class="wrap">
     <span><a href="index.html">← Назад в кодекс</a></span>
     <span>Сводка по билдам сообщества · не официальный гайд.</span>
+    <span>◇ Посетителей: <strong id="visitCount" style="color:var(--gold-leaf);font-family:'JetBrains Mono',monospace">…</strong></span>
   </div>
 </footer>
+<script>(function(){var el=document.getElementById('visitCount');if(!el)return;var b='https://countapi.mileshilliard.com/api/v1/',k='syarogka_orna_codex_visits',h=true;try{if(sessionStorage.getItem('orna_visit')==='1')h=false;}catch(e){}fetch(b+(h?'hit/':'get/')+k).then(function(r){return r.json();}).then(function(d){var v=parseInt(d.value,10);el.textContent=isNaN(v)?'\u2014':v.toLocaleString('ru-RU');try{sessionStorage.setItem('orna_visit','1');}catch(e){}}).catch(function(){el.textContent='\u2014';});})();</script>
 
 
 <a href="#" class="to-top" id="toTop" aria-label="Наверх" title="Наверх">&#8593;</a>
