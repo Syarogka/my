@@ -641,3 +641,646 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
 </script>
 </body>
 </html>
+<div class="gear"><div class="top">Осколок · альтернатива</div><div class="body"><p class="name">Эффективность аксессуаров +25%</p><p class="why">Можно использовать до высоких этажей.</p></div></div><!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem("orna-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
+<title>Heretic Corvus билд (Пифия) — Orna RPG | ORNA КОДЕКС</title>
+<meta name="description" content="Билд Heretic в Orna RPG: магический каст через флягу. Снаряжение, осколок, умения и итоги по статам.">
+<meta property="og:title" content="Heretic Corvus — Пифия">
+<meta property="og:description" content="Каст-билд Heretic на посохе Астропосох.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   ORNA КОДЕКС — светлая тема «Иллюминированная рукопись»
+   Пергамент + чернила + рубрикация (красный) + сусальное золото.
+   Те же классы, что и в тёмной теме.
+   =========================================================== */
+
+:root {
+  --parchment:     #F3ECDB;  /* фон страницы */
+  --parchment-deep:#E9DFC8;  /* панели */
+  --vellum:        #FBF6EA;  /* карточки, светлее */
+  --ink:           #2A2118;  /* основной текст — сепиевые чернила */
+  --ink-soft:      #6E614C;  /* вторичный текст */
+  --oxblood:       #8C2B22;  /* рубрика — красные чернила, основной акцент */
+  --oxblood-br:    #A8392C;
+  --gold-leaf:     #9E751F;  /* сусальное золото на светлом */
+  --gold-leaf-br:  #B89034;
+  --ward:          #2C6E7C;  /* Ward — приглушённая бирюза */
+  --pos:           #3E7D4F;  /* положительный стат */
+  --rule:          rgba(42,33,24,0.22);
+  --rule-soft:     rgba(42,33,24,0.10);
+
+  --maxw: 1080px;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Lora", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --card-featured: #FBF1E4;
+  --hover-warm:    #FBF1E4;
+  --shadow-card: 0 8px 22px rgba(42,33,24,0.10);
+  --shadow-toc:  0 5px 14px rgba(42,33,24,0.10);
+  --shadow-top:  0 6px 18px rgba(42,33,24,0.30);
+}
+
+/* ---------- Тёмный вариант кодекса («ночная рукопись») ---------- */
+html[data-theme="dark"] {
+  --parchment:     #1A1611;
+  --parchment-deep:#221C15;
+  --vellum:        #262019;
+  --ink:           #ECE3D2;
+  --ink-soft:      #A99B82;
+  --oxblood:       #CB5B49;
+  --oxblood-br:    #DA6B57;
+  --gold-leaf:     #CBA14A;
+  --gold-leaf-br:  #DEB75F;
+  --ward:          #5FB5C6;
+  --pos:           #6CC585;
+  --rule:          rgba(236,227,210,0.20);
+  --rule-soft:     rgba(236,227,210,0.09);
+  --card-featured: #2E2316;
+  --hover-warm:    #2E2316;
+  --shadow-card: 0 8px 22px rgba(0,0,0,0.50);
+  --shadow-toc:  0 5px 14px rgba(0,0,0,0.50);
+  --shadow-top:  0 6px 18px rgba(0,0,0,0.60);
+}
+
+/* ---------- Эксклюзивная розовая тема «Блаш» ---------- */
+html[data-theme="pink"] {
+  --parchment:     #FBEAF1;
+  --parchment-deep:#F5D9E6;
+  --vellum:        #FFF4F9;
+  --ink:           #4A2138;
+  --ink-soft:      #8A5A72;
+  --oxblood:       #B0235F;
+  --oxblood-br:    #C83473;
+  --gold-leaf:     #B97C4A;
+  --gold-leaf-br:  #CE9460;
+  --ward:          #2C7C8C;
+  --pos:           #3E7D4F;
+  --rule:          rgba(74,33,56,0.20);
+  --rule-soft:     rgba(74,33,56,0.10);
+  --card-featured: #FFE6F1;
+  --hover-warm:    #FFE6F1;
+  --shadow-card: 0 8px 22px rgba(74,33,56,0.12);
+  --shadow-toc:  0 5px 14px rgba(74,33,56,0.12);
+  --shadow-top:  0 6px 18px rgba(74,33,56,0.30);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 700px at 80% -10%, rgba(158,117,31,0.10), transparent 60%),
+    radial-gradient(900px 700px at 5% 108%, rgba(140,43,34,0.07), transparent 55%),
+    var(--parchment);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+a { color: var(--oxblood); text-decoration: none; }
+a:hover { color: var(--oxblood-br); text-decoration: underline; text-underline-offset: 3px; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-left: 22px; padding-right: 22px; }
+
+/* ---------- Шапка ---------- */
+.site-head {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(243,236,219,0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--ink);
+}
+.site-head .wrap { display: flex; align-items: center; gap: 12px; height: 62px; flex-wrap: nowrap; position: relative; }
+.brand {
+  font-family: var(--font-display); font-weight: 700; font-size: 19px;
+  letter-spacing: 0.02em; color: var(--ink); white-space: nowrap; flex-shrink: 0; margin-right: auto;
+}
+.brand b { color: var(--oxblood); }
+.nav {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 40;
+  display: none; flex-direction: column; align-items: stretch; gap: 0;
+  background: var(--parchment); border-bottom: 2px solid var(--ink);
+  box-shadow: var(--shadow-card); padding: 4px 22px 12px;
+}
+.nav.open { display: flex; }
+.nav a {
+  color: var(--ink-soft); font-size: 14px; letter-spacing: 0.08em;
+  text-transform: uppercase; font-weight: 600; font-family: var(--font-mono);
+  padding: 13px 2px; border-bottom: 1px solid var(--rule-soft);
+}
+.nav a:last-child { border-bottom: none; }
+.nav a:hover { color: var(--oxblood); text-decoration: none; }
+.nav a.active { color: var(--oxblood); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; text-decoration-color: var(--gold-leaf); }
+
+/* ---------- Типографика ---------- */
+.eyebrow {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--oxblood); margin: 0 0 14px;
+}
+.eyebrow::before { content: "❧ "; color: var(--gold-leaf); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.14; color: var(--ink); }
+h1 { font-size: clamp(36px, 6vw, 60px); margin: 0 0 16px; letter-spacing: -0.01em; }
+h2 { font-size: clamp(25px, 3.4vw, 35px); margin: 0 0 14px; }
+h2::after {
+  content: ""; display: block; width: 70px; height: 0;
+  border-top: 3px double var(--gold-leaf); margin-top: 12px;
+}
+h3 { font-size: 20px; margin: 0 0 8px; }
+.lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--ink-soft); max-width: 62ch; font-style: italic; }
+
+section { padding-top: 64px; padding-bottom: 64px; border-top: 1px solid var(--rule-soft); }
+section:first-of-type { border-top: 0; }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: 84px; padding-bottom: 56px; border: 0; }
+.hero .tag {
+  display: inline-flex; gap: 8px; align-items: center;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #fff; background: var(--oxblood);
+  border-radius: 4px; padding: 5px 14px; margin-bottom: 24px;
+}
+.hero h1 .accent { color: var(--oxblood); font-style: italic; }
+
+/* Цепочка-сигнатура */
+.chain {
+  display: grid; grid-template-columns: 1fr; gap: 1px;
+  margin: 40px 0 8px; border: 2px solid var(--ink); border-radius: 4px; overflow: hidden;
+  background: var(--rule);
+}
+.chain-node { padding: 22px 20px; position: relative; background: var(--vellum); }
+@media (min-width: 720px) { .chain { grid-template-columns: repeat(3, 1fr); } }
+.chain-node .n { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--ink-soft); text-transform: uppercase; }
+.chain-node .t { font-family: var(--font-display); font-size: 19px; margin-top: 6px; font-weight: 700; }
+.chain-node:nth-child(1) .t { color: var(--ward); }
+.chain-node:nth-child(2) .t { color: var(--oxblood); }
+.chain-node:nth-child(3) .t { color: var(--gold-leaf); }
+.chain-node .d { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+
+/* ---------- Карточки разделов ---------- */
+.grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.card {
+  display: block; background: var(--vellum); border: 1px solid var(--rule);
+  border-left: 4px solid var(--gold-leaf); border-radius: 4px; padding: 26px 24px;
+  transition: transform .18s, border-color .18s, box-shadow .18s;
+}
+.card:hover { transform: translateY(-3px); border-left-color: var(--oxblood); box-shadow: var(--shadow-card); text-decoration: none; }
+.card .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; color: var(--ink-soft); text-transform: uppercase; }
+.card h3 { color: var(--ink); margin: 10px 0 6px; }
+.card p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+.card.featured { border-left-color: var(--oxblood); background: var(--card-featured); }
+.card.featured h3 { color: var(--oxblood); }
+
+/* ---------- Стат-строка ---------- */
+.statbar { display: flex; flex-wrap: nowrap; overflow-x: auto; margin: 26px 0 0; border: 2px solid var(--ink); border-radius: 4px; background: var(--vellum); -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; }
+.statbar div { flex: 0 0 auto; min-width: 132px; padding: 16px 18px; background: var(--vellum); scroll-snap-align: start; }
+.statbar div + div { border-left: 1px solid var(--rule); }
+@media (min-width: 720px) { .statbar div { flex: 1 1 0; min-width: 0; } }
+.statbar .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+.statbar .val { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--ink); margin-top: 4px; }
+
+/* ---------- Карточки гира ---------- */
+.gear-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.gear { background: var(--vellum); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+.gear .top {
+  padding: 8px 16px; border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--oxblood); background: var(--parchment-deep);
+}
+.gear .body { padding: 16px; }
+.gear .name { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--ink); margin: 0 0 8px; }
+.gear .why { font-size: 14px; color: var(--ink-soft); margin: 0; }
+.gear.key { border-color: var(--oxblood); border-width: 1px; }
+.gear.key .top { color: #fff; background: var(--oxblood); }
+.gear .top .badge { float: right; color: var(--oxblood); border: 1px solid var(--oxblood); border-radius: 3px; padding: 0 7px; font-size: 10px; }
+.gear.key .top .badge { color: #fff; border-color: rgba(255,255,255,0.6); }
+
+/* Стат-чипы */
+.gear .stats { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; }
+.gear .stat {
+  font-family: var(--font-mono); font-size: 12px; padding: 3px 9px; border-radius: 4px;
+  background: var(--parchment); border: 1px solid var(--rule-soft); color: var(--ink-soft);
+}
+.gear .stat .v { font-weight: 600; color: var(--ink); }
+.gear .stat.pos  .v { color: var(--pos); }
+.gear .stat.neg  .v { color: var(--oxblood); }
+.gear .stat.crit .v { color: var(--oxblood); }
+.gear .stat.gold .v { color: var(--gold-leaf); }
+.gear .stat.tag { border-style: dashed; }
+
+/* ---------- Чипы ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; }
+.chip { font-family: var(--font-mono); font-size: 12px; padding: 3px 10px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink-soft); }
+.chip.ward { color: var(--ward); border-color: var(--ward); }
+.chip.crit { color: var(--oxblood); border-color: var(--oxblood); }
+.chip.neg  { color: var(--gold-leaf); border-color: var(--gold-leaf); }
+.chip.pos  { color: var(--pos); border-color: var(--pos); }
+
+/* ---------- Полоски статов ---------- */
+.bars { display: flex; flex-direction: column; gap: 18px; }
+.brow .btop { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; gap: 12px; }
+.brow .bname { font-family: var(--font-display); font-size: 16px; font-weight: 700; }
+.brow .bnote { color: var(--ink-soft); font-size: 13px; font-family: var(--font-mono); text-align: right; }
+.track { height: 11px; border-radius: 3px; background: var(--parchment-deep); border: 1px solid var(--rule); overflow: hidden; }
+.fill { height: 100%; }
+.fill.f1 { background: linear-gradient(90deg, var(--oxblood), var(--gold-leaf)); }
+.fill.f2 { background: linear-gradient(90deg, var(--gold-leaf), var(--gold-leaf-br)); }
+.fill.f3 { background: linear-gradient(90deg, var(--ward), #4FA0B0); }
+.fill.f4 { background: linear-gradient(90deg, #5A8F63, var(--pos)); }
+
+/* ---------- Таблица сравнения ---------- */
+.cmp { overflow-x: auto; border: 2px solid var(--ink); border-radius: 4px; background: var(--vellum); }
+.cmp table { width: 100%; border-collapse: collapse; min-width: 440px; }
+.cmp th, .cmp td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--rule-soft); font-size: 14px; vertical-align: top; }
+.cmp thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--parchment-deep); }
+.cmp thead th:nth-child(2) { color: var(--oxblood); }
+.cmp thead th:nth-child(3) { color: var(--gold-leaf); }
+.cmp tbody tr:last-child td { border-bottom: none; }
+.cmp td:first-child { color: var(--ink-soft); font-family: var(--font-mono); font-size: 12px; white-space: nowrap; }
+.cmp tbody td { color: var(--ink); }
+
+/* ---------- Вердикт ---------- */
+.verdict { margin-top: 16px; border: 1px solid var(--gold-leaf); border-radius: 4px; padding: 16px 18px; background: rgba(158,117,31,0.07); font-size: 15px; }
+.verdict b { color: var(--gold-leaf); }
+
+/* ---------- Варианты ---------- */
+.variant { border: 1px solid var(--rule); border-left: 4px solid var(--ink); border-radius: 4px; padding: 18px 20px; background: var(--vellum); margin-bottom: 14px; }
+.variant .vh { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 12px; margin-bottom: 10px; }
+.variant .vn { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--ink); }
+.variant .vtags { display: flex; flex-wrap: wrap; gap: 6px; }
+.variant p { margin: 12px 0 0; font-size: 14px; color: var(--ink-soft); }
+.variant p b { color: var(--ink); }
+
+/* ---------- Шаги ротации ---------- */
+.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; }
+.steps li { counter-increment: s; position: relative; padding: 18px 0 18px 64px; border-bottom: 1px solid var(--rule-soft); }
+.steps li:last-child { border-bottom: 0; }
+.steps li::before {
+  content: counter(s, decimal-leading-zero); position: absolute; left: 0; top: 14px;
+  font-family: var(--font-display); font-weight: 700; font-size: 26px; color: var(--oxblood); width: 46px;
+}
+.steps li h3 { margin: 0 0 4px; color: var(--ink); font-size: 18px; }
+.steps li p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+
+/* ---------- Заметки ---------- */
+.note { border-left: 4px solid var(--gold-leaf); background: var(--vellum); padding: 16px 20px; border-radius: 0 4px 4px 0; margin: 0 0 16px; font-size: 15px; border-top: 1px solid var(--rule-soft); border-right: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
+.note.warn { border-left-color: var(--oxblood); }
+.note b { color: var(--ink); }
+.note .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-leaf); display: block; margin-bottom: 6px; }
+.note.warn .h { color: var(--oxblood); }
+.todo { font-family: var(--font-mono); font-size: 12px; color: var(--oxblood); border: 1px dashed var(--oxblood); border-radius: 4px; padding: 2px 8px; display: inline-block; }
+
+/* ---------- Inline-клавиша ---------- */
+.kbd { font-family: var(--font-mono); font-size: 0.85em; color: var(--oxblood); background: rgba(140,43,34,0.08); padding: 1px 6px; border-radius: 4px; border: 1px solid rgba(140,43,34,0.3); white-space: nowrap; }
+
+/* ---------- Оглавление ---------- */
+.build-layout { display: grid; gap: 40px; grid-template-columns: 1fr; }
+.toc { font-size: 14px; counter-reset: toc; }
+.toc .eyebrow { margin-bottom: 12px; }
+.toc a {
+  display: flex; align-items: center; gap: 11px;
+  padding: 11px 13px; margin-bottom: 9px;
+  background: var(--vellum); border: 1px solid var(--rule); border-radius: 7px;
+  color: var(--ink); font-family: var(--font-mono); font-size: 13px;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s, border-color .15s, transform .15s, box-shadow .15s, color .15s;
+}
+.toc a::before {
+  counter-increment: toc; content: counter(toc, decimal-leading-zero);
+  font-size: 11px; font-weight: 600; color: var(--gold-leaf);
+  border: 1px solid var(--gold-leaf); border-radius: 4px; padding: 2px 6px; flex-shrink: 0;
+  transition: color .15s, border-color .15s, background .15s;
+}
+.toc a::after {
+  content: "→"; margin-left: auto; color: var(--ink-soft);
+  transition: transform .15s, color .15s;
+}
+.toc a:hover, .toc a:active, .toc a:focus-visible, .toc a.active {
+  background: var(--hover-warm); border-color: var(--oxblood); color: var(--oxblood);
+  transform: translateY(-1px); box-shadow: var(--shadow-toc);
+  text-decoration: none;
+}
+.toc a:hover::before, .toc a:active::before, .toc a:focus-visible::before, .toc a.active::before {
+  color: #fff; background: var(--oxblood); border-color: var(--oxblood);
+}
+.toc a:hover::after, .toc a:active::after, .toc a:focus-visible::after {
+  transform: translateX(4px); color: var(--oxblood);
+}
+@media (min-width: 900px) {
+  .build-layout { grid-template-columns: 220px 1fr; }
+  .toc-wrap { position: sticky; top: 86px; align-self: start; }
+}
+
+/* ---------- Подвал ---------- */
+.site-foot { border-top: 2px solid var(--ink); padding: 36px 0; margin-top: 40px; font-size: 13px; color: var(--ink-soft); }
+.site-foot .wrap { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+
+/* ---------- Крошки ---------- */
+.crumbs { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--ink-soft); padding-top: 26px; }
+.crumbs a { color: var(--ink-soft); }
+.crumbs a:hover { color: var(--oxblood); }
+
+/* ---------- Доступность ---------- */
+:focus-visible { outline: 2px solid var(--oxblood); outline-offset: 3px; border-radius: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* ---------- Кнопка «Наверх» ---------- */
+.to-top {
+  position: fixed; right: 18px; bottom: 18px; z-index: 60;
+  width: 50px; height: 50px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--oxblood); color: #fff; border: 2px solid var(--gold-leaf);
+  font-size: 24px; line-height: 1; text-decoration: none;
+  box-shadow: var(--shadow-top);
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity .2s, transform .2s, visibility .2s, background .15s;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.to-top:hover, .to-top:active { background: var(--oxblood-br); color: #fff; text-decoration: none; transform: translateY(-2px); }
+
+/* ---------- Переключатель темы ---------- */
+.theme-toggle {
+  margin-left: 6px; width: 38px; height: 38px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--vellum); color: var(--ink); border: 1px solid var(--rule);
+  font-size: 16px; line-height: 1; cursor: pointer; padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s, color .15s, border-color .15s, transform .15s;
+}
+.theme-toggle:hover, .theme-toggle:active { border-color: var(--oxblood); color: var(--oxblood); transform: translateY(-1px); }
+
+/* Кнопка розовой темы (активна = залита) */
+.pink-toggle.active { background: var(--oxblood); color: #fff; border-color: var(--oxblood); }
+.pink-toggle.active:hover, .pink-toggle.active:active { background: var(--oxblood-br); color: #fff; border-color: var(--oxblood-br); }
+
+/* Закреплённая зона кнопок тем (не уезжает при листании меню) */
+.head-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.head-actions .theme-toggle { margin-left: 0; }
+
+/* Бургер-кнопка + раскрытие меню; на десктопе меню в строку */
+.menu-toggle { display: inline-flex; }
+.build-layout, .build-body, .toc-wrap, main, section { min-width: 0; }
+@media (min-width: 760px) {
+  .menu-toggle { display: none; }
+  .nav {
+    position: static; display: flex; flex-direction: row; align-items: center;
+    gap: 22px; background: none; border-bottom: none; box-shadow: none; padding: 0;
+  }
+  .nav a { padding: 0; border-bottom: none; font-size: 13px; }
+}
+
+/* ===========================================================
+   Палитры и иконки классов
+   =========================================================== */
+.cls-gilgamesh    { --class-accent: #8C2233; --class-accent-2: #6A1A28; }
+.cls-heretic      { --class-accent: #2C8C9E; --class-accent-2: #1F6675; }
+.cls-realmshifter { --class-accent: #7E4BB0; --class-accent-2: #5B3486; }
+.cls-summoner     { --class-accent: #3A6EA5; --class-accent-2: #27517D; }
+.cls-beowulf      { --class-accent: #7A5018; --class-accent-2: #573910; }
+.cls-deity        { --class-accent: #C8962B; --class-accent-2: #9C7016; }
+
+/* Карточки классов на главной — в цвете класса + иконка */
+.card[class*="cls-"] { position: relative; overflow: hidden; border-left-color: var(--class-accent); }
+.card[class*="cls-"]:hover { border-left-color: var(--class-accent); }
+.card[class*="cls-"] h3 { color: var(--class-accent); }
+.card .cls-icon { position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; color: var(--class-accent); opacity: .9; }
+.card .cls-icon svg { width: 100%; height: 100%; display: block; }
+
+/* Страница класса: общий фоновый водяной знак с иконкой */
+.class-watermark { position: fixed; right: -6vw; bottom: -5vw; width: min(56vw, 380px); color: var(--class-accent); opacity: .08; pointer-events: none; z-index: 0; }
+.class-watermark svg { width: 100%; height: auto; display: block; }
+.crumbs, main, .site-foot { position: relative; z-index: 1; }
+
+/* Акценты страницы класса в цвете класса */
+body[class*="cls-"] .hero .tag { background: var(--class-accent); }
+body[class*="cls-"] .hero h1 .accent { color: var(--class-accent); }
+body[class*="cls-"] .eyebrow { color: var(--class-accent); }
+body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--class-accent); }
+
+/* Центрирование верхнего блока только на главной (.hero.wrap) */
+.hero.wrap { text-align: center; }
+.hero.wrap .lead { margin-left: auto; margin-right: auto; }
+.hero.wrap .chain { text-align: left; }
+
+/* «Разделы кодекса» — больше воздуха сверху */
+#klassy { padding-top: 100px; }
+
+/* Статы гира (сеты/осколки) — чёрным; таблицы единообразны по цвету */
+.gear .stat .v,
+.gear .stat.pos .v,
+.gear .stat.neg .v,
+.gear .stat.crit .v,
+.gear .stat.gold .v { color: var(--ink); }
+.cmp thead th,
+.cmp thead th:nth-child(2),
+.cmp thead th:nth-child(3) { color: var(--ink-soft); }
+
+/* Все карточки гира одинаковые: верхняя полоса в цвет фона карточки */
+.gear .top { background: var(--vellum); }
+.gear.key { border-color: var(--rule); }
+.gear.key .top { background: var(--vellum); color: var(--oxblood); }
+.gear.key .top .badge { color: var(--oxblood); border-color: var(--oxblood); }
+
+/* Единый фон везде: убрать оставшиеся контрастные подложки-выделения */
+.card.featured { background: var(--vellum); }
+.verdict { background: var(--vellum); border-color: var(--rule); }
+
+/* Чёрные цифры ротации и чёрные заголовки цепочки (Крит, Collateral и пр.) */
+.steps li::before { color: var(--ink); }
+.chain-node .t,
+.chain-node:nth-child(1) .t,
+.chain-node:nth-child(2) .t,
+.chain-node:nth-child(3) .t,
+body[class*="cls-"] .chain-node:nth-child(2) .t { color: var(--ink); }
+
+/* Кнопка языка RU/EN */
+.lang-toggle { font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; }
+
+/* Вкладки лоадаутов */
+.ldtabs { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 22px; }
+.ldtab { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.07em; text-transform: uppercase; padding: 11px 20px; border: 2px solid var(--rule); border-radius: 7px; background: var(--vellum); color: var(--ink); cursor: pointer; font-weight: 600; -webkit-tap-highlight-color: transparent; transition: background .15s, color .15s, border-color .15s; }
+.ldtab.on { color: var(--parchment); border-color: var(--ink); background: var(--ink); }
+.ldpanel { display: none; }
+.ldpanel.on { display: block; }
+
+/* Отметка «в работе» для пустых разделов */
+.wip { color: var(--ink-soft); font-style: italic; margin-top: 8px; }
+.wip-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-style: normal; color: var(--oxblood); border: 1px solid var(--oxblood); border-radius: 4px; padding: 3px 9px; margin-right: 10px; }
+
+/* Спек-вкладки (Рудиарий / Геркулес) — верхний уровень */
+.spectabs { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 26px; }
+.spectab { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.09em; text-transform: uppercase; padding: 14px 28px; border: 2px solid var(--ink); border-radius: 9px; background: var(--vellum); color: var(--ink); cursor: pointer; font-weight: 700; -webkit-tap-highlight-color: transparent; transition: background .15s, color .15s, border-color .15s, transform .08s, box-shadow .15s; }
+.spectab:active { transform: translateY(1px); }
+.spectab.on { color: #fff; background: var(--oxblood); border-color: var(--oxblood); box-shadow: 0 3px 0 rgba(0,0,0,0.14); }
+.specpanel { display: none; }
+.specpanel.on { display: block; }
+
+/* ссылки на кодекс в названиях вещей */
+a.item-link{color:inherit;text-decoration:none;border-bottom:1px dotted var(--gold-leaf);transition:color .15s,border-color .15s}
+a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
+
+/* итоги по снаряжению — полоски-бары */
+.statbars{margin-top:10px;display:flex;flex-direction:column;gap:9px}
+.sb{display:grid;grid-template-columns:96px 1fr auto;align-items:center;gap:12px}
+.sb-l{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ink)}
+.sb-track{height:12px;border-radius:6px;background:var(--parchment-deep);overflow:hidden}
+.sb-fill{display:block;height:100%;border-radius:6px}
+.sb-v{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+@media(max-width:480px){.sb{grid-template-columns:78px 1fr auto;gap:9px}}
+
+</style>
+</head>
+<body class="cls-heretic">
+<div class="class-watermark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="44" rx="14" ry="12"/><circle cx="15" cy="27" r="6"/><circle cx="26" cy="18" r="6"/><circle cx="38" cy="18" r="6"/><circle cx="49" cy="27" r="6"/></svg></div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">ORNA <b>КОДЕКС</b></a>
+    <nav class="nav">
+      <a href="index.html#klassy">Классы</a>
+      <a href="index.html#bildy">Билды</a>
+      <a href="index.html#mekhaniki">Механики</a>
+      <a href="index.html#gir">Гир</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="head-actions">
+      <button class="theme-toggle menu-toggle" id="menuToggle" type="button" aria-label="Меню" aria-expanded="false">&#9776;</button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Сменить тему">&#9790;</button>
+      <button class="theme-toggle pink-toggle" id="pinkToggle" type="button" aria-label="Розовая тема">&#10048;</button>
+      <button class="theme-toggle lang-toggle" id="langToggle" type="button" aria-label="Язык / Language">EN</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs">
+  <a href="index.html">Кодекс</a> / Билды / Heretic Corvus
+</div>
+
+<main class="wrap">
+  <section id="loadouts"><p class="eyebrow">Сборка · Heretic Corvus · спец. Пифия · Подземелье</p><h2>Heretic Corvus — Пифия (Оракул)</h2><p style="color:var(--ink-soft);margin-top:8px">Спасибо за предоставленную информацию: <strong style="color:var(--gold-leaf)">Summerbonus</strong> и <strong style="color:var(--gold-leaf)">Rewritings</strong>.</p><div class="ldtabs" style="margin:14px 0 4px"><button class="ldtab on" type="button" data-ld="he-current">Подземелье · Пифия</button><button class="ldtab" type="button" data-ld="he-original">Оригинальный сет билд</button></div><div class="ldpanel on" id="he-current"><p style="color:var(--ink-soft);margin-top:-6px">Специализация Пифия · глубокий эндгейм без <a class="item-link" href="https://playorna.com/codex/items/ruairc-archistaff/?lang=ru" target="_blank" rel="noopener">руариков</a>. Магический каст: фляга, два осколка «Крит +40». Сценарий — Подземелье.</p><div class="note"><span class="h">Особенность сборки</span>Магический каст через флягу. Два осколка — оба «Крит +40». Итоги ниже — сумма по снаряжению, без базовых статов персонажа.</div><p class="eyebrow" style="margin-top:26px">Снаряжение</p><div class="gear-grid"><div class="gear"><div class="top">Голова</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-headrobe/?lang=ru" target="_blank" rel="noopener">Чалма Йилбегэна</a></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оружие</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/celestial-staff/?lang=ru" target="_blank" rel="noopener">Астропосох</a></p><div class="stats"><span class="stat">Маг <span class="v">410</span></span><span class="stat">Сопр <span class="v">70</span></span><span class="stat">Крит <span class="v">2%</span></span><span class="stat">Вард <span class="v">2%</span></span><span class="stat">Обзор <span class="v">40</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/darkrift-robe/?lang=ru" target="_blank" rel="noopener">Darkrift Robe</a></p><p class="why">+ заклинания: Resolve Darkriftus, Ara's Edge.</p><div class="stats"><span class="stat">Маг <span class="v">12</span></span><span class="stat">Сопр <span class="v">270</span></span><span class="stat">Ловк <span class="v">12</span></span><span class="stat">Мощь манафляжки <span class="v">+20%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/rhongomiant/?lang=ru" target="_blank" rel="noopener">Ронгоминиад</a></p><p class="why" style="color:var(--oxblood)">▸ Умение: Сдвоенное заклинание</p><div class="stats"><span class="stat">Маг <span class="v">190</span></span><span class="stat">Мана <span class="v">100</span></span><span class="stat">Заряд фляги/убийство <span class="v">+100%</span></span><span class="stat">Сокеты <span class="v">2</span></span></div></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-skirt/?lang=ru" target="_blank" rel="noopener">Килт Йилбегэна</a></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" target="_blank" rel="noopener">Кольцо Карла</a></p><div class="stats"><span class="stat">Атк <span class="v">72</span></span><span class="stat">Маг <span class="v">72</span></span><span class="stat">Защ <span class="v">36</span></span><span class="stat">Сопр <span class="v">36</span></span><span class="stat">HP <span class="v">200</span></span><span class="stat">Мана <span class="v">200</span></span><span class="stat">Ловк <span class="v">24</span></span><span class="stat">Вард <span class="v">1%</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" target="_blank" rel="noopener">Кольцо Карла</a></p><div class="stats"><span class="stat">Атк <span class="v">72</span></span><span class="stat">Маг <span class="v">72</span></span><span class="stat">Защ <span class="v">36</span></span><span class="stat">Сопр <span class="v">36</span></span><span class="stat">HP <span class="v">200</span></span><span class="stat">Мана <span class="v">200</span></span><span class="stat">Ловк <span class="v">24</span></span><span class="stat">Вард <span class="v">1%</span></span></div></div></div><div class="gear"><div class="top">Тело · альтернатива</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-robes/?lang=ru" target="_blank" rel="noopener">Роба Йилбегэна</a></p><p class="why">★10 · классы магов. +26% мощь манафляжки, +10% урон по уязвимости. Повышает эффективность мана- и гемофляжек. Альтернатива основной груди (Darkrift Robe).</p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Слабость к стихиям <span class="v">+10%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оружие · для бафа</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/olympian-tower-joist/?lang=ru" target="_blank" rel="noopener">Лага Олимпии</a></p><p class="why">Двуручный архипосох · ★8 · классы магов. Умение «Стойка Астерии»: сильно повышает магию, но значительно снижает защиты и жжёт ману каждый ход. Или другое оружие с тем же бафом.</p><div class="stats"><span class="stat">Маг <span class="v">190</span></span><span class="stat">Мана <span class="v">40</span></span><span class="stat">Вард <span class="v">28%</span></span><span class="stat">Сокеты <span class="v">7</span></span><span class="stat">Двуручное</span></div></div></div><div class="gear"><div class="top">Оффхенд · для бафа</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/book-of-the-dragon/?lang=ru" target="_blank" rel="noopener">Книга дракона</a></p><p class="why">★6 · баф «Сущность дракона» (на себя); на врага — «Недуг». Книга ученика Аполлиона.</p><div class="stats"><span class="stat">Атк <span class="v">20</span></span><span class="stat">Маг <span class="v">20</span></span><span class="stat">Сокеты <span class="v">1</span></span><span class="stat">Дракон</span></div></div></div><div class="gear"><div class="top">Астропосох · астро-компоненты</div><div class="body"><p class="name">2× <a class="item-link" href="https://playorna.com/codex/items/fluke-of-oceanus/?lang=ru" target="_blank" rel="noopener">Плавники Океануса</a></p><p class="why">Мана −200, Вард 5% (каждый)</p><p class="name" style="margin-top:10px">2× <a class="item-link" href="https://playorna.com/codex/items/arms-of-oceanus/?lang=ru" target="_blank" rel="noopener">Руки Океануса</a></p><p class="why">Мана 250 (каждый)</p><p class="name" style="margin-top:10px"><a class="item-link" href="https://playorna.com/codex/items/calloused-hands-of-oceanus/?lang=ru" target="_blank" rel="noopener">Мозоли Океануса</a> хорошее</p><p class="why">Мана 116, Сопр 105, Крит 15%</p></div></div><div class="gear"><div class="top">Украшения</div><div class="body"><p class="name">Грудь · <a class="item-link" href="https://playorna.com/codex/items/eye-of-ptah/?lang=ru" target="_blank" rel="noopener">Глаз Птаха</a></p><p class="why">Диковина ★6</p><div class="stats"><span class="stat">Маг <span class="v">8</span></span><span class="stat">Заполн. манафляжки <span class="v">+1%</span></span><span class="stat">Мощь манафляжки <span class="v">+1%</span></span></div><p class="name" style="margin-top:12px">Голова и ноги · <a class="item-link" href="https://playorna.com/codex/items/eye-of-sekhmet/?lang=ru" target="_blank" rel="noopener">Глаз Сехмет</a></p><p class="why">Диковина ★6</p><div class="stats"><span class="stat">Атк <span class="v">20</span></span><span class="stat">Крит <span class="v">2%</span></span></div><p class="name" style="margin-top:12px">Ронгоминиад · <a class="item-link" href="https://playorna.com/codex/items/ashen-ruby/?lang=ru" target="_blank" rel="noopener">Пепельный рубин</a> ×1</p><div class="stats"><span class="stat">HP <span class="v">15</span></span><span class="stat">Мана <span class="v">15</span></span><span class="stat">Атк <span class="v">6</span></span><span class="stat">Маг <span class="v">6</span></span><span class="stat">Защ <span class="v">6</span></span><span class="stat">Сопр <span class="v">6</span></span><span class="stat">Ловк <span class="v">4</span></span><span class="stat">Похищ. жизни <span class="v">+2%</span></span></div><p class="name" style="margin-top:10px"><a class="item-link" href="https://playorna.com/codex/items/eye-of-the-morrigan/?lang=ru" target="_blank" rel="noopener">Глаз Морриган</a> или <a class="item-link" href="https://playorna.com/codex/items/eye-of-ptah/?lang=ru" target="_blank" rel="noopener">Глаз Птаха</a> <span style="color:var(--ink-soft);font-weight:400">(остальные слоты)</span></p><p class="why">Глаз Морриган · Диковина ★10</p><div class="stats"><span class="stat">Атк <span class="v">12</span></span><span class="stat">Маг <span class="v">12</span></span><span class="stat">Защ <span class="v">8</span></span><span class="stat">Сопр <span class="v">8</span></span><span class="stat">Ловк <span class="v">8</span></span><span class="stat">Крит <span class="v">2%</span></span></div><p class="why" style="margin-top:6px">Глаз Птаха · Диковина ★6</p><div class="stats"><span class="stat">Маг <span class="v">8</span></span><span class="stat">Заполн. манафляжки <span class="v">+1%</span></span><span class="stat">Мощь манафляжки <span class="v">+1%</span></span></div></div></div><div class="gear"><div class="top">Питомец (основной)</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/followers/gilded-kheper/?lang=ru" target="_blank" rel="noopener">Златохепри</a> · ★9</p><p class="why">Основной пет на этажах — ради умения Reraise (второй шанс). Умения: Воскрешение, Яркая звезда II, Reraise.</p></div></div><div class="gear"><div class="top">Необходимые питомцы</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/followers/arisen-bloodwarg/?lang=ru" target="_blank" rel="noopener">Восставший бладварг</a> · ★10</p><p class="why">баф: «В.Крит ++»</p><p class="name" style="margin-top:8px"><a class="item-link" href="https://playorna.com/codex/followers/gullinkambi/?lang=ru" target="_blank" rel="noopener">Гуллинкамби</a> · ★7</p><p class="why">баф: «В.Ловкость +++»</p><p class="name" style="margin-top:8px"><a class="item-link" href="https://playorna.com/codex/followers/archimedes/?lang=ru" target="_blank" rel="noopener">Архимед</a> · ★6</p><p class="why">баф: «В.Магия +++»</p><p class="name" style="margin-top:8px"><a class="item-link" href="https://playorna.com/codex/followers/great-pegasus/?lang=ru" target="_blank" rel="noopener">Великий Пегас</a> · ★10</p><p class="why">баф: «В.Сопротивление, защита»</p><p class="name" style="margin-top:8px"><a class="item-link" href="https://playorna.com/codex/followers/three-toed-sloth/?lang=ru" target="_blank" rel="noopener">Three-Toed Sloth</a> · ★10</p><p class="why">или любой питомец с бафом «В.Всё+++»</p></div></div><div class="gear"><div class="top">Осколок ×2</div><div class="body"><p class="name">Крит +40</p><p class="why">Два слота осколков — оба «Крит +40»</p></div></div></div><p class="eyebrow" style="margin-top:30px">Умения в сборке</p><div class="cmp"><table><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Штормотерравулкан</b></td><td><b>9 063</b></td></tr><tr><td style="color:var(--ink-soft)">Инфузия гемофляжки</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Боевая гемофляжка</td><td style="color:var(--ink-soft)">0</td></tr></tbody></table></div><p class="eyebrow" style="margin-top:30px;color:var(--oxblood)">Итого по снаряжению</p><div class="statbars"><div class="sb"><span class="sb-l">Маг</span><span class="sb-track"><span class="sb-fill" style="width:45%;background:#7E4BB0"></span></span><span class="sb-v">1 406</span></div><div class="sb"><span class="sb-l">Сопрот.</span><span class="sb-track"><span class="sb-fill" style="width:100%;background:#5E7C8C"></span></span><span class="sb-v">3 099</span></div><div class="sb"><span class="sb-l">Атака</span><span class="sb-track"><span class="sb-fill" style="width:15%;background:#9E751F"></span></span><span class="sb-v">470</span></div><div class="sb"><span class="sb-l">Защита</span><span class="sb-track"><span class="sb-fill" style="width:10%;background:#8A6D3B"></span></span><span class="sb-v">310</span></div><div class="sb"><span class="sb-l">Ловкость</span><span class="sb-track"><span class="sb-fill" style="width:7%;background:#3F7D4E"></span></span><span class="sb-v">218</span></div><div class="sb"><span class="sb-l">Вард</span><span class="sb-track"><span class="sb-fill" style="width:51%;background:#2C8C9E"></span></span><span class="sb-v">51%</span></div><div class="sb"><span class="sb-l">Крит</span><span class="sb-track"><span class="sb-fill" style="width:44%;background:#8C2233"></span></span><span class="sb-v">44%</span></div></div></div><div class="ldpanel" id="he-original"><p style="color:var(--ink-soft);margin:20px 0 16px">Оригинальная сборка — каст через флягу.</p><p class="eyebrow" style="margin-top:8px">Снаряжение</p><div class="gear-grid"><div class="gear"><div class="top">Голова</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-headrobe/?lang=ru" target="_blank" rel="noopener">Чалма Йилбегэна</a> <span style="color:var(--ink-soft)">(Yelmogus Headrobe)</span></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оружие</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/ruairc-archistaff/?lang=ru" target="_blank" rel="noopener">Ruairc Archistaff</a></p><div class="stats"><span class="stat">Маг <span class="v">331</span></span><span class="stat">Крит <span class="v">4%</span></span><span class="stat">Заряд фляги/убийство <span class="v">+50%</span></span><span class="stat">Ход первым (PvE) <span class="v">+50%</span></span><span class="stat">Сокеты <span class="v">3</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-robes/?lang=ru" target="_blank" rel="noopener">Роба Йилбегэна</a> <span style="color:var(--ink-soft)">(Yelmogus Robes)</span></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Слабость к стихиям <span class="v">+10%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Тело · альтернатива</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/darkrift-robe/?lang=ru" target="_blank" rel="noopener">Darkrift Robe</a></p><p class="why">Альтернатива основной груди (Роба Йилбегэна).</p><p class="why">+ заклинания: Resolve Darkriftus, Ara's Edge.</p><div class="stats"><span class="stat">Маг <span class="v">12</span></span><span class="stat">Сопр <span class="v">270</span></span><span class="stat">Ловк <span class="v">12</span></span><span class="stat">Мощь манафляжки <span class="v">+20%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/ruairc-archistaff/?lang=ru" target="_blank" rel="noopener">Ruairc Archistaff</a></p><p class="why" style="color:var(--oxblood)">▸ Умение: Сдвоенное заклинание</p><div class="stats"><span class="stat">Маг <span class="v">331</span></span><span class="stat">Крит <span class="v">4%</span></span><span class="stat">Заряд фляги/убийство <span class="v">+50%</span></span><span class="stat">Ход первым (PvE) <span class="v">+50%</span></span><span class="stat">Сокеты <span class="v">3</span></span></div></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-skirt/?lang=ru" target="_blank" rel="noopener">Килт Йилбегэна</a> <span style="color:var(--ink-soft)">(Yelmogus Skirt)</span></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/band-of-gods/?lang=ru" target="_blank" rel="noopener">Кольцо богов</a></p><p class="why">эпическое · L · слот Аркана</p><div class="stats"><span class="stat">Опыт <span class="v">+50%</span></span><span class="stat">Золото <span class="v">+50%</span></span><span class="stat">Орны <span class="v">+50%</span></span><span class="stat">Встречи <span class="v">+50%</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/band-of-gods/?lang=ru" target="_blank" rel="noopener">Кольцо богов</a></p><p class="why">эпическое · L · слот Аркана</p><div class="stats"><span class="stat">Опыт <span class="v">+50%</span></span><span class="stat">Золото <span class="v">+50%</span></span><span class="stat">Орны <span class="v">+50%</span></span><span class="stat">Встречи <span class="v">+50%</span></span></div></div></div><div class="gear"><div class="top">Осколок ×2</div><div class="body"><p class="name">Стечение и Неумение · Пощёчина и Яды</p><p class="why">по +40% мощь крита (каждый осколок)</p></div></div></div><p class="eyebrow" style="margin-top:30px">Украшения</p><div class="gear-grid"><div class="gear"><div class="top">Украшения</div><div class="body"><p class="name">Вся броня · <a class="item-link" href="https://playorna.com/codex/items/eye-of-ptah/?lang=ru" target="_blank" rel="noopener">Глаз Птаха</a></p><p class="why">Вставка во весь сет брони. Маг 8.</p><p class="name" style="margin-top:12px">Оружие · <a class="item-link" href="https://playorna.com/codex/items/ferocious-bulls-eye/?lang=ru" target="_blank" rel="noopener">Глаз свирепого быка</a></p><p class="why">Мана 60, Атк 12, Маг 12, Крит 4%.</p><p class="name" style="margin-top:10px"><a class="item-link" href="https://playorna.com/codex/items/ashen-ruby/?lang=ru" target="_blank" rel="noopener">Пепельный рубин</a> ×1</p><div class="stats"><span class="stat">HP <span class="v">15</span></span><span class="stat">Мана <span class="v">15</span></span><span class="stat">Атк <span class="v">6</span></span><span class="stat">Маг <span class="v">6</span></span><span class="stat">Защ <span class="v">6</span></span><span class="stat">Сопр <span class="v">6</span></span><span class="stat">Ловк <span class="v">4</span></span><span class="stat">Похищ. жизни <span class="v">+2%</span></span></div></div></div></div></div><p class="eyebrow" style="margin-top:40px">Источник</p><p style="color:var(--ink-soft);margin-top:-2px">Оригинальный гайд (Google Таблица) — <a class="item-link" href="https://docs.google.com/spreadsheets/d/1unU5LcivK_lO-y5xB8U6rWd2JxbuS99zdKEYNQLp7Us/edit" target="_blank" rel="noopener">открыть таблицу →</a></p></section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span><a href="index.html">← Назад в кодекс</a></span>
+    <span>Сводка по билдам сообщества · не официальный гайд.</span>
+    <span>◇ Посетителей: <strong id="visitCount" style="color:var(--gold-leaf);font-family:'JetBrains Mono',monospace">…</strong></span>
+  </div>
+</footer>
+<script>(function(){var el=document.getElementById('visitCount');if(!el)return;var b='https://countapi.mileshilliard.com/api/v1/',k='syarogka_orna_codex_visits',h=true;try{if(sessionStorage.getItem('orna_visit')==='1')h=false;}catch(e){}fetch(b+(h?'hit/':'get/')+k).then(function(r){return r.json();}).then(function(d){var v=parseInt(d.value,10);el.textContent=isNaN(v)?'\u2014':v.toLocaleString('ru-RU');try{sessionStorage.setItem('orna_visit','1');}catch(e){}}).catch(function(){el.textContent='\u2014';});})();</script>
+
+
+<a href="#" class="to-top" id="toTop" aria-label="Наверх" title="Наверх">&#8593;</a>
+<script>
+(function(){var b=document.getElementById("toTop");if(!b)return;function chk(){window.scrollY>400?b.classList.add("show"):b.classList.remove("show");}window.addEventListener("scroll",chk,{passive:true});b.addEventListener("click",function(e){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});});chk();})();
+</script>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  function cur(){return html.getAttribute("data-theme")||"light";}
+  var moon=document.getElementById("themeToggle");
+  var pink=document.getElementById("pinkToggle");
+  function paint(){
+    var c=cur();
+    if(moon){var d=(c==="dark");moon.innerHTML=d?"\u2600":"\u263E";moon.setAttribute("aria-label",d?"Включить светлую тему":"Включить тёмную тему");}
+    if(pink){var p=(c==="pink");pink.classList.toggle("active",p);pink.setAttribute("aria-label",p?"Выключить розовую тему":"Розовая тема");}
+  }
+  function set(n){html.setAttribute("data-theme",n);try{localStorage.setItem("orna-theme",n);}catch(e){}paint();}
+  function prev(){try{return localStorage.getItem("orna-prev")||"light";}catch(e){return "light";}}
+  if(moon)moon.addEventListener("click",function(){var c=cur();c==="pink"?set(prev()):set(c==="dark"?"light":"dark");});
+  if(pink)pink.addEventListener("click",function(){var c=cur();if(c==="pink"){set(prev());}else{try{localStorage.setItem("orna-prev",c);}catch(e){}set("pink");}});
+  paint();
+})();
+</script>
+
+<script data-scrollspy>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.nav a, .toc a'));
+  var here=location.pathname.split('/').pop();
+  var map={},targets=[];
+  links.forEach(function(a){
+    var href=a.getAttribute('href')||'';var i=href.indexOf('#');if(i<0)return;
+    var path=href.slice(0,i);
+    if(path&&path!==here)return;            /* пропускаем ссылки на другую страницу */
+    var id=href.slice(i+1);if(!id)return;
+    var el=document.getElementById(id);if(!el)return;
+    map[id]=a;targets.push(el);
+  });
+  if(!targets.length||!('IntersectionObserver'in window))return;
+  var vis={};
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting)vis[en.target.id]=1; else delete vis[en.target.id]; });
+    var best=null,bt=Infinity;
+    Object.keys(vis).forEach(function(id){
+      var t=document.getElementById(id).getBoundingClientRect().top;
+      if(t<bt){bt=t;best=id;}
+    });
+    Object.keys(map).forEach(function(id){ map[id].classList.toggle('active',id===best); });
+  },{rootMargin:'-80px 0px -68% 0px',threshold:0});
+  targets.forEach(function(t){obs.observe(t);});
+})();
+</script>
+
+<script>
+(function(){
+  var mt=document.getElementById("menuToggle");
+  var nav=document.querySelector(".nav");
+  if(!mt||!nav)return;
+  function close(){nav.classList.remove("open");mt.setAttribute("aria-expanded","false");}
+  mt.addEventListener("click",function(e){e.stopPropagation();var o=nav.classList.toggle("open");mt.setAttribute("aria-expanded",o?"true":"false");});
+  nav.addEventListener("click",function(e){if(e.target.tagName==="A")close();});
+  document.addEventListener("click",function(e){if(nav.classList.contains("open")&&!nav.contains(e.target)&&!mt.contains(e.target))close();});
+})();
+</script>
+
+<script>
+(function(){
+  var DICT = {"КОДЕКС": "CODEX", "Классы": "Classes", "Билды": "Builds", "Механики": "Mechanics", "Гир": "Gear", "● ЭНДГЕЙМ · ПАТЧИ 32–33": "● ENDGAME · PATCHES 32–33", "База знаний по": "Knowledge base for", "Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.": "Breakdowns of endgame classes, working builds and mechanics rarely collected in one place. No fluff — only what changes damage, survivability and clear speed.", "основа": "foundation", "Негативная защита": "Negative defense", "Снижаем защиту цели в минус.": "Push the target's defense below zero.", "срабатывание": "trigger", "Коллатеральный крит": "Collateral crit", "Одиночный крит бьёт по площади.": "A single crit hits an area.", "результат": "result", "Зачистка хорды": "Horde cleared", "Толпа складывается с одного удара.": "The pack drops from one hit.", "Флагманский билд": "Flagship build", "Gilgamesh Ursa — «Коллатеральные криты»": "Gilgamesh Ursa — Collateral Crits", "Стеклянная пушка на спеке Rudiarius и оружии Astromolot. Полный разбор: концепт, гир, статы, ротация и подводные камни.": "A glass cannon on the Rudiarius spec and Astromolot weapon. Full breakdown: concept, gear, stats, rotation and pitfalls.", "Билд · готов": "Build · ready", "Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.": "Collateral damage, negative defense, crit nukes. Identical to Gallia Ursa.", "Класс · в работе": "Class · WIP", "Скоро: разбор спеков и ротаций.": "Soon: specs and rotations.", "Скоро: механики и сборка.": "Soon: mechanics and build.", "Скоро: саммоны и приоритеты.": "Soon: summons and priorities.", "Разделы кодекса": "Codex sections", "Что внутри": "What's inside", "01 · Классы": "01 · Classes", "Эндгейм-классы": "Endgame classes", "Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.": "Gilgamesh, Heretic, Realmshifter, Grand Summoner — strengths and weaknesses.", "02 · Механики": "02 · Mechanics", "Как считается урон": "How damage works", "Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.": "Collateral damage, negative defense, crit on multi-hits, Ward priority.", "03 · Гир": "03 · Gear", "Гир по тирам": "Gear by tier", "Лучшие предметы T10, сеты, талисманы и украшения под конкретные сборки.": "Best T10 items, sets, charms and adornments for specific builds.", "04 · FAQ": "04 · FAQ", "Для новичков": "For newcomers", "Базовые вопросы по эндгейму и частые ошибки в сборках.": "Basic endgame questions and common build mistakes.", "Три правила, на которых всё держится": "Three rules it all rests on", "Коллатеральный урон": "Collateral damage", "Масштабируется от негативной защиты": "Scales with negative defense", " и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.": " and lets you clear packs with single crits — one hit on a target splashes to the rest.", "Крит и мультихит": "Crit vs multi-hit", "Скиллы с несколькими ударами имеют": "Multi-hit skills have", "0% шанс крита": "0% crit chance", ". Под крит-сборку берут одиночные удары.": ". A crit build uses single-hit skills.", "Ядро урона — крит": "Damage core — crit", "Крит удваивает удар (": "Crit doubles the hit (", "), а Collateral разносит его по своре.": "), and Collateral spreads it across the pack.", "усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.": "amplifies the chain: it eats ward but boosts attack, agility and Collateral speed.", "Полный разбор механик на примере Gilgamesh Ursa →": "Full mechanics breakdown on the Gilgamesh Ursa page →", "Опорные предметы T10": "Core T10 items", "Талисман ×2": "Charm ×2", "Оберег Тревельяна": "Trevelyan's Charm", "Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.": "Near-ideal for two-handed builds: zero defense, +10% two-handed weapon power — two slots give +20%.", "Броня · сет": "Armor · set", "Восставший Тыквобезголовый": "Risen Pumpkinhead", "Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.": "Body + legs: HP, agility, crit and resistance instead of defense.", "Шлем": "Helmet", "Шлем досадного разочарования": "Helm of Bitter Disappointment", "−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.": "−273 defense: pushes the total negative for Collateral. Plus +18% crit and +500 agility.", "Полный лут под Gilgamesh Ursa →": "Full loadout for Gilgamesh Ursa →", "Коротко о главном": "The essentials", "Зачем уводить защиту в минус?": "Why push defense negative?", "Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.": "Collateral is stronger with negative defense. The −273 helmet keeps the total negative even with +210 defense from the weapon. The cost is low survivability: a ward skill (Frenzy) and the Chibi-Prometheus pet help.", "Gilgamesh Ursa и Gallia Ursa — это разное?": "Are Gilgamesh Ursa and Gallia Ursa different?", "Механически идентичны. Любой разбор по одному подходит к другому.": "Mechanically identical. Any breakdown of one applies to the other.", "ORNA КОДЕКС — независимая база знаний по Orna RPG.": "ORNA CODEX — an independent Orna RPG knowledge base.", "Данные: ornalegends.com · патчи 32–33.": "Data: ornalegends.com · patches 32–33."};
+  var html=document.documentElement;
+  var btn=document.getElementById("langToggle");
+  var nodes=[];
+  (function walk(node){
+    for(var n=node.firstChild;n;n=n.nextSibling){
+      if(n.nodeType===3){ if(n.nodeValue && n.nodeValue.trim()) nodes.push(n); }
+      else if(n.nodeType===1 && n.tagName!=="SCRIPT" && n.tagName!=="STYLE") walk(n);
+    }
+  })(document.body);
+  nodes.forEach(function(n){ n.__ru=n.nodeValue; });
+  function apply(lang){
+    nodes.forEach(function(n){
+      if(lang==="en"){
+        var k=n.__ru.trim();
+        if(DICT[k]!==undefined) n.nodeValue=n.__ru.replace(k,DICT[k]);
+      } else { n.nodeValue=n.__ru; }
+    });
+    html.setAttribute("lang", lang==="en"?"en":"ru");
+    if(btn) btn.textContent = lang==="en"?"RU":"EN";
+    try{localStorage.setItem("orna-lang",lang);}catch(e){}
+  }
+  var saved="ru"; try{saved=localStorage.getItem("orna-lang")||"ru";}catch(e){}
+  if(btn) btn.addEventListener("click",function(){ apply(html.getAttribute("lang")==="en"?"ru":"en"); });
+  apply(saved);
+})();
+</script>
+
+<script data-ldtab-init>
+(function(){document.querySelectorAll(".ldtabs").forEach(function(group){var tabs=group.querySelectorAll(".ldtab");var box=group.parentNode;tabs.forEach(function(t){t.addEventListener("click",function(){var id=t.getAttribute("data-ld");tabs.forEach(function(x){x.classList.remove("on")});t.classList.add("on");Array.prototype.forEach.call(box.children,function(pp){if(pp.classList&&pp.classList.contains("ldpanel"))pp.classList.toggle("on",pp.id===id);});});});});})();
+</script>
+
+<script data-spectab-init>
+(function(){var t=document.querySelectorAll(".spectab");if(!t.length)return;t.forEach(function(b){b.addEventListener("click",function(){var id=b.getAttribute("data-spec");t.forEach(function(x){x.classList.remove("on")});b.classList.add("on");document.querySelectorAll(".specpanel").forEach(function(p){p.classList.toggle("on",p.id===id)});});});})();
+</script>
+</body>
+</html>
