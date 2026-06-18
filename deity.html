@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <script>(function(){try{var t=localStorage.getItem("orna-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
-<title>Дейти Бог Урса билд — Orna RPG | ORNA КОДЕКС</title>
+<title>Дейти · Бог Урса · Катафрактарий — Orna RPG | ORNA КОДЕКС</title>
 <meta content="Билд Дейти (Бог Урса) в Orna RPG: вард-танк с петом-мамонтом, отрицательная защита и Коллатерал. Снаряжение, украшения, осколок и питомец." name="description"/>
 <meta content="Дейти — Бог Урса" property="og:title"/>
 <meta content="Вард-танк Урса на боге с петом-мамонтом. Эндгейм-сборка." property="og:description"/>
@@ -578,6 +578,391 @@ th,td{
 .adorn-text{
   display:block;
 }
+
+/* ORNA КОДЕКС · общий стиль сайта и вкладок */
+:root{
+  --orna-radius: 8px;
+  --orna-gap: 18px;
+  --orna-soft-border: rgba(87,55,32,.28);
+  --orna-soft-bg: rgba(255,248,224,.36);
+  --orna-active-bg: var(--ink);
+  --orna-active-fg: var(--parchment);
+}
+
+/* Общая сетка и карточки */
+.gear-grid{
+  gap: var(--orna-gap);
+}
+.gear{
+  border-radius: var(--orna-radius);
+  overflow: hidden;
+}
+.gear .top{
+  min-height: 42px;
+  display:flex;
+  align-items:center;
+}
+.gear .body{
+  min-height: 88px;
+}
+.name{
+  line-height:1.45;
+}
+.why{
+  margin-top:10px;
+  line-height:1.65;
+}
+.note{
+  border-radius:var(--orna-radius);
+  line-height:1.65;
+}
+
+/* Единые статы */
+.stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:flex-start;
+}
+.stat{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  line-height:1.55;
+}
+
+/* Единый блок украшений */
+.adorn-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:10px;
+}
+.adorn-row{
+  border:1px solid var(--orna-soft-border);
+  background:var(--orna-soft-bg);
+  border-radius:var(--orna-radius);
+  padding:10px 12px;
+  line-height:1.6;
+}
+.adorn-slot{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--oxblood);
+  font-weight:800;
+  margin-bottom:4px;
+}
+.adorn-text{
+  display:block;
+}
+
+/* Единые вкладки */
+.tabs,
+.spectabs,
+.ldtabs,
+.choice-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin:14px 0 18px;
+}
+.tab,
+.spectab,
+.ldtab,
+.choice-pill,
+.theme-toggle{
+  appearance:none;
+  border-radius:var(--orna-radius);
+  border:2px solid var(--rule);
+  background:var(--vellum);
+  color:var(--ink);
+  font-family:var(--font-mono);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  padding:11px 18px;
+  cursor:pointer;
+  line-height:1.15;
+  transition:transform .12s ease, background .12s ease, color .12s ease, border-color .12s ease;
+}
+.tab:hover,
+.spectab:hover,
+.ldtab:hover,
+.choice-pill:hover,
+.theme-toggle:hover{
+  transform:translateY(-1px);
+}
+.tab.active,
+.spectab.active,
+.ldtab.active,
+.choice-pill.on,
+.tab[aria-selected="true"],
+.spectab[aria-selected="true"],
+.ldtab[aria-selected="true"]{
+  background:var(--orna-active-bg);
+  color:var(--orna-active-fg);
+  border-color:var(--ink);
+}
+.choice-label{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--oxblood);
+  margin:18px 0 8px;
+  font-weight:800;
+}
+
+/* Панели вкладок */
+.panel,
+.specpanel,
+.ldpanel,
+.tabpanel,
+[role="tabpanel"]{
+  scroll-margin-top:90px;
+}
+.panel[hidden],
+.specpanel[hidden],
+.ldpanel[hidden],
+.tabpanel[hidden],
+[role="tabpanel"][hidden]{
+  display:none !important;
+}
+
+/* Таблицы во всех вкладках */
+table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:var(--orna-radius);
+}
+th,td{
+  vertical-align:top;
+  line-height:1.55;
+}
+th{
+  font-family:var(--font-mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* Ссылки на Codex */
+.item-link{
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+.item-link:hover{
+  text-decoration-thickness:2px;
+}
+
+/* ORNA КОДЕКС · единый стиль блоков и текста */
+:root{
+  --orna-radius: 8px;
+  --orna-gap: 18px;
+  --orna-line: 1.65;
+  --orna-small-line: 1.45;
+  --orna-soft-border: rgba(87,55,32,.28);
+  --orna-soft-bg: rgba(255,248,224,.36);
+  --orna-text-muted: rgba(62,43,31,.78);
+}
+
+/* Единая типографика */
+body{
+  line-height: var(--orna-line);
+}
+h1,h2,h3{
+  text-wrap: balance;
+}
+p{
+  line-height: var(--orna-line);
+}
+.eyebrow,
+.choice-label,
+.gear .top,
+th{
+  font-family: var(--font-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.lead,
+.note,
+.why,
+.adorn-text,
+td{
+  line-height: var(--orna-line);
+}
+
+/* Карточки одного типа */
+.gear{
+  border-radius: var(--orna-radius);
+  overflow: hidden;
+}
+.gear .top{
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+.gear .body{
+  min-height: 88px;
+}
+.gear .body > p:first-child{
+  margin-top: 0;
+}
+.name{
+  font-weight: 800;
+  font-size: 16px;
+  line-height: var(--orna-small-line);
+  margin: 0 0 8px;
+}
+.why{
+  color: var(--orna-text-muted);
+  margin: 10px 0 0;
+}
+.gear-grid{
+  gap: var(--orna-gap);
+}
+
+/* Заметки и пояснительные блоки */
+.note{
+  border-radius: var(--orna-radius);
+}
+.note .h{
+  display: block;
+  font-family: var(--font-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+/* Статы */
+.stats{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+.stat{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.5;
+}
+.stat .v{
+  font-weight: 800;
+}
+
+/* Украшения — всегда одна рамка и одинаковые строки */
+.adorn-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.adorn-row{
+  border: 1px solid var(--orna-soft-border);
+  background: var(--orna-soft-bg);
+  border-radius: var(--orna-radius);
+  padding: 10px 12px;
+  line-height: var(--orna-line);
+}
+.adorn-slot{
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.adorn-text{
+  display: block;
+}
+
+/* Вкладки */
+.tabs,
+.spectabs,
+.ldtabs,
+.choice-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 14px 0 18px;
+}
+.tab,
+.spectab,
+.ldtab,
+.choice-pill,
+.theme-toggle{
+  appearance: none;
+  border-radius: var(--orna-radius);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  padding: 11px 18px;
+}
+.tab.active,
+.spectab.active,
+.ldtab.active,
+.choice-pill.on,
+.tab[aria-selected="true"],
+.spectab[aria-selected="true"],
+.ldtab[aria-selected="true"]{
+  background: var(--ink);
+  color: var(--parchment);
+  border-color: var(--ink);
+}
+
+/* Таблицы */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--orna-radius);
+  overflow: hidden;
+}
+th,td{
+  vertical-align: top;
+}
+th{
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Ссылки */
+.item-link{
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.item-link:hover{
+  text-decoration-thickness: 2px;
+}
+
+/* Мобильная ровность */
+@media (max-width: 640px){
+  .tab,
+  .spectab,
+  .ldtab,
+  .choice-pill,
+  .theme-toggle{
+    width: 100%;
+  }
+  .adorn-row{
+    padding: 10px;
+  }
+}
 </style>
 </head>
 <body class="cls-deity">
@@ -604,12 +989,12 @@ th,td{
 <a href="index.html">Кодекс</a> / Билды / Дейти
 </div>
 <main class="wrap">
-<section id="loadouts"><p class="eyebrow">Сборка · класс Дейти · Бог Урса</p><h2>Дейти — Бог Урса</h2><p style="color:var(--ink-soft);margin:0 0 16px">Сборка для PvP.</p><div class="gear-grid"><div class="gear"><div class="top">Специализация</div><div class="body"><p class="name">Катафрактарий</p></div></div><div class="gear"><div class="top">Голова</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/beguiled-helmet-y/?lang=ru" rel="noopener" target="_blank">Шлем досадного разочарования У</a></p><div class="stats"><span class="stat">Защ <span class="v">−280</span></span><span class="stat">Мана <span class="v">200</span></span><span class="stat">Ловк <span class="v">200</span></span><span class="stat">Вард <span class="v">5%</span></span><span class="stat">Сокеты <span class="v">6</span></span></div></div></div><div class="gear"><div class="top">Оружие</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/celestial-axe/?lang=ru" rel="noopener" target="_blank">Астротопор</a></p><div class="stats"><span class="stat">Атк <span class="v">410</span></span><span class="stat">Защ <span class="v">35</span></span><span class="stat">HP <span class="v">70</span></span><span class="stat">Вард <span class="v">20%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/arisen-pumpkinless-armor/?lang=ru" rel="noopener" target="_blank">Доспех восставшего Тыквобезголового</a></p><div class="stats"><span class="stat">Защ <span class="v">20</span></span><span class="stat">Сопр <span class="v">180</span></span><span class="stat">HP <span class="v">600</span></span><span class="stat">Ловк <span class="v">180</span></span><span class="stat">Вард <span class="v">4%</span></span><span class="stat">Иниц <span class="v">−80</span></span><span class="stat">Мощь двуручей <span class="v">+7%</span></span><span class="stat">Сокеты <span class="v">4</span></span><span class="stat">Аркана</span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/arisen-shield/?lang=ru" rel="noopener" target="_blank">Щит восставшего</a></p><p class="why">▸ Умение: Оплот III</p><div class="stats"><span class="stat">Защ <span class="v">22</span></span><span class="stat">Сопр <span class="v">22</span></span><span class="stat">HP <span class="v">24</span></span><span class="stat">Вард <span class="v">39%</span></span></div></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/covyns-dark-leggings/?lang=ru" rel="noopener" target="_blank">Спортивные штаны Ковина</a></p><div class="stats"><span class="stat">Защ <span class="v">20</span></span><span class="stat">Сопр <span class="v">180</span></span><span class="stat">HP <span class="v">600</span></span><span class="stat">Ловк <span class="v">180</span></span><span class="stat">Вард <span class="v">4%</span></span><span class="stat">Иниц <span class="v">−80</span></span><span class="stat">Мощь двуручей <span class="v">+7%</span></span><span class="stat">Сокеты <span class="v">4</span></span><span class="stat">Тьма</span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/gilded-scarab-amulet/?lang=ru" rel="noopener" target="_blank">Амулет златохепри</a></p><p class="why">Гибкий слот: уворот, HP, +3% реген HP.</p><div class="stats"><span class="stat">HP <span class="v">750</span></span><span class="stat">Вард <span class="v">−3%</span></span><span class="stat">Уклон <span class="v">+5%</span></span><span class="stat">Удача <span class="v">+15%</span></span><span class="stat">Реген <span class="v">+2%</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" rel="noopener" target="_blank">Кольцо Карла</a></p><p class="why">Гибкий слот: много статов и варда.</p><div class="stats"><span class="stat">Атк <span class="v">72</span></span><span class="stat">Маг <span class="v">72</span></span><span class="stat">Защ <span class="v">36</span></span><span class="stat">Сопр <span class="v">36</span></span><span class="stat">HP <span class="v">200</span></span><span class="stat">Мана <span class="v">200</span></span><span class="stat">Ловк <span class="v">24</span></span><span class="stat">Вард <span class="v">1%</span></span></div></div></div><div class="gear"><div class="top">Осколок</div><div class="body"><p class="name">Парапет и Сквалыжничество</p><p class="why">Может прикрыть от входящего урона в размере <b>95% от максимального запаса очков здоровья и выше</b>.<br/><b>Шанс срабатывания — 20%.</b></p></div></div><div class="gear"><div class="top">Питомец</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/followers/bone-mammoth/?lang=ru" rel="noopener" target="_blank">Мамонт</a></p></div></div><div class="gear" style="grid-column:1/-1">
+<section id="loadouts"><p class="eyebrow">Сборка · класс Дейти · Бог Урса · Катафрактарий</p><h2>Дейти — Бог Урса · Катафрактарий</h2><p style="color:var(--ink-soft);margin:0 0 16px">Сборка для PvP.</p><div class="gear-grid"><div class="gear"><div class="top">Голова</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/beguiled-helmet-y/?lang=ru" rel="noopener" target="_blank">Шлем досадного разочарования У</a></p><div class="stats"><span class="stat">Защ <span class="v">−280</span></span><span class="stat">Мана <span class="v">200</span></span><span class="stat">Ловк <span class="v">200</span></span><span class="stat">Вард <span class="v">5%</span></span><span class="stat">Сокеты <span class="v">6</span></span></div></div></div><div class="gear"><div class="top">Оружие</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/celestial-axe/?lang=ru" rel="noopener" target="_blank">Астротопор</a></p><div class="stats"><span class="stat">Атк <span class="v">410</span></span><span class="stat">Защ <span class="v">35</span></span><span class="stat">HP <span class="v">70</span></span><span class="stat">Вард <span class="v">20%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/arisen-pumpkinless-armor/?lang=ru" rel="noopener" target="_blank">Доспех восставшего Тыквобезголового</a></p><div class="stats"><span class="stat">Защ <span class="v">20</span></span><span class="stat">Сопр <span class="v">180</span></span><span class="stat">HP <span class="v">600</span></span><span class="stat">Ловк <span class="v">180</span></span><span class="stat">Вард <span class="v">4%</span></span><span class="stat">Иниц <span class="v">−80</span></span><span class="stat">Мощь двуручей <span class="v">+7%</span></span><span class="stat">Сокеты <span class="v">4</span></span><span class="stat">Аркана</span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/arisen-shield/?lang=ru" rel="noopener" target="_blank">Щит восставшего</a></p><p class="why">▸ Умение: Оплот III</p><div class="stats"><span class="stat">Защ <span class="v">22</span></span><span class="stat">Сопр <span class="v">22</span></span><span class="stat">HP <span class="v">24</span></span><span class="stat">Вард <span class="v">39%</span></span></div></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/covyns-dark-leggings/?lang=ru" rel="noopener" target="_blank">Спортивные штаны Ковина</a></p><div class="stats"><span class="stat">Защ <span class="v">20</span></span><span class="stat">Сопр <span class="v">180</span></span><span class="stat">HP <span class="v">600</span></span><span class="stat">Ловк <span class="v">180</span></span><span class="stat">Вард <span class="v">4%</span></span><span class="stat">Иниц <span class="v">−80</span></span><span class="stat">Мощь двуручей <span class="v">+7%</span></span><span class="stat">Сокеты <span class="v">4</span></span><span class="stat">Тьма</span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/gilded-scarab-amulet/?lang=ru" rel="noopener" target="_blank">Амулет златохепри</a></p><p class="why">Гибкий слот: уворот, HP, +3% реген HP.</p><div class="stats"><span class="stat">HP <span class="v">750</span></span><span class="stat">Вард <span class="v">−3%</span></span><span class="stat">Уклон <span class="v">+5%</span></span><span class="stat">Удача <span class="v">+15%</span></span><span class="stat">Реген <span class="v">+2%</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" rel="noopener" target="_blank">Кольцо Карла</a></p><p class="why">Гибкий слот: много статов и варда.</p><div class="stats"><span class="stat">Атк <span class="v">72</span></span><span class="stat">Маг <span class="v">72</span></span><span class="stat">Защ <span class="v">36</span></span><span class="stat">Сопр <span class="v">36</span></span><span class="stat">HP <span class="v">200</span></span><span class="stat">Мана <span class="v">200</span></span><span class="stat">Ловк <span class="v">24</span></span><span class="stat">Вард <span class="v">1%</span></span></div></div></div><div class="gear"><div class="top">Осколок</div><div class="body"><p class="name">Парапет и Сквалыжничество</p><p class="why">Может прикрыть от входящего урона в размере <b>95% от максимального запаса очков здоровья и выше</b>.<br/><b>Шанс срабатывания — 20%.</b></p></div></div><div class="gear"><div class="top">Питомец</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/followers/bone-mammoth/?lang=ru" rel="noopener" target="_blank">Мамонт</a></p></div></div><div class="gear" style="grid-column:1/-1">
 <div class="top">Украшения</div>
 <div class="body"><div class="adorn-list"><div class="adorn-row"><span class="adorn-slot">Оружие</span><span class="adorn-text">Астротопор:  · <a class="item-link" href="https://playorna.com/codex/items/heart-of-selene/?lang=ru" rel="noopener" target="_blank">Сердце Селены ×4</a> · <a class="item-link" href="https://playorna.com/codex/items/spine-of-mnemosyne/?lang=ru" rel="noopener" target="_blank">Хребет Мнемозины ×1</a></span></div><div class="adorn-row"><span class="adorn-slot">Шлем</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/eye-of-osiris/?lang=ru" rel="noopener" target="_blank">Гемма Осириса ×8</a> · <a class="item-link" href="https://playorna.com/codex/items/jewel-of-creation/?lang=ru" rel="noopener" target="_blank">Сотворение ×2</a></span></div><div class="adorn-row"><span class="adorn-slot">Тело</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/jewel-of-creation/?lang=ru" rel="noopener" target="_blank">Сотворение ×8</a></span></div><div class="adorn-row"><span class="adorn-slot">Ноги</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/jewel-of-creation/?lang=ru" rel="noopener" target="_blank">Сотворение ×8</a></span></div></div></div>
 </div>
 </div>
-<div class="note" style="margin-top:18px"><span class="h">Гибкие слоты аксессуаров</span><a class="item-link" href="https://playorna.com/codex/items/gilded-scarab-amulet/?lang=ru" rel="noopener" target="_blank">Амулет златохепри</a> (уворот, HP, +3% реген HP) ↔ <b><a class="item-link" href="https://playorna.com/codex/items/guineveres-hairpin/?lang=ru" rel="noopener" target="_blank">Заколка Гунивер</a></b> (резист к «лягухе», реген варда, +2% реген HP, больше варда).<br/><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" rel="noopener" target="_blank">Кольцо Карла</a> (много статов и варда) ↔ <b><a class="item-link" href="https://playorna.com/codex/items/ectoplasm/?lang=ru" rel="noopener" target="_blank">Эктоплазма</a></b> против физ-ДД, когда важна победа в защите.</div><p class="eyebrow" style="margin-top:30px">Умения в защите</p><div class="cmp"><table><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Шипованный щит III</b></td><td><b>231 224</b></td></tr><tr><td style="color:var(--ink-soft)">Канелалус</td><td style="color:var(--ink-soft)">0</td></tr></tbody></table></div><p class="eyebrow" style="margin-top:30px">Умения в атаке / управляемом ПВП</p><div class="cmp"><table><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Шипованный щит III</b></td><td><b>231 224</b></td></tr><tr><td style="color:var(--ink-soft)">Канелалус</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Вард ортанита</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Поступь Гюннр</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Мощь медведя</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Лечащий огонёк II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Рассеивание варда II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Рассеивание варда</td><td style="color:var(--ink-soft)">0</td></tr><tr><td><b>Засветка</b></td><td><b>6 333</b></td></tr><tr><td style="color:var(--ink-soft)">Запрет</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Угроза</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Оглушающий дротик</td><td style="color:var(--ink-soft)">0</td></tr><tr><td><b>Удар усмирения II</b></td><td><b>12 937</b></td></tr><tr><td style="color:var(--ink-soft)">Нейтралус барриалус</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Пробой</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Немота</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Разложение</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Прыть виверны II</td><td style="color:var(--ink-soft)">0</td></tr></tbody></table></div></section>
+<div class="note" style="margin-top:18px"><span class="h">Гибкие слоты аксессуаров</span><a class="item-link" href="https://playorna.com/codex/items/gilded-scarab-amulet/?lang=ru" rel="noopener" target="_blank">Амулет златохепри</a> (уворот, HP, +3% реген HP) ↔ <b><a class="item-link" href="https://playorna.com/codex/items/guineveres-hairpin/?lang=ru" rel="noopener" target="_blank">Заколка Гунивер</a></b> (резист к «лягухе», реген варда, +2% реген HP, больше варда).<br/><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" rel="noopener" target="_blank">Кольцо Карла</a> (много статов и варда) ↔ <b><a class="item-link" href="https://playorna.com/codex/items/ectoplasm/?lang=ru" rel="noopener" target="_blank">Эктоплазма</a></b> против физ-ДД, когда важна победа в защите.</div><p class="eyebrow" style="margin-top:30px">Умения в защите</p><div class="cmp"><table class="ornatable"><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Шипованный щит III</b></td><td><b>231 224</b></td></tr><tr><td style="color:var(--ink-soft)">Канелалус</td><td style="color:var(--ink-soft)">0</td></tr></tbody></table></div><p class="eyebrow" style="margin-top:30px">Умения в атаке / управляемом ПВП</p><div class="cmp"><table class="ornatable"><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Шипованный щит III</b></td><td><b>231 224</b></td></tr><tr><td style="color:var(--ink-soft)">Канелалус</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Вард ортанита</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Поступь Гюннр</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Мощь медведя</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Лечащий огонёк II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Рассеивание варда II</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Рассеивание варда</td><td style="color:var(--ink-soft)">0</td></tr><tr><td><b>Засветка</b></td><td><b>6 333</b></td></tr><tr><td style="color:var(--ink-soft)">Запрет</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Угроза</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Оглушающий дротик</td><td style="color:var(--ink-soft)">0</td></tr><tr><td><b>Удар усмирения II</b></td><td><b>12 937</b></td></tr><tr><td style="color:var(--ink-soft)">Нейтралус барриалус</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Пробой</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Немота</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Разложение</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Прыть виверны II</td><td style="color:var(--ink-soft)">0</td></tr></tbody></table></div></section>
 </main>
 <footer class="site-foot">
 <div class="wrap">
