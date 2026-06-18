@@ -1391,6 +1391,53 @@ th .item-link{
 #deity-oracle-skills .note{
   line-height:1.65;
 }
+
+/* Deity · нормальный текст блока «Гибкие слоты аксессуаров» */
+.accessory-flex-note,
+.accessory-flex-note *,
+.accessory-flex-note .h,
+.accessory-flex-note .item-link{
+  text-transform:none !important;
+  letter-spacing:normal !important;
+}
+.accessory-flex-note{
+  font-family:var(--font-body) !important;
+  font-size:15px !important;
+  line-height:1.65 !important;
+}
+.accessory-flex-note .h{
+  display:block;
+  font-family:var(--font-display) !important;
+  font-size:19px !important;
+  font-weight:700 !important;
+  line-height:1.3 !important;
+  margin:0 0 8px !important;
+  color:var(--ink) !important;
+}
+.accessory-flex-note .item-link{
+  font-family:var(--font-display) !important;
+  font-size:inherit !important;
+  font-weight:700 !important;
+}
+
+/* Deity · выравнивание подчёркиваний в блоке «Гибкие слоты аксессуаров» */
+.accessory-flex-note a,
+.accessory-flex-note .item-link{
+  text-decoration:none !important;
+  border-bottom:1px dotted currentColor !important;
+  padding-bottom:1px !important;
+  line-height:1.18 !important;
+  vertical-align:baseline !important;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+.accessory-flex-note a::before,
+.accessory-flex-note a::after,
+.accessory-flex-note .item-link::before,
+.accessory-flex-note .item-link::after{
+  text-decoration:none !important;
+  border-bottom:0 !important;
+}
 </style>
 </head>
 <body class="cls-deity">
@@ -1426,7 +1473,7 @@ th .item-link{
 <div class="top">Украшения</div>
 <div class="body"><div class="adorn-list"><div class="adorn-row"><span class="adorn-slot">Оружие</span><span class="adorn-text">Астротопор:  · <a class="item-link" href="https://playorna.com/codex/items/heart-of-selene/?lang=ru" rel="noopener" target="_blank">Сердце Селены ×4</a> · <a class="item-link" href="https://playorna.com/codex/items/spine-of-mnemosyne/?lang=ru" rel="noopener" target="_blank">Хребет Мнемозины ×1</a></span></div><div class="adorn-row"><span class="adorn-slot">Шлем</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/eye-of-osiris/?lang=ru" rel="noopener" target="_blank">Гемма Осириса ×8</a> · <a class="item-link" href="https://playorna.com/codex/items/jewel-of-creation/?lang=ru" rel="noopener" target="_blank">Сотворение ×2</a></span></div><div class="adorn-row"><span class="adorn-slot">Тело</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/jewel-of-creation/?lang=ru" rel="noopener" target="_blank">Сотворение ×8</a></span></div><div class="adorn-row"><span class="adorn-slot">Ноги</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/jewel-of-creation/?lang=ru" rel="noopener" target="_blank">Сотворение ×8</a></span></div></div></div>
 </div>
-</div><div class="note" style="margin-top:18px"><span class="h">Гибкие слоты аксессуаров</span><a class="item-link" href="https://playorna.com/codex/items/gilded-scarab-amulet/?lang=ru" rel="noopener" target="_blank">Амулет златохепри</a> (уворот, HP, +3% реген HP) ↔ <b><a class="item-link" href="https://playorna.com/codex/items/guineveres-hairpin/?lang=ru" rel="noopener" target="_blank">Заколка Гунивер</a></b> (резист к «лягухе», реген варда, +2% реген HP, больше варда).<br/><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" rel="noopener" target="_blank">Кольцо Карла</a> (много статов и варда) ↔ <b><a class="item-link" href="https://playorna.com/codex/items/ectoplasm/?lang=ru" rel="noopener" target="_blank">Эктоплазма</a></b> против физ-ДД, когда важна победа в защите.</div></div><div class="ldpanel" id="deity-raids-panel" role="tabpanel"><div id="deity-oracle-build">
+</div><div class="note accessory-flex-note" style="margin-top:18px"><span class="h">Гибкие слоты аксессуаров</span><a class="item-link" href="https://playorna.com/codex/items/gilded-scarab-amulet/?lang=ru" rel="noopener" target="_blank">Амулет златохепри</a> (уворот, HP, +3% реген HP) ↔ <b><a class="item-link" href="https://playorna.com/codex/items/guineveres-hairpin/?lang=ru" rel="noopener" target="_blank">Заколка Гунивер</a></b> (резист к «лягухе», реген варда, +2% реген HP, больше варда).<br/><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" rel="noopener" target="_blank">Кольцо Карла</a> (много статов и варда) ↔ <b><a class="item-link" href="https://playorna.com/codex/items/ectoplasm/?lang=ru" rel="noopener" target="_blank">Эктоплазма</a></b> против физ-ДД, когда важна победа в защите.</div></div><div class="ldpanel" id="deity-raids-panel" role="tabpanel"><div id="deity-oracle-build">
 <p class="eyebrow" style="margin-top:30px">Рейдовая сборка · базовый бог · Оракул</p>
 <h2>Дейти — Базовый бог · Оракул</h2>
 <p class="build-subtitle">Сборка для рейдов. Основа — сила накала, сила аксессуаров, гибрид и стихия вашей фракции.</p>
