@@ -1257,6 +1257,109 @@ th .item-link{
     max-width:100% !important;
   }
 }
+
+/* Финальный фикс мобильного меню: кнопка ☰ снова раскрывает навигацию */
+@media (max-width: 759px){
+  .site-head{
+    overflow: visible !important;
+  }
+  .site-head .wrap{
+    position: relative !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    min-height: 62px !important;
+    height: 62px !important;
+    gap: 8px !important;
+    max-width: 100% !important;
+  }
+  .site-head .brand{
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    margin-right: auto !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .site-head .head-actions{
+    flex: 0 0 auto !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-left: auto !important;
+    min-width: 0 !important;
+  }
+  .site-head .theme-toggle{
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    flex: 0 0 38px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+  .site-head .lang-toggle{
+    font-size: 12px !important;
+    letter-spacing: 0 !important;
+  }
+  .site-head .nav{
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 80 !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    background: var(--parchment) !important;
+    border-bottom: 2px solid var(--ink) !important;
+    box-shadow: var(--shadow-card) !important;
+    padding: 4px 22px 12px !important;
+  }
+  .site-head .nav.open{
+    display: flex !important;
+  }
+  .site-head .nav a{
+    display: block !important;
+    width: 100% !important;
+    padding: 13px 2px !important;
+    border-bottom: 1px solid var(--rule-soft) !important;
+    color: var(--ink-soft) !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+  .site-head .nav a:last-child{
+    border-bottom: none !important;
+  }
+}
+@media (min-width: 760px){
+  .site-head .nav{
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 22px !important;
+    width: auto !important;
+    background: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  .site-head .menu-toggle{
+    display: none !important;
+  }
+}
 </style>
 </head>
 <body class="cls-heretic">
@@ -1388,5 +1491,37 @@ th .item-link{
 <script data-spectab-init="">
 (function(){var t=document.querySelectorAll(".spectab");if(!t.length)return;t.forEach(function(b){b.addEventListener("click",function(){var id=b.getAttribute("data-spec");t.forEach(function(x){x.classList.remove("on")});b.classList.add("on");document.querySelectorAll(".specpanel").forEach(function(p){p.classList.toggle("on",p.id===id)});});});})();
 </script>
-</body>
+<script>
+(function(){
+  var mt = document.getElementById("menuToggle");
+  var nav = document.querySelector(".site-head .nav");
+  if(!mt || !nav || mt.dataset.ornaMenuFixed === "1") return;
+  mt.dataset.ornaMenuFixed = "1";
+
+  function closeMenu(){
+    nav.classList.remove("open");
+    mt.setAttribute("aria-expanded", "false");
+  }
+
+  mt.addEventListener("click", function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var opened = !nav.classList.contains("open");
+    nav.classList.toggle("open", opened);
+    mt.setAttribute("aria-expanded", opened ? "true" : "false");
+  }, true);
+
+  nav.addEventListener("click", function(e){
+    if(e.target && e.target.closest && e.target.closest("a")) closeMenu();
+  });
+
+  document.addEventListener("click", function(e){
+    if(nav.classList.contains("open") && !nav.contains(e.target) && !mt.contains(e.target)) closeMenu();
+  });
+
+  window.addEventListener("resize", function(){
+    if(window.innerWidth >= 760) closeMenu();
+  });
+})();
+</script></body>
 </html>
