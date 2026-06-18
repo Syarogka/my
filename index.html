@@ -1,17 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <script>(function(){try{var t=localStorage.getItem("orna-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
 <title>Orna RPG — База знаний по эндгейму: билды, классы, механики</title>
-<meta name="description" content="Русскоязычная база знаний по Orna RPG: разборы эндгейм-классов, билдов, механик и гира по тирам. Гайды по Gilgamesh, Heretic, Realmshifter и Grand Summoner.">
-<meta property="og:title" content="Orna RPG — База знаний по эндгейму">
-<meta property="og:description" content="Билды, классы и механики Orna RPG на русском. Патчи 32–33.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta content="Русскоязычная база знаний по Orna RPG: разборы эндгейм-классов, билдов, механик и гира по тирам. Гайды по Gilgamesh, Heretic, Realmshifter и Grand Summoner." name="description"/>
+<meta content="Orna RPG — База знаний по эндгейму" property="og:title"/>
+<meta content="Билды, классы и механики Orna RPG на русском. Патчи 32–33." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
 /* ===========================================================
    ORNA КОДЕКС — светлая тема «Иллюминированная рукопись»
@@ -499,104 +500,92 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
 </style>
 </head>
 <body>
-
 <header class="site-head">
-  <div class="wrap">
-    <span class="brand">ORNA <b>КОДЕКС</b></span>
-    <nav class="nav">
-      <a href="#klassy">Классы</a>
-      <a href="#bildy">Билды</a>
-      <a href="#mekhaniki">Механики</a>
-      <a href="#gir">Гир</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <div class="head-actions">
-      <button class="theme-toggle menu-toggle" id="menuToggle" type="button" aria-label="Меню" aria-expanded="false">&#9776;</button>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Сменить тему">&#9790;</button>
-      <button class="theme-toggle pink-toggle" id="pinkToggle" type="button" aria-label="Розовая тема">&#10048;</button>
-      <button class="theme-toggle lang-toggle" id="langToggle" type="button" aria-label="Язык / Language">EN</button>
-    </div>
-  </div>
+<div class="wrap">
+<span class="brand">ORNA <b>КОДЕКС</b></span>
+<nav class="nav">
+<a href="#klassy">Классы</a>
+<a href="#bildy">Билды</a>
+<a href="#mekhaniki">Механики</a>
+<a href="#gir">Гир</a>
+<a href="#faq">FAQ</a>
+</nav>
+<div class="head-actions">
+<button aria-expanded="false" aria-label="Меню" class="theme-toggle menu-toggle" id="menuToggle" type="button">☰</button>
+<button aria-label="Сменить тему" class="theme-toggle" id="themeToggle" type="button">☾</button>
+<button aria-label="Розовая тема" class="theme-toggle pink-toggle" id="pinkToggle" type="button">❀</button>
+<button aria-label="Язык / Language" class="theme-toggle lang-toggle" id="langToggle" type="button">EN</button>
+</div>
+</div>
 </header>
-
 <main>
-  <section class="hero wrap">
-    <h1>База знаний по <span class="accent">Orna RPG</span></h1>
-    <p class="lead">Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.</p>
-
-  </section>
-
-  <section id="bildy" class="wrap">
-    <div class="grid">
-      <a class="card featured cls-gilgamesh" href="gilgamesh-ursa.html">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M32 4 36 42 28 42Z"/><rect x="17" y="42" width="30" height="5" rx="2"/><rect x="29" y="47" width="6" height="9"/><circle cx="32" cy="58" r="4"/></svg></span>
-        <span class="k">Билд · готов</span>
-        <h3>Gilgamesh →</h3>
-      </a>
-      <a class="card cls-heretic" href="heretic.html">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M32 5 56 32 32 59 8 32Z"/><path d="M32 19 45 32 32 45 19 32Z"/></svg></span>
-        <span class="k">Билд · посох</span>
-        <h3>Heretic →</h3>
-      </a>
-      <a class="card cls-realmshifter" href="#">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor" fill-rule="evenodd"><path d="M32 6C19 6 10 15 10 28c0 7 3 12 7 15v8a4 4 0 0 0 4 4h22a4 4 0 0 0 4-4v-8c4-3 7-8 7-15C54 15 45 6 32 6Zm-9 17a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm18 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg></span>
-        <span class="k">Класс · в работе</span>
-        <h3>Realmshifter</h3>
-      </a>
-      <a class="card cls-summoner" href="#">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M32 4l7.3 17.5L58 23 44 35.2 48.6 54 32 43.7 15.4 54 20 35.2 6 23l18.7-1.5z"/></svg></span>
-        <span class="k">Класс · в работе</span>
-        <h3>Grand Summoner</h3>
-      </a>
-      <a class="card cls-beowulf" href="beowulf.html">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="44" rx="14" ry="12"/><circle cx="15" cy="27" r="6"/><circle cx="26" cy="18" r="6"/><circle cx="38" cy="18" r="6"/><circle cx="49" cy="27" r="6"/></svg></span>
-        <span class="k">Билд · рейды</span>
-        <h3>Beowulf →</h3>
-      </a>
-      <a class="card cls-deity" href="#">
-        <span class="cls-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="32" cy="32" r="10" fill="currentColor" stroke="none"/><path d="M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M52 12l-6 6M18 46l-6 6"/></svg></span>
-        <span class="k">Класс · в работе</span>
-        <h3>Deity</h3>
-      </a>
-    </div>
-  </section>
-
-  <section id="klassy" class="wrap">
-    <p class="eyebrow">Разделы кодекса</p>
-    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
-  </section>
-
-  <section id="mekhaniki" class="wrap">
-    <p class="eyebrow">Механики</p>
-    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
-  </section>
-
-  <section id="gir" class="wrap">
-    <p class="eyebrow">Гир</p>
-    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
-  </section>
-
-  <section id="faq" class="wrap">
-    <p class="eyebrow">FAQ</p>
-    <p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
-  </section>
+<section class="hero wrap">
+<h1>База знаний по <span class="accent">Orna RPG</span></h1>
+<p class="lead">Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.</p>
+</section>
+<section class="wrap" id="bildy">
+<div class="grid">
+<a class="card featured cls-gilgamesh" href="gilgamesh-ursa.html">
+<span aria-hidden="true" class="cls-icon"><svg fill="currentColor" viewbox="0 0 64 64"><path d="M32 4 36 42 28 42Z"></path><rect height="5" rx="2" width="30" x="17" y="42"></rect><rect height="9" width="6" x="29" y="47"></rect><circle cx="32" cy="58" r="4"></circle></svg></span>
+<span class="k">Билд · готов</span>
+<h3>Gilgamesh →</h3>
+</a>
+<a class="card cls-heretic" href="heretic.html">
+<span aria-hidden="true" class="cls-icon"><svg fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4" viewbox="0 0 64 64"><path d="M32 5 56 32 32 59 8 32Z"></path><path d="M32 19 45 32 32 45 19 32Z"></path></svg></span>
+<span class="k">Билд · посох</span>
+<h3>Heretic →</h3>
+</a>
+<a class="card cls-realmshifter" href="#">
+<span aria-hidden="true" class="cls-icon"><svg fill="currentColor" fill-rule="evenodd" viewbox="0 0 64 64"><path d="M32 6C19 6 10 15 10 28c0 7 3 12 7 15v8a4 4 0 0 0 4 4h22a4 4 0 0 0 4-4v-8c4-3 7-8 7-15C54 15 45 6 32 6Zm-9 17a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm18 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"></path></svg></span>
+<span class="k">Класс · в работе</span>
+<h3>Realmshifter</h3>
+</a>
+<a class="card cls-summoner" href="#">
+<span aria-hidden="true" class="cls-icon"><svg fill="currentColor" viewbox="0 0 64 64"><path d="M32 4l7.3 17.5L58 23 44 35.2 48.6 54 32 43.7 15.4 54 20 35.2 6 23l18.7-1.5z"></path></svg></span>
+<span class="k">Класс · в работе</span>
+<h3>Grand Summoner</h3>
+</a>
+<a class="card cls-beowulf" href="beowulf.html">
+<span aria-hidden="true" class="cls-icon"><svg fill="currentColor" viewbox="0 0 64 64"><ellipse cx="32" cy="44" rx="14" ry="12"></ellipse><circle cx="15" cy="27" r="6"></circle><circle cx="26" cy="18" r="6"></circle><circle cx="38" cy="18" r="6"></circle><circle cx="49" cy="27" r="6"></circle></svg></span>
+<span class="k">Билд · рейды</span>
+<h3>Beowulf →</h3>
+</a>
+<a class="card cls-deity" href="deity.html">
+<span aria-hidden="true" class="cls-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="currentColor" r="10" stroke="none"></circle><path d="M32 4v8M32 52v8M4 32h8M52 32h8M12 12l6 6M46 46l6 6M52 12l-6 6M18 46l-6 6"></path></svg></span>
+<span class="k">Билд · Бог Урса</span>
+<h3>Deity →</h3>
+</a>
+</div>
+</section>
+<section class="wrap" id="klassy">
+<p class="eyebrow">Разделы кодекса</p>
+<p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
+</section>
+<section class="wrap" id="mekhaniki">
+<p class="eyebrow">Механики</p>
+<p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
+</section>
+<section class="wrap" id="gir">
+<p class="eyebrow">Гир</p>
+<p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
+</section>
+<section class="wrap" id="faq">
+<p class="eyebrow">FAQ</p>
+<p class="wip"><span class="wip-tag">в работе</span> Раздел скоро появится.</p>
+</section>
 </main>
-
 <footer class="site-foot">
-  <div class="wrap">
-    <span>ORNA КОДЕКС — независимая база знаний по Orna RPG.</span>
-    <span>Данные: ornalegends.com · патчи 32–33.</span>
-    <span>◇ Посетителей: <strong id="visitCount" style="color:var(--gold-leaf);font-family:'JetBrains Mono',monospace">…</strong></span>
-  </div>
+<div class="wrap">
+<span>ORNA КОДЕКС — независимая база знаний по Orna RPG.</span>
+<span>Данные: ornalegends.com · патчи 32–33.</span>
+<span>◇ Посетителей: <strong id="visitCount" style="color:var(--gold-leaf);font-family:'JetBrains Mono',monospace">…</strong></span>
+</div>
 </footer>
 <script>(function(){var el=document.getElementById('visitCount');if(!el)return;var b='https://countapi.mileshilliard.com/api/v1/',k='syarogka_orna_codex_visits',h=true;try{if(sessionStorage.getItem('orna_visit')==='1')h=false;}catch(e){}fetch(b+(h?'hit/':'get/')+k).then(function(r){return r.json();}).then(function(d){var v=parseInt(d.value,10);el.textContent=isNaN(v)?'\u2014':v.toLocaleString('ru-RU');try{sessionStorage.setItem('orna_visit','1');}catch(e){}}).catch(function(){el.textContent='\u2014';});})();</script>
-
-
-<a href="#" class="to-top" id="toTop" aria-label="Наверх" title="Наверх">&#8593;</a>
+<a aria-label="Наверх" class="to-top" href="#" id="toTop" title="Наверх">↑</a>
 <script>
 (function(){var b=document.getElementById("toTop");if(!b)return;function chk(){window.scrollY>400?b.classList.add("show"):b.classList.remove("show");}window.addEventListener("scroll",chk,{passive:true});b.addEventListener("click",function(e){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});});chk();})();
 </script>
-
 <script>
 (function(){
   var html=document.documentElement;
@@ -615,8 +604,7 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
   paint();
 })();
 </script>
-
-<script data-scrollspy>
+<script data-scrollspy="">
 (function(){
   var links=[].slice.call(document.querySelectorAll('.nav a, .toc a'));
   var here=location.pathname.split('/').pop();
@@ -643,7 +631,6 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
   targets.forEach(function(t){obs.observe(t);});
 })();
 </script>
-
 <script>
 (function(){
   var mt=document.getElementById("menuToggle");
@@ -655,7 +642,6 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
   document.addEventListener("click",function(e){if(nav.classList.contains("open")&&!nav.contains(e.target)&&!mt.contains(e.target))close();});
 })();
 </script>
-
 <script>
 (function(){
   var DICT = {"в работе": "in progress", "Раздел скоро появится.": "Section coming soon.", "КОДЕКС": "CODEX", "Классы": "Classes", "Билды": "Builds", "Механики": "Mechanics", "Гир": "Gear", "● ЭНДГЕЙМ · ПАТЧИ 32–33": "● ENDGAME · PATCHES 32–33", "База знаний по": "Knowledge base for", "Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.": "Breakdowns of endgame classes, working builds and mechanics rarely collected in one place. No fluff — only what changes damage, survivability and clear speed.", "основа": "foundation", "Негативная защита": "Negative defense", "Снижаем защиту цели в минус.": "Push the target's defense below zero.", "срабатывание": "trigger", "Коллатеральный крит": "Collateral crit", "Одиночный крит бьёт по площади.": "A single crit hits an area.", "результат": "result", "Зачистка хорды": "Horde cleared", "Толпа складывается с одного удара.": "The pack drops from one hit.", "Флагманский билд": "Flagship build", "Gilgamesh Ursa — «Коллатеральные криты»": "Gilgamesh Ursa — Collateral Crits", "Стеклянная пушка на спеке Rudiarius и оружии Astromolot. Полный разбор: концепт, гир, статы, ротация и подводные камни.": "A glass cannon on the Rudiarius spec and Astromolot weapon. Full breakdown: concept, gear, stats, rotation and pitfalls.", "Билд · готов": "Build · ready", "Коллатеральный урон, негативная защита, крит-нюки. Идентичен Gallia Ursa.": "Collateral damage, negative defense, crit nukes. Identical to Gallia Ursa.", "Класс · в работе": "Class · WIP", "Скоро: разбор спеков и ротаций.": "Soon: specs and rotations.", "Скоро: механики и сборка.": "Soon: mechanics and build.", "Скоро: саммоны и приоритеты.": "Soon: summons and priorities.", "Разделы кодекса": "Codex sections", "Что внутри": "What's inside", "01 · Классы": "01 · Classes", "Эндгейм-классы": "Endgame classes", "Gilgamesh, Heretic, Realmshifter, Grand Summoner — сильные и слабые стороны.": "Gilgamesh, Heretic, Realmshifter, Grand Summoner — strengths and weaknesses.", "02 · Механики": "02 · Mechanics", "Как считается урон": "How damage works", "Коллатеральный урон, негативная защита, крит на мультихитах, приоритет Ward.": "Collateral damage, negative defense, crit on multi-hits, Ward priority.", "03 · Гир": "03 · Gear", "Гир по тирам": "Gear by tier", "Лучшие предметы T10, сеты, талисманы и украшения под конкретные сборки.": "Best T10 items, sets, charms and adornments for specific builds.", "04 · FAQ": "04 · FAQ", "Для новичков": "For newcomers", "Базовые вопросы по эндгейму и частые ошибки в сборках.": "Basic endgame questions and common build mistakes.", "Три правила, на которых всё держится": "Three rules it all rests on", "Коллатеральный урон": "Collateral damage", "Масштабируется от негативной защиты": "Scales with negative defense", " и позволяет зачищать толпу одиночными критами — один удар по цели задевает остальных.": " and lets you clear packs with single crits — one hit on a target splashes to the rest.", "Крит и мультихит": "Crit vs multi-hit", "Скиллы с несколькими ударами имеют": "Multi-hit skills have", "0% шанс крита": "0% crit chance", ". Под крит-сборку берут одиночные удары.": ". A crit build uses single-hit skills.", "Ядро урона — крит": "Damage core — crit", "Крит удваивает удар (": "Crit doubles the hit (", "), а Collateral разносит его по своре.": "), and Collateral spreads it across the pack.", "усиливает цепочку: жрёт вард, но качает атаку, ловкость и скорость Collateral.": "amplifies the chain: it eats ward but boosts attack, agility and Collateral speed.", "Полный разбор механик на примере Gilgamesh Ursa →": "Full mechanics breakdown on the Gilgamesh Ursa page →", "Опорные предметы T10": "Core T10 items", "Талисман ×2": "Charm ×2", "Оберег Тревельяна": "Trevelyan's Charm", "Близок к идеалу для двуручных сборок: ноль вклада в защиту, +10% к силе двуручного оружия — два слота дают +20%.": "Near-ideal for two-handed builds: zero defense, +10% two-handed weapon power — two slots give +20%.", "Броня · сет": "Armor · set", "Восставший Тыквобезголовый": "Risen Pumpkinhead", "Тело + ноги: связка HP, ловкости, крита и сопротивления вместо защиты.": "Body + legs: HP, agility, crit and resistance instead of defense.", "Шлем": "Helmet", "Шлем досадного разочарования": "Helm of Bitter Disappointment", "−273 к защите: уводит итог в минус ради Collateral. Плюс +18% крита и +500 ловкости.": "−273 defense: pushes the total negative for Collateral. Plus +18% crit and +500 agility.", "Полный лут под Gilgamesh Ursa →": "Full loadout for Gilgamesh Ursa →", "Коротко о главном": "The essentials", "Зачем уводить защиту в минус?": "Why push defense negative?", "Collateral сильнее с отрицательной защитой. Шлем на −273 держит итог в минусе даже с +210 защиты от оружия. Плата — низкая выживаемость: спасает вард-скилл (Frenzy) и пет Чиби-Прометей.": "Collateral is stronger with negative defense. The −273 helmet keeps the total negative even with +210 defense from the weapon. The cost is low survivability: a ward skill (Frenzy) and the Chibi-Prometheus pet help.", "Gilgamesh Ursa и Gallia Ursa — это разное?": "Are Gilgamesh Ursa and Gallia Ursa different?", "Механически идентичны. Любой разбор по одному подходит к другому.": "Mechanically identical. Any breakdown of one applies to the other.", "ORNA КОДЕКС — независимая база знаний по Orna RPG.": "ORNA CODEX — an independent Orna RPG knowledge base.", "Данные: ornalegends.com · патчи 32–33.": "Data: ornalegends.com · patches 32–33."};
