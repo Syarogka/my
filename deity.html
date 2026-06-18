@@ -497,6 +497,59 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
 .sb-v{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
 @media(max-width:480px){.sb{grid-template-columns:78px 1fr auto;gap:9px}}
 
+/* ORNA КОДЕКС · единый визуальный слой */
+:root{
+  --site-card-radius: 7px;
+  --site-card-gap: 18px;
+}
+.gear{
+  border-radius: var(--site-card-radius);
+  overflow: hidden;
+}
+.gear .top{
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+}
+.gear .body{
+  min-height: 88px;
+}
+.gear-grid{
+  gap: var(--site-card-gap);
+}
+.stats{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+.stat{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.55;
+}
+.why{
+  margin-top: 10px;
+  line-height: 1.65;
+}
+.note{
+  border-radius: var(--site-card-radius);
+}
+.item-link{
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+th,td{
+  vertical-align: top;
+}
+.tab,.spectab,.ldtab,.choice-pill,.theme-toggle{
+  border-radius: 7px;
+}
 </style>
 </head>
 <body class="cls-deity">
@@ -528,9 +581,6 @@ a.item-link:hover{color:var(--oxblood);border-bottom-color:var(--oxblood)}
 <div class="body">
 <div class="gear-grid">
 <div class="gear"><div class="top">Оружие</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/celestial-axe/?lang=ru" rel="noopener" target="_blank">Астротопор</a></p><p class="why">• <a class="item-link" href="https://playorna.com/codex/items/heart-of-selene/?lang=ru" rel="noopener" target="_blank">Сердце Селены</a> ×4<br/>• <a class="item-link" href="https://playorna.com/codex/items/spine-of-mnemosyne/?lang=ru" rel="noopener" target="_blank">Хребет Мнемозины</a> ×1</p><div class="stats"><span class="stat">Атк <span class="v">410</span></span><span class="stat">Защ <span class="v">35</span></span><span class="stat">HP <span class="v">70</span></span><span class="stat">Вард <span class="v">20%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div>
-<div class="gear"><div class="top">Шлем</div><div class="body"><p class="why">• <a class="item-link" href="https://playorna.com/codex/items/eye-of-osiris/?lang=ru" rel="noopener" target="_blank">Гемма Осириса</a> ×8<br/>• <a class="item-link" href="https://playorna.com/codex/items/jewel-of-creation/?lang=ru" rel="noopener" target="_blank">Сотворение</a> ×2</p></div></div>
-<div class="gear"><div class="top">Тело</div><div class="body"><p class="why">• <a class="item-link" href="https://playorna.com/codex/items/jewel-of-creation/?lang=ru" rel="noopener" target="_blank">Сотворение</a> ×8</p></div></div>
-<div class="gear"><div class="top">Ноги</div><div class="body"><p class="why">• <a class="item-link" href="https://playorna.com/codex/items/jewel-of-creation/?lang=ru" rel="noopener" target="_blank">Сотворение</a> ×8</p></div></div>
 </div>
 </div>
 </div>

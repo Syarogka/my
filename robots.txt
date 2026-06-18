@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://OrnaKodeks/sitemap.xml
+Sitemap: https://ВАШ-ДОМЕН/sitemap.xml
