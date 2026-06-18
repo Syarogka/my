@@ -963,6 +963,111 @@ th{
     padding: 10px;
   }
 }
+
+/* Фикс верхней панели и кнопки EN на мобильных экранах */
+header,
+.site-header,
+.topbar,
+.navbar,
+nav{
+  max-width:100%;
+  box-sizing:border-box;
+}
+header .wrap,
+.site-header .wrap,
+.topbar .wrap,
+.navbar .wrap,
+nav .wrap{
+  max-width:100%;
+  min-width:0;
+  box-sizing:border-box;
+}
+.lang,
+.lang-switch,
+.language,
+.language-switch,
+a[href*="lang"],
+a[href*="?lang"],
+button.lang,
+button.language,
+.theme-toggle{
+  box-sizing:border-box;
+  max-width:100%;
+  white-space:nowrap;
+}
+@media (max-width: 640px){
+  header,
+  .site-header,
+  .topbar,
+  .navbar{
+    overflow-x:hidden;
+  }
+  header .wrap,
+  .site-header .wrap,
+  .topbar .wrap,
+  .navbar .wrap,
+  nav,
+  .nav{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    width:100%;
+    min-width:0;
+  }
+  .brand,
+  .logo,
+  .site-title{
+    min-width:0;
+    flex:1 1 auto;
+  }
+  .brand a,
+  .logo a,
+  .site-title a{
+    display:block;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .lang,
+  .lang-switch,
+  .language,
+  .language-switch,
+  a[href*="lang"],
+  a[href*="?lang"]{
+    flex:0 0 auto;
+    width:auto !important;
+    min-width:44px;
+    max-width:72px;
+    padding:8px 10px !important;
+    font-size:12px !important;
+    line-height:1 !important;
+    text-align:center;
+  }
+  .theme-toggle{
+    flex:0 0 auto;
+    width:auto !important;
+    max-width:90px;
+    padding:8px 10px !important;
+    font-size:12px !important;
+    line-height:1 !important;
+  }
+}
+@media (max-width: 380px){
+  .lang,
+  .lang-switch,
+  .language,
+  .language-switch,
+  a[href*="lang"],
+  a[href*="?lang"],
+  .theme-toggle{
+    min-width:38px;
+    max-width:58px;
+    padding:7px 8px !important;
+    font-size:11px !important;
+  }
+}
 </style>
 </head>
 <body class="cls-heretic">
