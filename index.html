@@ -1360,6 +1360,39 @@ th .item-link{
     display: none !important;
   }
 }
+
+
+/* Фикс мобильного смещения по всему сайту: на телефоне липкие панели не перекрывают контент */
+@media (max-width: 760px){
+  .site-head,
+  .toc-wrap,
+  .tabs,
+  .spectabs,
+  .ldtabs,
+  .choice-row,
+  .guide-page .tabs{
+    position: static !important;
+    top: auto !important;
+    z-index: 1 !important;
+  }
+
+  .site-head{
+    z-index: 50 !important;
+  }
+
+  .site-head .nav{
+    z-index: 80 !important;
+  }
+
+  section[id],
+  .build-section[id],
+  .ldpanel[id],
+  .panel[id],
+  .guide-page [id]{
+    scroll-margin-top: 16px !important;
+  }
+}
+
 </style>
 </head>
 <body>
