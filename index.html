@@ -5,11 +5,46 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <script>(function(){try{var t=localStorage.getItem("orna-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
-<title>Orna RPG — База знаний по эндгейму: билды, классы, механики</title>
-<meta content="Русскоязычная база знаний по Orna RPG: разборы эндгейм-классов, билдов, механик и гира по тирам. Гайды по Gilgamesh, Heretic, Realmshifter и Grand Summoner." name="description"/>
-<meta content="Orna RPG — База знаний по эндгейму" property="og:title"/>
-<meta content="Билды, классы и механики Orna RPG на русском. Патчи 32–33." property="og:description"/>
+<title>ORNA КОДЕКС — гайды Orna RPG на русском: классы, билды, механики</title>
+
+
+
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ORNA КОДЕКС",
+  "alternateName": "База знаний Orna RPG на русском",
+  "url": "https://syarogka.github.io/my/",
+  "inLanguage": "ru",
+  "description": "ORNA КОДЕКС — русская база знаний по Orna RPG: гайды по классам, билды, снаряжение, механики, Grand Summoner, Gilgamesh, Heretic, Beowulf и Deity.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ORNA КОДЕКС"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://syarogka.github.io/my/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}</script>
+<meta content="https://syarogka.github.io/my/assets/og-orna-kodex.png" name="twitter:image"/>
+<meta content="ORNA КОДЕКС — русская база знаний по Orna RPG: гайды по классам, билды, снаряжение, механики, Grand Summoner, Gilgamesh, Heretic, Beowulf и Deity." name="twitter:description"/>
+<meta content="ORNA КОДЕКС — гайды Orna RPG на русском" name="twitter:title"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://syarogka.github.io/my/assets/og-orna-kodex.png" property="og:image"/>
+<meta content="https://syarogka.github.io/my/" property="og:url"/>
+<meta content="ORNA КОДЕКС — русская база знаний по Orna RPG: гайды по классам, билды, снаряжение, механики, Grand Summoner, Gilgamesh, Heretic, Beowulf и Deity." property="og:description"/>
+<meta content="ORNA КОДЕКС — гайды Orna RPG на русском" property="og:title"/>
 <meta content="website" property="og:type"/>
+<meta content="ru_RU" property="og:locale"/>
+<meta content="ORNA КОДЕКС" property="og:site_name"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://syarogka.github.io/my/" rel="canonical"/>
+<meta content="ORNA КОДЕКС" name="author"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="Orna RPG, Orna гайд, Orna RPG на русском, ORNA КОДЕКС, билды Orna, классы Orna, Grand Summoner, Gilgamesh, Heretic, Beowulf, Deity" name="keywords"/>
+<meta content="ORNA КОДЕКС — русская база знаний по Orna RPG: гайды по классам, билды, снаряжение, механики, Grand Summoner, Gilgamesh, Heretic, Beowulf и Deity." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
@@ -1393,6 +1428,36 @@ th .item-link{
   }
 }
 
+
+
+/* SEO: скрытый H1 для страниц, где визуальный заголовок оформлен как H2 */
+.seo-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+.seo-panel {
+  margin: 18px auto 8px;
+  padding: 18px 20px;
+  border: 1px solid var(--rule-soft);
+  border-radius: 18px;
+  background: linear-gradient(180deg, var(--vellum), var(--parchment-deep));
+  box-shadow: var(--shadow-card);
+}
+.seo-panel h2 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  color: var(--oxblood);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+}
+.seo-panel p { margin: 0; color: var(--ink-soft); line-height: 1.65; }
+
 </style>
 </head>
 <body>
@@ -1418,7 +1483,9 @@ th .item-link{
 <section class="hero wrap">
 <h1>База знаний по <span class="accent">Orna RPG</span></h1>
 <p class="lead">Разборы эндгейм-классов, рабочих билдов и механик, которых не найти на русском. Без воды — только то, что меняет урон, выживаемость и зачистку.</p>
-</section>
+</section><section class="wrap seo-panel" id="seo-orna-kodex"><h2>ORNA КОДЕКС — русские гайды по Orna RPG</h2>
+<p>Здесь собраны гайды по Orna RPG на русском: классы, билды, снаряжение, механики, призыватель Grand Summoner, Gilgamesh, Heretic, Beowulf и Deity. Раздел помогает быстрее найти рабочие сборки для эндгейма, рейдов, башен, подземелий и бесконечки.</p></section>
+
 <section class="wrap" id="bildy">
 <div class="grid">
 <a class="card featured cls-gilgamesh" href="gilgamesh-ursa.html">

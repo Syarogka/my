@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ВАШ-ДОМЕН/sitemap.xml
+
+Sitemap: https://syarogka.github.io/my/sitemap.xml
