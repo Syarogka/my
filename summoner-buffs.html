@@ -1554,6 +1554,41 @@ html[data-theme="pink"] .guide-page .tabs { background: rgba(251,234,241,0.90); 
 .guide-page .card h3 small { display: block; margin-top: 4px; color: var(--ink-soft); font-family: var(--font-body); font-size: 13px; font-weight: 400; }
 .guide-page .card ul { margin: 8px 0 0; padding-left: 20px; }
 .guide-page .card li { margin: 4px 0; }
+.guide-page .offhand-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 0;
+  display: grid;
+  gap: 10px;
+}
+.guide-page .offhand-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(190px, 0.72fr) minmax(210px, 1fr);
+  align-items: start;
+  column-gap: 16px;
+  margin: 0;
+  padding-left: 24px;
+}
+.guide-page .offhand-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+}
+.guide-page .offhand-list .offhand-name { min-width: 0; }
+.guide-page .offhand-list .offhand-desc {
+  min-width: 0;
+  color: var(--ink);
+}
+.guide-page .offhand-list .offhand-desc::before {
+  content: "—";
+  margin-right: 10px;
+}
+
 .guide-page .tag {
   display: inline-block;
   margin: 2px 0 8px;
@@ -1628,6 +1663,43 @@ html[data-theme="pink"] .guide-page .tabs { background: rgba(251,234,241,0.90); 
   .guide-page .tabs { top: 62px; padding: 8px; }
   .guide-page .tab { flex-basis: calc(50% - 8px); min-width: 0; font-size: 11px; padding: 10px 8px; }
 }
+
+@media (max-width:680px) {
+  .guide-page .offhand-list li {
+    grid-template-columns: minmax(118px, 44%) minmax(0, 1fr);
+    column-gap: 10px;
+    padding-left: 22px;
+  }
+  .guide-page .offhand-list .offhand-desc::before { margin-right: 6px; }
+}
+@media (max-width:390px) {
+  .guide-page .offhand-list li {
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+  .guide-page .offhand-list .offhand-desc::before { margin-right: 8px; }
+}
+
+
+/* Фикс мобильного смещения: вкладки не прилипают поверх контента и не закрывают верх блока */
+@media (max-width: 760px){
+  .guide-page .tabs{
+    position: static !important;
+    top: auto !important;
+    z-index: 1 !important;
+    margin: 14px 0 20px !important;
+  }
+  #gear-yielbegen,
+  #gear-transfer-buffs,
+  #gear,
+  #roles,
+  #dragons,
+  #mammoths,
+  #home{
+    scroll-margin-top: 84px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1734,14 +1806,14 @@ html[data-theme="pink"] .guide-page .tabs { background: rgba(251,234,241,0.90); 
       </ul>
     </div>
 
-    <div class="card">
+    <div class="card offhand-card">
       <h3>6) Оффхенд</h3>
       <span class="tag">Событие: Разочарование Аполлиона · с мобов</span>
-      <ul>
-        <li><a class="codex-link" href="https://playorna.com/codex/items/book-of-the-dragon/?lang=ru" target="_blank" rel="noopener">Книга дракона</a> — для драконов, шанс бафа 15%</li>
-        <li><a class="codex-link" href="https://playorna.com/codex/items/book-of-the-dragon-x/?lang=ru" target="_blank" rel="noopener">Великая книга дракона</a> — для драконов, шанс бафа 30%</li>
-        <li><a class="codex-link" href="https://playorna.com/codex/items/book-of-darkness/?lang=ru" target="_blank" rel="noopener">Книга тьмы</a> — для мамонтов, шанс бафа 15%</li>
-        <li><a class="codex-link" href="https://playorna.com/codex/items/book-of-darkness-x/?lang=ru" target="_blank" rel="noopener">Великая книга тьмы</a> — для мамонтов, шанс бафа 30%</li>
+      <ul class="offhand-list">
+        <li><span class="offhand-name"><a class="codex-link" href="https://playorna.com/codex/items/book-of-the-dragon/?lang=ru" target="_blank" rel="noopener">Книга дракона</a></span><span class="offhand-desc">для драконов, шанс бафа 15%</span></li>
+        <li><span class="offhand-name"><a class="codex-link" href="https://playorna.com/codex/items/book-of-the-dragon-x/?lang=ru" target="_blank" rel="noopener">Великая книга дракона</a></span><span class="offhand-desc">для драконов, шанс бафа 30%</span></li>
+        <li><span class="offhand-name"><a class="codex-link" href="https://playorna.com/codex/items/book-of-darkness/?lang=ru" target="_blank" rel="noopener">Книга тьмы</a></span><span class="offhand-desc">для мамонтов, шанс бафа 15%</span></li>
+        <li><span class="offhand-name"><a class="codex-link" href="https://playorna.com/codex/items/book-of-darkness-x/?lang=ru" target="_blank" rel="noopener">Великая книга тьмы</a></span><span class="offhand-desc">для мамонтов, шанс бафа 30%</span></li>
       </ul>
     </div>
   </section>
@@ -2049,11 +2121,19 @@ html[data-theme="pink"] .guide-page .tabs { background: rgba(251,234,241,0.90); 
     var pageY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     var viewportH = window.innerHeight || document.documentElement.clientHeight || 0;
 
+    var stickyOffset = 88;
+    var siteHead = document.querySelector('.site-head');
+    if(siteHead){ stickyOffset = siteHead.getBoundingClientRect().height + 18; }
+    var stickyTabs = document.querySelector('.guide-page .tabs');
+    if(stickyTabs && window.getComputedStyle(stickyTabs).position === 'sticky'){
+      stickyOffset += stickyTabs.getBoundingClientRect().height + 12;
+    }
+
     var y;
     if(rect.height >= viewportH * 0.82){
-      y = rect.top + pageY - 82;
+      y = rect.top + pageY - stickyOffset;
     }else{
-      y = rect.top + pageY - ((viewportH - rect.height) / 2);
+      y = rect.top + pageY - Math.max(stickyOffset, ((viewportH - rect.height) / 2));
     }
 
     window.scrollTo({top: Math.max(0, y), left: 0, behavior: smooth ? 'smooth' : 'auto'});
