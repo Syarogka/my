@@ -3,7 +3,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <script>(function(){try{var t=localStorage.getItem("orna-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
 <title>Beowulf Аурига билд (рейды) — Orna RPG | ORNA КОДЕКС</title>
 <meta content="Билд Beowulf в Orna RPG: магический дуал-вилд на Зачарованных шпагах Финесса. Сборка для рейдов — снаряжение, осколок, умения и итоги по статам." name="description"/>
@@ -1510,6 +1510,36 @@ html[data-theme="pink"] .build-page .choice-row{
 }
 
 </style>
+
+<!-- Mobile accidental zoom guard -->
+<style id="orna-no-accidental-zoom">
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+@media (hover:none) and (pointer:coarse){
+  html, body{
+    touch-action:pan-y;
+    overscroll-behavior-x:none;
+  }
+  a, button, .toc a, .tab, .ldtab, .spectab, .theme-toggle, .lang-toggle, .to-top{
+    touch-action:manipulation;
+  }
+}
+</style>
+<script id="orna-no-doubletap-zoom">
+(function(){
+  var lastTouchEnd = 0;
+  document.addEventListener('touchend', function(event){
+    var now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, {passive:false});
+})();
+</script>
+
 </head>
 <body class="cls-beowulf">
 <div aria-hidden="true" class="class-watermark"><svg fill="currentColor" viewbox="0 0 64 64"><ellipse cx="32" cy="44" rx="14" ry="12"></ellipse><circle cx="15" cy="27" r="6"></circle><circle cx="26" cy="18" r="6"></circle><circle cx="38" cy="18" r="6"></circle><circle cx="49" cy="27" r="6"></circle></svg></div>
