@@ -1471,6 +1471,122 @@ th .item-link{
   }
 }
 
+
+
+/* Превью: стиль страниц и вкладок как у Summoner. Главная index.html не меняется и не входит в правку. */
+.build-page > section[id]{
+  background: rgba(255,250,238,0.58);
+  border: 1px solid var(--rule);
+  border-radius: 22px;
+  padding: clamp(18px, 4vw, 32px);
+  box-shadow: var(--shadow-card);
+  margin: 0 0 28px;
+}
+html[data-theme="dark"] .build-page > section[id]{
+  background: rgba(31,26,20,0.70);
+}
+html[data-theme="pink"] .build-page > section[id]{
+  background: rgba(255,246,250,0.72);
+}
+.build-page .ldtabs,
+.build-page .spectabs,
+.build-page .choice-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 18px 0 18px !important;
+  padding: 10px;
+  background: rgba(243,236,219,0.88);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  box-shadow: var(--shadow-toc);
+}
+html[data-theme="dark"] .build-page .ldtabs,
+html[data-theme="dark"] .build-page .spectabs,
+html[data-theme="dark"] .build-page .choice-row{
+  background: rgba(26,22,17,0.90);
+}
+html[data-theme="pink"] .build-page .ldtabs,
+html[data-theme="pink"] .build-page .spectabs,
+html[data-theme="pink"] .build-page .choice-row{
+  background: rgba(251,234,241,0.90);
+}
+.build-page .ldtab,
+.build-page .spectab,
+.build-page .choice-pill{
+  appearance: none;
+  flex: 1 1 150px;
+  min-width: 132px;
+  text-align: center;
+  padding: 11px 12px;
+  cursor: pointer;
+  color: var(--ink-soft) !important;
+  background: var(--parchment-deep) !important;
+  border: 1px solid var(--rule) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .15s ease, color .15s ease, border-color .15s ease, background .15s ease;
+}
+.build-page .ldtab:hover,
+.build-page .spectab:hover,
+.build-page .choice-pill:hover{
+  color: var(--oxblood) !important;
+  border-color: var(--gold-leaf) !important;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.build-page .ldtab.on,
+.build-page .ldtab.active,
+.build-page .ldtab[aria-selected="true"],
+.build-page .spectab.on,
+.build-page .spectab.active,
+.build-page .spectab[aria-selected="true"],
+.build-page .choice-pill.on,
+.build-page .choice-pill.active{
+  color: var(--oxblood) !important;
+  border-color: var(--gold-leaf) !important;
+  background: var(--card-featured) !important;
+  box-shadow: inset 0 -3px 0 var(--gold-leaf) !important;
+}
+.build-page .ldpanel.on,
+.build-page .specpanel.on{
+  animation: guideFade .18s ease;
+}
+.build-page .choice-label{
+  margin: 20px 0 8px;
+}
+@media (max-width: 760px){
+  .build-page > section[id]{
+    border-radius: 18px;
+    padding: 18px;
+  }
+  .build-page .ldtabs,
+  .build-page .spectabs,
+  .build-page .choice-row{
+    position: static !important;
+    top: auto !important;
+    z-index: 1 !important;
+    margin: 14px 0 20px !important;
+  }
+  .build-page .ldtab,
+  .build-page .spectab,
+  .build-page .choice-pill{
+    flex: 1 1 145px;
+    min-width: 0;
+    padding: 11px 10px;
+  }
+}
+
 </style>
 </head>
 <body class="cls-deity">
@@ -1496,7 +1612,7 @@ th .item-link{
 <div class="wrap crumbs">
 <a href="index.html">Кодекс</a> / Билды / Дейти
 </div>
-<main class="wrap">
+<main class="wrap guide-page build-page">
 <section id="loadouts">
 <div class="ldtabs" id="deity-build-tabs">
 <button aria-controls="deity-pvp-panel" aria-selected="true" class="ldtab on" data-ld="deity-pvp-panel" type="button">PvP</button>
