@@ -1734,6 +1734,170 @@ html[data-theme="pink"] .guide-page .tabs { background: rgba(251,234,241,0.90); 
 }
 
 </style>
+<style id="orna-text-align-global">
+/* ORNA КОДЕКС · глобальное выравнивание текста, кроме главной страницы */
+.build-page,
+.guide-page{
+  text-align:left !important;
+}
+.build-page :where(h1,h2,h3,h4,p,li,.note,.why,.name,.tag,.eyebrow,td,th),
+.guide-page :where(h1,h2,h3,h4,p,li,.note,.tag,.legend,.sub,td,th){
+  text-align:left !important;
+}
+
+/* Карточки: одинаковая внутренняя ось текста */
+.build-page .gear-grid,
+.guide-page .cols{
+  align-items:stretch !important;
+}
+.build-page .gear,
+.guide-page .card{
+  text-align:left !important;
+  box-sizing:border-box !important;
+}
+.build-page .gear{
+  display:flex !important;
+  flex-direction:column !important;
+}
+.build-page .gear .top{
+  justify-content:flex-start !important;
+  text-align:left !important;
+}
+.build-page .gear .body{
+  flex:1 1 auto !important;
+  text-align:left !important;
+}
+.build-page .gear .body > :first-child,
+.guide-page .card > :first-child{
+  margin-top:0 !important;
+}
+
+/* Статы и мелкие строки — в один ровный левый ряд */
+.build-page .stats{
+  justify-content:flex-start !important;
+  align-items:flex-start !important;
+}
+.build-page .stat{
+  justify-content:flex-start !important;
+  text-align:left !important;
+}
+.build-page .sb{
+  grid-template-columns:minmax(82px,110px) minmax(0,1fr) minmax(52px,auto) !important;
+  align-items:center !important;
+}
+.build-page .sb-l,
+.build-page .sb-v{
+  text-align:left !important;
+}
+
+/* Украшения: слот слева, описание справа — без случайных переносов под разной шириной */
+.build-page .adorn-row{
+  display:grid !important;
+  grid-template-columns:minmax(96px,150px) minmax(0,1fr) !important;
+  column-gap:14px !important;
+  row-gap:4px !important;
+  align-items:start !important;
+  text-align:left !important;
+}
+.build-page .adorn-slot{
+  margin:0 !important;
+  text-align:left !important;
+}
+.build-page .adorn-text{
+  min-width:0 !important;
+  text-align:left !important;
+}
+
+/* Таблицы: все ячейки строго от левого края */
+.build-page table,
+.guide-page table{
+  width:100% !important;
+}
+.build-page th,
+.build-page td,
+.guide-page th,
+.guide-page td{
+  text-align:left !important;
+  vertical-align:top !important;
+}
+.build-page td > *,
+.build-page th > *,
+.guide-page td > *,
+.guide-page th > *{
+  text-align:left !important;
+}
+
+/* Вкладки не центрируют всю строку; текст внутри кнопок остаётся аккуратно по центру */
+.build-page .tabs,
+.build-page .spectabs,
+.build-page .ldtabs,
+.build-page .choice-row,
+.guide-page .tabs,
+.guide-page .spectabs,
+.guide-page .ldtabs,
+.guide-page .choice-row{
+  justify-content:flex-start !important;
+}
+.build-page .tab,
+.build-page .spectab,
+.build-page .ldtab,
+.build-page .choice-pill,
+.guide-page .tab,
+.guide-page .spectab,
+.guide-page .ldtab,
+.guide-page .choice-pill{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
+
+/* Summoner: оффхенд и списки держат одинаковую сетку */
+.guide-page .card ul{
+  text-align:left !important;
+}
+.guide-page .card li{
+  text-align:left !important;
+}
+.guide-page .offhand-list li{
+  grid-template-columns:minmax(185px,220px) minmax(0,1fr) !important;
+  column-gap:16px !important;
+  align-items:start !important;
+}
+.guide-page .offhand-list .offhand-name,
+.guide-page .offhand-list .offhand-desc{
+  text-align:left !important;
+  min-width:0 !important;
+}
+
+@media (max-width:680px){
+  .guide-page .offhand-list li{
+    grid-template-columns:minmax(130px,44%) minmax(0,1fr) !important;
+    column-gap:10px !important;
+  }
+}
+@media (max-width:640px){
+  .build-page .adorn-row{
+    grid-template-columns:1fr !important;
+  }
+  .build-page .sb{
+    grid-template-columns:78px minmax(0,1fr) auto !important;
+  }
+  .build-page .gear .top,
+  .build-page .gear .body,
+  .guide-page .card{
+    text-align:left !important;
+  }
+}
+@media (max-width:390px){
+  .guide-page .offhand-list li{
+    grid-template-columns:1fr !important;
+  }
+  .guide-page .offhand-list .offhand-desc{
+    grid-column:1 !important;
+  }
+}
+</style>
 </head>
 <body>
 <div aria-hidden="true" class="class-watermark"><svg fill="currentColor" viewBox="0 0 64 64"><path d="M32 4l7.3 17.5L58 23 44 35.2 48.6 54 32 43.7 15.4 54 20 35.2 6 23l18.7-1.5z"></path></svg></div>
@@ -1907,7 +2071,7 @@ html[data-theme="pink"] .guide-page .tabs { background: rgba(251,234,241,0.90); 
       <div class="icons"><img class="gi" src="data:image/png;base64,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" alt="Омега-печать Разлома"></div>
     </div>
 
-    <div class="card"><h3>№1 · Кормилец</h3><span class="tag">Аурига или Великий Призыватель Т10 · ~10–15 ходов</span><ul><li>1) Нужен один призванный с хорошей атакой и ХП. Далее призываете 10 скелетов через «Мёртвая орда»</li><li>2) Убиваете их Пактом Ахлис (всех, кроме одного) или Пактом Харона — нужно 10 жертв</li><li>3) Одеваете сет на максимальный бонус к характеристикам призванных. 1-го начального дракона убиваете Пактом Харона. После этого призываете древних драконов</li><li>4) Заходите, используете стойку Офиона</li><li>5) Перезаходите, надев вместо Стяга Офиона Герлыгу Йиелбегена</li><li>6) Снотра</li><li>7) Проделки мимика</li><li>8) Песнь виверны</li><li>9) Барьер 1 или 2</li><li>10) Прыть виверны</li><li>11) Стойкость голема</li><li>12) Вард ортанита, пока не получите бафф «Сущность дракона». Из оффхенда — книга дракона.</li></ul><p class="note"><button class="tab-jump" type="button" data-open-gear-target="gear-yielbegen">Перейти к снаряжению: 1) Фулл шмот Йиелбегена</button></p></div>
+    <div class="card"><h3>№1 · Кормилец</h3><span class="tag">Аурига или Великий Призыватель Т10 · ~10–15 ходов</span><ul><li>1) Нужен один призванный с хорошей атакой и ХП. Далее призываете 10 скелетов через «Мёртвая орда»</li><li>2) Убиваете их Пактом Ахлис (всех, кроме одного) или Пактом Харона — нужно 10 жертв</li><li>3) Одеваете сет на максимальный бонус к характеристикам призванных. После этого призываете древних драконов. Как призовёте остальных, 1-го начального дракона убиваете Пактом Харона.</li><li>4) Заходите, используете стойку Офиона</li><li>5) Перезаходите, надев вместо Стяга Офиона Герлыгу Йиелбегена</li><li>6) Снотра</li><li>7) Проделки мимика</li><li>8) Песнь виверны</li><li>9) Барьер 1 или 2</li><li>10) Прыть виверны</li><li>11) Стойкость голема</li><li>12) Вард ортанита, пока не получите бафф «Сущность дракона». Из оффхенда — книга дракона.</li></ul><p class="note"><button class="tab-jump" type="button" data-open-gear-target="gear-yielbegen">Перейти к снаряжению: 1) Фулл шмот Йиелбегена</button></p></div>
     <div class="card"><h3>№2 · Астерия</h3><span class="tag">Призыватель Т8 или Т7 · стойку вешать ДО берсерков · ~20–50 ходов, большой рандом</span><ul><li>1) Стойка Астерии, пока не передадите 2–3 драконам (на усмотрение)</li><li>2) Стойка Астерии на себя</li></ul><p class="note"><button class="tab-jump" type="button" data-open-gear-target="gear-transfer-buffs">Перейти к снаряжению: 2) Фулл шмот для передачи стоек</button></p></div>
 
     <div class="card">
@@ -1935,7 +2099,7 @@ html[data-theme="pink"] .guide-page .tabs { background: rgba(251,234,241,0.90); 
       <div class="icons"><img class="gi" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAABjCAIAAAD1p6JyAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAShUlEQVR4Ae2du48kVxXGT/c8uuexO7v4EVhGTmCELAIki4TAIiRG8AeQIJCIEAF/BCJCMnJiIkJiSwQmIEUCkU2GIDR47V3Pq2em+Z3vq6rprZruqn6s5R1XuV1769a955773fO6t6ruDGLtYxCDYQyHsQWlYQwiBtOYmiq3qsRWbFWX3CY9UDHSN3HjKmRux85WbJclobwFcRMhfya9EzG9iituTePmJkllo5CaxCU/0tdxdRWX13FNAVN4oeftNanTZzDiZyhNrYJS3Us0gcDo+AziJAZCfzvgoUCc8tRV4YTPiFfUQGSqkuBFFYpti8IgdinjYoALZY1oTHIMEt9rnSs6ZnLj59WhNCjCMYWFn5lThws+sx/qhv6ZuorvkaYu6b14sJ1YpOCA0U1MkCOXZHiggHCpOpmF7EvwKckgJP87/Jd11RqpRDxzhC9pSl5ntnKceBHnFaGsgKAzdFg9L3rCPwaiZLfIN3C+xZlaO7FLmb042I19i4yG4eY6JjeCD2QFa1IapOIXsk/+FTInYdf5VvGBC+CGglXSnQ25aZqgYtlQhXsS38hRiNJGaH3FiawilcgU42zlYswZfClRjjNjPqvskpFEeCuGW7FTWURUdRR7qDa39uPhOA6gk+XyGCCSF3FKahLnl3ExlXpKxIqBlyeZovilaGE6CguzEyPuUovqMEOL2M2SOLxtWdlL8TTP2er6x4pQwhPc0zxn92dGcwsPI1XCIydGOF9+1mhd7uzH4YP4GukH8Rgod2Mkaun9cbun8YxLoLyIMy5JY0NpyI1KhYfncWYLi7LLYqS5gDFacUOXcW4eKgV3E5yxwEIzDTRwq5iy1zitAqXljnPFRykdsIUIFLLjbrtXoxjjWzjvxSG1kEfgw0qSPoiHZFpw6B7CDnxG1phexhnFzuNz0CyLpSrQlqWPWjKp6Z1I4H/c6Dj2QROgr+XTBFlySDEHbTdKgyOZ66NZdBvq/bEmAstJZTmkDiRnh4EgMQ8KIC82o4q0h5av3djbifF+PDiKVyj2KF4jTQHSSNAo9k0ZzUXAET1EmFsouEQmhZ5bVzG0smMlEatx7FlILZu+dZUU8NRZBcpwJcp5iXjaIJCWWmdsq3SWJrWmYC4BJQ2XGKV+WZFhQm7BzIBC4mj40C9PXWBXOB4dxqPH8TqX2EfcjqHkTHn3CqOGtl7GnmMdVLtqCHOBjhsv0sSSELci0yLlL7ABiXj6ogoUQnqKGS90X3Ygr2hOLRZQCsfbWi6/7HkJKNUrzw6xU4hk8sH/5NN/CwjWkO7txphbyB0Jm3ykcj+ODuLIthI/C4IGQkQKJ4uXH+Vv35BNYh+UAZ0yn8X/aNT+l8vd2JXkpt9AKi9LT4WdJV2G654CFRPWSVwQsVLeRwWlR5EulHdW/HdWSVck0VczAl2l0hrhAfTZ9ZFKptKInkVMUjlCtbmLm+aSH+lR+uvDnbSJOXhSwMLXo3RMnLcl4zJzzPNuPD1HPCW8GSch9dwlPiWNFqMKtGhOkPFRXCGn3DqP07M4LeNKdBtZm04kjDSkplP63JBn9GKGvELBVxbPrlBanbPB4sAi+XC4vuOe0CusGA6Be0SO6Dhn0ig4uGzHyNyTA8dV36YCiExyCFw8a+QSFZbKpyXZT/Us8DqNp9NctsALFQqLF6Jpig1jm1qoOWkQlN2ETkamDAbmwiYCA0Jdz+5pFGYYImPKuQKXWt2PrlBK+rJLPqrG6I/8xnhX1h3xpCfEjBTDxuFnQJM0Zcgfxo65h3UsVzIvU8v8OotE/On4N5wXH987+SGtTzJ0vzI1cARx6FMRa8glw0aapTYKMDZec8P1YbtLKwyUiSbFZGrPKWaNYf7uMV7MRvNudyjT5c2qdimW6SLRYnttoKQbzAVpyXMYQCSNyKCzWq3IevwPu/Rft3AgI36kuxxApop0+HNkkCrYE9oyhau4eBpPHPTgfED2LM58i8xJjAnaqWKR1HAypORMzxPK1H0AJVHJSheWXKZ3O92xainZLpWWRIuk05j8ynQijLKPGWbTlPxPEb6gTUiNhZehJvqT+c/BU6w3dGCEHYCC46cWZnUbEduJCYK5E3uV7CD7YxlligximwiUBNp9k2I7tB2AE9qysiOPJKzsKD79wpLaWZGvmYIZ78JRUaYdShd0UOlFVrpBYzbzzKNxMuiXvTbaByiGVRCPhHvaSi6305unwcVoAoTNKBE+yFZAtPJ+GI8xIGgrJsLGG69dWTd4O4jHoAOd67hEeYH7QppLFYzMQJbE/BhW0kDJ+UwDwFljsHSYuQhKjdXtLJAOW3ZglzF09IPjlqnCO6fVJ01XvXoGxPQZFsmXPT0gSvfKAt0DO3eYUUFm7alacaTAq/Em46E5ZbE2DpSAckoUnz7kHBPpgUFFyET0bB9ZSRLnyc+WxNC8UQwJxBNa5xgeqnhsKqnvwtgiKLvUd5n/Hv+rtfCPT35dK/P745/Vcn7Oc622473jX9WK/KhB+aPjP9TKNC/fOPl2M3OdnLlQopgMF+PGmQa4RAyt1AggP2uuMzOKazteiTeQSgcc8q1LG6N5LRzFq8/iU7tjBNAMzys8m28xRGMwXJcZe2Q4jMgTZvEjhXh257IOpUKBpEcDOArO6HJexxT4Kihh1/myjOZApeafXok3qeVQ7iIuHCrPL77EHeL/3Tj3o2AZ8WL9YjEJFNlTddncjI6NLI4UB2A+WYG2PV1MynebUKYAck84In25AMMlDZMoDV8uibvYXkaRGYS3HhhQ+oldoyRj3n20Wylj5mRwc8gZWgxiaxUKIArGDinBI6Fenl8O4xo07UVBGcqVT1tMto8rF+OzxN2mVHoBLWWQgZIk5iAzG0PBSx/HhJegJ+cn+MrSxLS0StCDIfN0m6AEgi0VOt/WrP/AT9OQJvjsUhW27aA1Qx9UARBzSeQaowERtBsTjNSTbvXm9f7AlrWYlrTMkx5GnOWyhW3l9DgD4NnjJz94MntJ+oMPH9VympdNf/39R+21/vKk3tZ7mPS2owuHhydvQIbwnummF5Kxlc/iiY2SAV3QTp0JcCzfHsknolza52ItkdCRJNFziQVEX9JbNvqsS51pmYNelKrTybDXoZRUpv2Wj84JouXW3ryU0JcUqxa2sVrqOJPdfIDOoQTJ8kqZ806925mHzNL5dam09EEGs8goKWJIuAl9kFOb0aUbeUkq0EE4lR3LpRmlLxQ+p1Tichd7njqUgGW8vORTGkoHlcW8W63cw5OhpPvIkJ3MbkzGceE1eYL2ZaEEr4x+oMj4IIyT46dcsnxAlHAaH5Pu4g2bSK/mr7/z06/XSb1fz4gOPr0ZUdzRi/hbjfTWSS4h2kMQqxPJL3BAva2sobf6ZV3B0Wiv8ttG6Lw69Ze9JnpZ+W+Q4YdgzutUXSoxrv5RgYQfls6rfO/zQUCLHYkJsPJb0OW6VFYxvQAVngtq3/dbXh8q10daPHhdKu87OC+wf3WpPDrONwB08CCJXyd/3fTOXebFZUOL/v37+/9edLvzvTs4bKwS3OXTHz2MMb+qnZOTkypdS/RSWQNk9cseytWxq9XsoawBsvplD+Xq2NVq9lDWAFn9su7BV6f0fM07PGZzrbsxd97UKnqz9ee5eyFXvVRuDNYeyh7KjSGwMUK9VPZQbgyBjRFq9+DvvH07A3WzH3y4SvNNr3rHPL3h05stNWs1KTdrdclZs6e9gncBuVOZHspOMHUp1EPZBaVOZXooO8HUpVAPZReUOpXx2zC3RfWALfHVs518e+2t47dubyv1u1/mV0Szxy9+W/fys3ed7uJnm975xdHp0ovDk9c/i094Oxs2+HSSjyf8QUqTK3LqwZAemedJifxy885qX5FMXgj1Z3v0l7RfUJ/X9zqUlCtf59jMjhLzGn4p8nm/kr1l/NwRqaqr8PN96G3l83iscXWHVK5B7b5V5X1fvjexlcN5lC9a3t3NFqlU/btrfhVyqxfU6WwLkAtg9iDwBnH1qhyvCT5gLxa+cj+uv+/R9IZNoL9IL78aP988+S5sfxofP4mP+RKa9Fl+tzMpP4eaVOlm78hpkco76/SZdyKwyFY6xizfVs1XkO53bHSq+FFfkOXmEuDlz81K3V3swBtxZQ1v4PNXAnqljfeP7nOYyae5dP8q2PyBj92qnqYMkW+LV8Nn9nKxVCYJxepJiDeA7/frlrzZTH+xjFK+SgaLryWq61n4ZtOLoCRW1+CkPVU6g/bZyvcsXYbixWfm6h0IFMKEXKKaCz6yngsNqFkS+WYCorylyVvZB/oy9Che48V3e3Y+hGNPgv8c/7MV1tW8apPspuh84+Qdf8vFziXMDnnV3PNrYkn2z/LXZLzQzyZv9hBoPVjzzXCTJefMlUpNH9knLrdeqSqzIwppckbawIE0r3GWb3JWpV6WRO5aCq9IDMoHXqBZse7Zs/XSdhPxXKyUc6GEqFc0TJ6WuPRnvozPVuz6Mzak1TtlVEy8LAl2KzE0uGm6hnyUm1GkNbMkCt9iaymnF/RuEZRG02NCq9ByiICQa9DSOLCblTMXtPHlvJXf0ehbRtQWV6MJYoqNJBEoM00+vTOsAD0rts1O9SF6E5MVc1qksqJqq1Fesh3vBNvM5Tg/Zpvru8ryX+p/ET2tRbKDeEqiNB1hrEslsildnNuXJVDAa3uTJT6nZ+ePh9r0GJ+uLaTZyjcn5szTq69z+RpY2pE8weU/jv88l4vyxqa889sn75YkgaRwx94Fo+RzDG/P4hOKsU6uRcliQxzyUXyH66ycIzRW8MU4QqerVMpC51Yn1CFcGObGnHmoAZLsVJy3iHL3yr2F9DVV7pJKvgc5K3whRylTuacTRtAKBCiy+OlN4QpkP4/85pCIhw8YKAOIXFIMKG1GpYs4JTngNs57W9mGUOf7XaUSggwOI0yC0cOtW1M44wrZt8I7aKDgu3HpeA3nTsJzTX/N25mrdQueakswRA/20KTSU3uzNRNn28Zz7xyGdhOcI5iWZXpHFetfpd1dGOoKJTjKKlvU2Qd14E97pex4HvJ96wbU2HKNtpXIvzChdJ6/sMOWDnXWhtRMY1ICmNuAl/kEZTbI0GUquB+HGUpuIShVujvPXaGEYmUywEwGJSf/cDPJj//YZs+2gp2d2O8zt0Pxx/kyslm+O0/rl/QUULF37u0NamI1/Y8NImDxA0HygVIPHgr34tarznZnZgkPDlErtQXNmxrhx7XlZ7Wn75jd9/0XDUiwxYwbUAemsO6eaA104M3yQFxftKZQ//X4j62sf+vkXYYHp8HwGCPkSL+sSqYjG9Iqc0lhUOOSpsnx7reUJ13+HQB2xyt2wEkSqx6921kVuUa9JRScurYgjHO5tI4U5HoJcmpXQ7i+o102KYyPIhT1PsmUR4LktXLwWFUSkWRHJpjYs6t+6HP1NCP4umvVYj1lmjykXJsNiJOWyUsHQmipywxrrLk0Ctt2R0grQkqBNY/loKw0BWhQENrmbFyMBX14Fp/ZDrC6x2W1WwJQYqrsyjlzyx3gj2xIPTOS73KAAnVFme2k84Ar+AEapVlUxcXlHSXgkoWyvCWUgTgRF74g6OnDBnCE5nJQUoGDnrMtn/nDMAElUlna6dwPzi/Z0Ad23cZiUgUc6ZhkweEUAstfgEgJ9XqMqSX1tsODJ1JIXFKTZvAnetKHWMRMDQtIomQs6VLL5hUi1HXa8pG31zt6W7kefjO1u1qomSpF0jKF/2ViTmTOgOsGmyGztXaxhTL5XtakGKvx1m4Vy8frKClpdBPB4UxaKp9mF0HjEqnB4VbWTYqs2lnRfyzKARnrEQig//KTC+TZLhsiJLhEQtEhx5KQrazKrNjeVl4+tTqUbgsImOdgHEsNzT9aVdrK3JeIHyUBlG372WITTLkEU/mKNFKUZxjcHyl7WlhhSufRwWKnXukm0Uxih62AAoj78QBmhMAws7V/pVov+gVk+BajzPsBhJDlkFN2w8cqtnKWBSRF0WIR3wqCtOscdBXRc/DITOMiHk7iyNsjE29ul39hcKDtNkthAVPvf5gyzvDowUs+UzWUNo5qIOF2LSYzjIQHSVY7F/w5YAD2kEpPzJggeoR0c/On3lZuDNN1pRJGpJ53LIsiKUiB/SOicRZPOXt2zD7fPB1CZqmOOlOyNGfplPHFFh9RzpCgaqXMz7kKmmuzIJube8RTTDYhTQRpDspjEyyVruv8F3Fe11Yu4In+AJZtJT6Hruplrhw8PadMY0faEJgOgIIjMFVkZ/nz2HBLip8mZRZKN0QAL4Kp4txlIB33+LIi2yd6BHoEegR6BHoEegR6BIzA/wG941WbAc/QrAAAAABJRU5ErkJggg==" alt="Омега-печать Разлома"></div>
     </div>
 
-    <div class="card"><h3>№1 · Кормилец</h3><span class="tag">Аурига / Великий Призыватель Т10</span><ul><li>1) Нужен один призванный с хорошей атакой и ХП. Далее призываете 10 скелетов через «Мёртвая орда»</li><li>2) Убиваете их Пактом Ахлис (всех, кроме одного) или Пактом Харона — нужно 10 жертв</li><li>3) Одеваете сет на максимальный бонус к характеристикам призванных. 1-го начального мамонта убиваете Пактом Харона. После этого призываете костяных мамонтов</li><li>4) Заходите, используете стойку Офиона</li><li>5) Перезаходите, надев вместо Стяга Офиона Герлыгу Йиелбегена</li><li>6) Поступь Фруд</li><li>7) Проделки мимика</li><li>8) Песнь виверны</li><li>9) Барьер 1 или 2</li><li>10) Прыть виверны 2</li><li>11) Стойкость голема</li><li>12) Вард ортанита, пока не получите бафф «Сущность тьмы». Из оффхенда — «Книга тьмы».</li><li>13) Шипованное поножье и Шипованное оплечье</li></ul><p class="note"><button class="tab-jump" type="button" data-open-gear-target="gear-yielbegen">Перейти к снаряжению: 1) Фулл шмот Йиелбегена</button></p></div>
+    <div class="card"><h3>№1 · Кормилец</h3><span class="tag">Аурига / Великий Призыватель Т10</span><ul><li>1) Нужен один призванный с хорошей атакой и ХП. Далее призываете 10 скелетов через «Мёртвая орда»</li><li>2) Убиваете их Пактом Ахлис (всех, кроме одного) или Пактом Харона — нужно 10 жертв</li><li>3) Одеваете сет на максимальный бонус к характеристикам призванных. После этого призываете костяных мамонтов. Как призовёте остальных, 1-го начального мамонта убиваете Пактом Харона.</li><li>4) Заходите, используете стойку Офиона</li><li>5) Перезаходите, надев вместо Стяга Офиона Герлыгу Йиелбегена</li><li>6) Поступь Фруд</li><li>7) Проделки мимика</li><li>8) Песнь виверны</li><li>9) Барьер 1 или 2</li><li>10) Прыть виверны 2</li><li>11) Стойкость голема</li><li>12) Вард ортанита, пока не получите бафф «Сущность тьмы». Из оффхенда — «Книга тьмы».</li><li>13) Шипованное поножье и Шипованное оплечье</li></ul><p class="note"><button class="tab-jump" type="button" data-open-gear-target="gear-yielbegen">Перейти к снаряжению: 1) Фулл шмот Йиелбегена</button></p></div>
     <div class="card"><h3>№2 · Атлас</h3><span class="tag">Призыватель Т8 или Т7 · «Как хотите, либо катафрактарии»</span><ul><li>1) Используйте Плечо Атласа, пока не передадите 2–3 мамонтам (на усмотрение)</li><li>2) Стойка Атласа на себя</li></ul><p class="note"><button class="tab-jump" type="button" data-open-gear-target="gear-transfer-buffs">Перейти к снаряжению: 2) Фулл шмот для передачи стоек</button></p></div>
     <div class="card">
       <h3>Важно</h3>
