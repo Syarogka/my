@@ -5,53 +5,11 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <script>(function(){try{var t=localStorage.getItem("orna-theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
-<title>Heretic Orna RPG — билд Corvus Пифия | ORNA КОДЕКС</title>
-
-
-
-
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Heretic Corvus Orna RPG — билд Пифия",
-  "description": "Билд Heretic Corvus в Orna RPG: Пифия, магический каст через флягу, снаряжение, осколок, умения, статы и советы для подземелий.",
-  "url": "https://syarogka.github.io/my/heretic.html",
-  "mainEntityOfPage": "https://syarogka.github.io/my/heretic.html",
-  "image": "https://syarogka.github.io/my/assets/og-orna-kodex.png",
-  "inLanguage": "ru",
-  "dateModified": "2026-06-21",
-  "author": {
-    "@type": "Organization",
-    "name": "ORNA КОДЕКС"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ORNA КОДЕКС"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "ORNA КОДЕКС",
-    "url": "https://syarogka.github.io/my/"
-  }
-}</script>
-<meta content="2026-06-21T00:00:00+02:00" property="article:modified_time"/>
-<meta content="https://syarogka.github.io/my/assets/og-orna-kodex.png" name="twitter:image"/>
-<meta content="Билд Heretic Corvus в Orna RPG: Пифия, магический каст через флягу, снаряжение, осколок, умения, статы и советы для подземелий." name="twitter:description"/>
-<meta content="Heretic Corvus Orna RPG — билд Пифия" name="twitter:title"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://syarogka.github.io/my/assets/og-orna-kodex.png" property="og:image"/>
-<meta content="https://syarogka.github.io/my/heretic.html" property="og:url"/>
-<meta content="Билд Heretic Corvus в Orna RPG: Пифия, магический каст через флягу, снаряжение, осколок, умения, статы и советы для подземелий." property="og:description"/>
-<meta content="Heretic Corvus Orna RPG — билд Пифия" property="og:title"/>
+<title>Heretic Corvus билд (Пифия) — Orna RPG | ORNA КОДЕКС</title>
+<meta content="Билд Heretic в Orna RPG: магический каст через флягу. Снаряжение, осколок, умения и итоги по статам." name="description"/>
+<meta content="Heretic Corvus — Пифия" property="og:title"/>
+<meta content="Каст-билд Heretic на посохе Астропосох." property="og:description"/>
 <meta content="article" property="og:type"/>
-<meta content="ru_RU" property="og:locale"/>
-<meta content="ORNA КОДЕКС" property="og:site_name"/>
-<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="https://syarogka.github.io/my/heretic.html" rel="canonical"/>
-<meta content="ORNA КОДЕКС" name="author"/>
-<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
-<meta content="Heretic Orna RPG, Orna Heretic билд, Heretic Corvus, Пифия, Оракул, магический билд Orna, подземелье Orna" name="keywords"/>
-<meta content="Билд Heretic Corvus в Orna RPG: Пифия, магический каст через флягу, снаряжение, осколок, умения, статы и советы для подземелий." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
@@ -157,8 +115,8 @@ a:hover { color: var(--oxblood-br); text-decoration: underline; text-underline-o
 /* ---------- Шапка ---------- */
 .site-head {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(243,236,219,0.88);
-  backdrop-filter: blur(8px);
+  background: var(--parchment);
+  backdrop-filter: none;
   border-bottom: 2px solid var(--ink);
 }
 .site-head .wrap { display: flex; align-items: center; gap: 12px; height: 62px; flex-wrap: nowrap; position: relative; }
@@ -1461,9 +1419,9 @@ html[data-theme="pink"] .build-page > section[id]{
   align-items: center;
   margin: 18px 0 18px !important;
   padding: 10px;
-  background: rgba(243,236,219,0.88);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  background: var(--parchment);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   border: 1px solid var(--rule);
   border-radius: 16px;
   box-shadow: var(--shadow-toc);
@@ -1553,35 +1511,35 @@ html[data-theme="pink"] .build-page .choice-row{
 
 
 
-/* SEO: скрытый H1 для страниц, где визуальный заголовок оформлен как H2 */
-.seo-visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+/* === Фикс 26.06.2026: шапка и мобильное меню полностью непрозрачные === */
+.site-head{
+  background: var(--parchment) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
 }
-.seo-panel {
-  margin: 18px auto 8px;
-  padding: 18px 20px;
-  border: 1px solid var(--rule-soft);
-  border-radius: 18px;
-  background: linear-gradient(180deg, var(--vellum), var(--parchment-deep));
-  box-shadow: var(--shadow-card);
+.site-head .nav{
+  background: var(--parchment) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
 }
-.seo-panel h2 {
-  margin: 0 0 8px;
-  font-family: var(--font-display);
-  color: var(--oxblood);
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
+@media (max-width: 760px){
+  .site-head{
+    position: relative !important;
+    z-index: 1000 !important;
+    background: var(--parchment) !important;
+  }
+  .site-head .nav{
+    z-index: 1001 !important;
+    background: var(--parchment) !important;
+    border-bottom: 2px solid var(--ink) !important;
+    box-shadow: var(--shadow-card) !important;
+  }
 }
-.seo-panel p { margin: 0; color: var(--ink-soft); line-height: 1.65; }
 
 </style>
+
 <!-- Mobile accidental zoom guard -->
 <style id="orna-no-accidental-zoom">
 html{
@@ -1610,6 +1568,7 @@ html{
   }, {passive:false});
 })();
 </script>
+
 <style id="orna-text-align-global">
 /* ORNA КОДЕКС · глобальное выравнивание текста, кроме главной страницы */
 .build-page,
@@ -1798,8 +1757,7 @@ html{
 <div class="wrap crumbs">
 <a href="index.html">Кодекс</a> / Билды / Heretic Corvus
 </div>
-<main class="wrap guide-page build-page"><h1 class="seo-visually-hidden">Heretic Corvus Orna RPG — билд Пифия</h1>
-
+<main class="wrap guide-page build-page">
 <section id="loadouts"><p class="eyebrow">Сборка · Heretic Corvus · спец. Пифия · Подземелье</p><h2>Heretic Corvus — Пифия (Оракул)</h2><p style="color:var(--ink-soft);margin-top:8px">Спасибо за предоставленную информацию: <strong style="color:var(--gold-leaf)">Summerbonus</strong> и <strong style="color:var(--gold-leaf)">Rewritings</strong>.</p><div class="ldtabs" style="margin:14px 0 4px"><button class="ldtab on" data-ld="he-current" type="button">Подземелье · Пифия</button><button class="ldtab" data-ld="he-original" type="button">Оригинальный сет билд</button></div><div class="ldpanel on" id="he-current"><p style="color:var(--ink-soft);margin-top:-6px">Специализация Пифия · глубокий эндгейм без <a class="item-link" href="https://playorna.com/codex/items/ruairc-archistaff/?lang=ru" rel="noopener" target="_blank">Ruairc Archistaff</a>. Магический каст: фляга, два осколка «Крит +40». Сценарий — Подземелье.</p><div class="note"><span class="h">Особенность сборки</span>Магический каст через флягу. Два осколка — оба «Крит +40». Итоги ниже — сумма по снаряжению, без базовых статов персонажа.</div><p class="eyebrow" style="margin-top:26px">Снаряжение</p><div class="gear-grid"><div class="gear"><div class="top">Голова</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-headrobe/?lang=ru" rel="noopener" target="_blank">Чалма Йилбегэна</a></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оружие</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/celestial-staff/?lang=ru" rel="noopener" target="_blank">Астропосох</a></p><div class="stats"><span class="stat">Маг <span class="v">410</span></span><span class="stat">Сопр <span class="v">70</span></span><span class="stat">Крит <span class="v">2%</span></span><span class="stat">Вард <span class="v">2%</span></span><span class="stat">Обзор <span class="v">40</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/darkrift-robe/?lang=ru" rel="noopener" target="_blank">Darkrift Robe</a></p><p class="why">+ заклинания: Resolve Darkriftus, Ara's Edge.</p><div class="stats"><span class="stat">Маг <span class="v">12</span></span><span class="stat">Сопр <span class="v">270</span></span><span class="stat">Ловк <span class="v">12</span></span><span class="stat">Мощь манафляжки <span class="v">+20%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/rhongomiant/?lang=ru" rel="noopener" target="_blank">Ронгоминиад</a></p><p class="why" style="color:var(--oxblood)">▸ Умение: Сдвоенное заклинание</p><div class="stats"><span class="stat">Маг <span class="v">190</span></span><span class="stat">Мана <span class="v">100</span></span><span class="stat">Заряд фляги/убийство <span class="v">+100%</span></span><span class="stat">Сокеты <span class="v">2</span></span></div><p class="why">Украшения: <a class="item-link" href="https://playorna.com/codex/items/eye-of-the-morrigan/?lang=ru" rel="noopener" target="_blank">Глаз Морриган</a> или <a class="item-link" href="https://playorna.com/codex/items/eye-of-ptah/?lang=ru" rel="noopener" target="_blank">Глаз Птаха</a> (остальные слоты).</p></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-skirt/?lang=ru" rel="noopener" target="_blank">Килт Йилбегэна</a></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" rel="noopener" target="_blank">Кольцо Карла</a></p><div class="stats"><span class="stat">Атк <span class="v">72</span></span><span class="stat">Маг <span class="v">72</span></span><span class="stat">Защ <span class="v">36</span></span><span class="stat">Сопр <span class="v">36</span></span><span class="stat">HP <span class="v">200</span></span><span class="stat">Мана <span class="v">200</span></span><span class="stat">Ловк <span class="v">24</span></span><span class="stat">Вард <span class="v">1%</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/carls-ring-646f22f4/?lang=ru" rel="noopener" target="_blank">Кольцо Карла</a></p><div class="stats"><span class="stat">Атк <span class="v">72</span></span><span class="stat">Маг <span class="v">72</span></span><span class="stat">Защ <span class="v">36</span></span><span class="stat">Сопр <span class="v">36</span></span><span class="stat">HP <span class="v">200</span></span><span class="stat">Мана <span class="v">200</span></span><span class="stat">Ловк <span class="v">24</span></span><span class="stat">Вард <span class="v">1%</span></span></div></div></div><div class="gear"><div class="top">Тело · альтернатива</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-robes/?lang=ru" rel="noopener" target="_blank">Роба Йилбегэна</a></p><p class="why">★10 · классы магов. +26% мощь манафляжки, +10% урон по уязвимости. Повышает эффективность мана- и гемофляжек. Альтернатива основной груди (Darkrift Robe).</p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Слабость к стихиям <span class="v">+10%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оружие · для бафа</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/olympian-tower-joist/?lang=ru" rel="noopener" target="_blank">Лага Олимпии</a></p><p class="why">Двуручный архипосох · ★8 · классы магов. Умение «Стойка Астерии»: сильно повышает магию, но значительно снижает защиты и жжёт ману каждый ход. Или другое оружие с тем же бафом.</p><div class="stats"><span class="stat">Маг <span class="v">190</span></span><span class="stat">Мана <span class="v">40</span></span><span class="stat">Вард <span class="v">28%</span></span><span class="stat">Сокеты <span class="v">7</span></span><span class="stat">Двуручное</span></div></div></div><div class="gear"><div class="top">Оффхенд · для бафа</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/book-of-the-dragon/?lang=ru" rel="noopener" target="_blank">Книга дракона</a></p><p class="why">★6 · баф «Сущность дракона» (на себя); на врага — «Недуг». Книга ученика Аполлиона.</p><div class="stats"><span class="stat">Атк <span class="v">20</span></span><span class="stat">Маг <span class="v">20</span></span><span class="stat">Сокеты <span class="v">1</span></span><span class="stat">Дракон</span></div></div></div><div class="gear"><div class="top">Астропосох · астро-компоненты</div><div class="body"><p class="name">2× <a class="item-link" href="https://playorna.com/codex/items/fluke-of-oceanus/?lang=ru" rel="noopener" target="_blank">Плавники Океануса</a></p><p class="why">Мана −200, Вард 5% (каждый)</p><p class="name" style="margin-top:10px">2× <a class="item-link" href="https://playorna.com/codex/items/arms-of-oceanus/?lang=ru" rel="noopener" target="_blank">Руки Океануса</a></p><p class="why">Мана 250 (каждый)</p><p class="name" style="margin-top:10px"><a class="item-link" href="https://playorna.com/codex/items/calloused-hands-of-oceanus/?lang=ru" rel="noopener" target="_blank">Мозоли Океануса</a></p><p class="why">Мана 116, Сопр 105, Крит 15%</p></div></div><div class="gear" style="grid-column:1/-1"><div class="top">Украшения</div><div class="body"><div class="adorn-list"><div class="adorn-row"><span class="adorn-slot">Грудь</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/eye-of-ptah/?lang=ru" rel="noopener" target="_blank">Глаз Птаха</a> · Диковина ★6 · Маг <span class="v">8</span> · Заполн. манафляжки <span class="v">+1%</span> · Мощь манафляжки <span class="v">+1%</span></span></div><div class="adorn-row"><span class="adorn-slot">Голова и ноги</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/eye-of-sekhmet/?lang=ru" rel="noopener" target="_blank">Глаз Сехмет</a> · Диковина ★6 · Атк <span class="v">20</span> · Крит <span class="v">2%</span></span></div><div class="adorn-row"><span class="adorn-slot">Ронгоминиад</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/ashen-ruby/?lang=ru" rel="noopener" target="_blank">Пепельный рубин</a> ×1 · HP <span class="v">15</span> · Мана <span class="v">15</span> · Атк <span class="v">6</span> · Маг <span class="v">6</span> · Защ <span class="v">6</span> · Сопр <span class="v">6</span> · Ловк <span class="v">4</span> · Похищ. жизни <span class="v">+2%</span> · Глаз Морриган или Глаз Птаха (остальные слоты)</span></div><div class="adorn-row"><span class="adorn-slot">Глаз Морриган или Глаз Птаха (остальные слоты)</span><span class="adorn-text">Глаз Морриган · Диковина ★10 · Атк <span class="v">12</span> · Маг <span class="v">12</span> · Защ <span class="v">8</span> · Сопр <span class="v">8</span> · Ловк <span class="v">8</span> · Крит <span class="v">2%</span> · Глаз Птаха · Диковина ★6 · Маг <span class="v">8</span> · Заполн. манафляжки <span class="v">+1%</span> · Мощь манафляжки <span class="v">+1%</span></span></div></div></div></div><div class="gear"><div class="top">Питомец (основной)</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/followers/gilded-kheper/?lang=ru" rel="noopener" target="_blank">Златохепри</a> · ★9</p><p class="why">Основной пет на этажах — ради умения Reraise (второй шанс). Умения: Воскрешение, Яркая звезда II, Reraise.</p></div></div><div class="gear"><div class="top">Необходимые питомцы</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/followers/arisen-bloodwarg/?lang=ru" rel="noopener" target="_blank">Восставший бладварг</a> · ★10</p><p class="why">баф: «В.Крит ++»</p><p class="name" style="margin-top:8px"><a class="item-link" href="https://playorna.com/codex/followers/gullinkambi/?lang=ru" rel="noopener" target="_blank">Гуллинкамби</a> · ★7</p><p class="why">баф: «В.Ловкость +++»</p><p class="name" style="margin-top:8px"><a class="item-link" href="https://playorna.com/codex/followers/archimedes/?lang=ru" rel="noopener" target="_blank">Архимед</a> · ★6</p><p class="why">баф: «В.Магия +++»</p><p class="name" style="margin-top:8px"><a class="item-link" href="https://playorna.com/codex/followers/great-pegasus/?lang=ru" rel="noopener" target="_blank">Великий Пегас</a> · ★10</p><p class="why">баф: «В.Сопротивление, защита»</p><p class="name" style="margin-top:8px"><a class="item-link" href="https://playorna.com/codex/followers/three-toed-sloth/?lang=ru" rel="noopener" target="_blank">Three-Toed Sloth</a> · ★10</p><p class="why">или любой питомец с бафом «В.Всё+++»</p></div></div><div class="gear"><div class="top">Осколок ×2</div><div class="body"><p class="name">Крит +40</p><p class="why">Два слота осколков — оба «Крит +40»</p></div></div></div><p class="eyebrow" style="margin-top:30px">Умения в сборке</p><div class="cmp"><table class="ornatable"><thead><tr><th>Скилл</th><th>Power</th></tr></thead><tbody><tr><td><b>Штормотерравулкан</b></td><td><b>9 063</b></td></tr><tr><td style="color:var(--ink-soft)">Инфузия гемофляжки</td><td style="color:var(--ink-soft)">0</td></tr><tr><td style="color:var(--ink-soft)">Боевая гемофляжка</td><td style="color:var(--ink-soft)">0</td></tr></tbody></table></div><p class="eyebrow" style="margin-top:30px;color:var(--oxblood)">Итого по снаряжению</p><div class="statbars"><div class="sb"><span class="sb-l">Маг</span><span class="sb-track"><span class="sb-fill" style="width:45%;background:#7E4BB0"></span></span><span class="sb-v">1 406</span></div><div class="sb"><span class="sb-l">Сопрот.</span><span class="sb-track"><span class="sb-fill" style="width:100%;background:#5E7C8C"></span></span><span class="sb-v">3 099</span></div><div class="sb"><span class="sb-l">Атака</span><span class="sb-track"><span class="sb-fill" style="width:15%;background:#9E751F"></span></span><span class="sb-v">470</span></div><div class="sb"><span class="sb-l">Защита</span><span class="sb-track"><span class="sb-fill" style="width:10%;background:#8A6D3B"></span></span><span class="sb-v">310</span></div><div class="sb"><span class="sb-l">Ловкость</span><span class="sb-track"><span class="sb-fill" style="width:7%;background:#3F7D4E"></span></span><span class="sb-v">218</span></div><div class="sb"><span class="sb-l">Вард</span><span class="sb-track"><span class="sb-fill" style="width:51%;background:#2C8C9E"></span></span><span class="sb-v">51%</span></div><div class="sb"><span class="sb-l">Крит</span><span class="sb-track"><span class="sb-fill" style="width:44%;background:#8C2233"></span></span><span class="sb-v">44%</span></div></div></div><div class="ldpanel" id="he-original"><p style="color:var(--ink-soft);margin:20px 0 16px">Оригинальная сборка — каст через флягу.</p><p class="eyebrow" style="margin-top:8px">Снаряжение</p><div class="gear-grid"><div class="gear"><div class="top">Голова</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-headrobe/?lang=ru" rel="noopener" target="_blank">Чалма Йилбегэна</a> <span style="color:var(--ink-soft)">(Чалма Йилбегэна)</span></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оружие</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/ruairc-archistaff/?lang=ru" rel="noopener" target="_blank">Ruairc Archistaff</a></p><div class="stats"><span class="stat">Маг <span class="v">331</span></span><span class="stat">Крит <span class="v">4%</span></span><span class="stat">Заряд фляги/убийство <span class="v">+50%</span></span><span class="stat">Ход первым (PvE) <span class="v">+50%</span></span><span class="stat">Сокеты <span class="v">3</span></span></div></div></div><div class="gear"><div class="top">Тело</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-robes/?lang=ru" rel="noopener" target="_blank">Роба Йилбегэна</a> <span style="color:var(--ink-soft)">(Роба Йилбегэна)</span></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Слабость к стихиям <span class="v">+10%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Тело · альтернатива</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/darkrift-robe/?lang=ru" rel="noopener" target="_blank">Darkrift Robe</a></p><p class="why">Альтернатива основной груди (Роба Йилбегэна).</p><p class="why">+ заклинания: Resolve Darkriftus, Ara's Edge.</p><div class="stats"><span class="stat">Маг <span class="v">12</span></span><span class="stat">Сопр <span class="v">270</span></span><span class="stat">Ловк <span class="v">12</span></span><span class="stat">Мощь манафляжки <span class="v">+20%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Оффхенд</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/ruairc-archistaff/?lang=ru" rel="noopener" target="_blank">Ruairc Archistaff</a></p><p class="why" style="color:var(--oxblood)">▸ Умение: Сдвоенное заклинание</p><div class="stats"><span class="stat">Маг <span class="v">331</span></span><span class="stat">Крит <span class="v">4%</span></span><span class="stat">Заряд фляги/убийство <span class="v">+50%</span></span><span class="stat">Ход первым (PvE) <span class="v">+50%</span></span><span class="stat">Сокеты <span class="v">3</span></span></div></div></div><div class="gear"><div class="top">Ноги</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/yelmogus-skirt/?lang=ru" rel="noopener" target="_blank">Килт Йилбегэна</a> <span style="color:var(--ink-soft)">(Килт Йилбегэна)</span></p><div class="stats"><span class="stat">Защ <span class="v">40</span></span><span class="stat">Сопр <span class="v">305</span></span><span class="stat">Ловк <span class="v">20</span></span><span class="stat">Вард <span class="v">1%</span></span><span class="stat">Мощь манафляжки <span class="v">+15%</span></span><span class="stat">Сокеты <span class="v">4</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 1</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/band-of-gods/?lang=ru" rel="noopener" target="_blank">Кольцо богов</a></p><p class="why">эпическое · L · слот Аркана</p><div class="stats"><span class="stat">Опыт <span class="v">+50%</span></span><span class="stat">Золото <span class="v">+50%</span></span><span class="stat">Орны <span class="v">+50%</span></span><span class="stat">Встречи <span class="v">+50%</span></span></div></div></div><div class="gear"><div class="top">Аксессуар 2</div><div class="body"><p class="name"><a class="item-link" href="https://playorna.com/codex/items/band-of-gods/?lang=ru" rel="noopener" target="_blank">Кольцо богов</a></p><p class="why">эпическое · L · слот Аркана</p><div class="stats"><span class="stat">Опыт <span class="v">+50%</span></span><span class="stat">Золото <span class="v">+50%</span></span><span class="stat">Орны <span class="v">+50%</span></span><span class="stat">Встречи <span class="v">+50%</span></span></div></div></div><div class="gear"><div class="top">Осколок ×2</div><div class="body"><p class="name">Стечение и Неумение · Пощёчина и Яды</p><p class="why">по +40% мощь крита (каждый осколок)</p></div></div><div class="gear"><div class="top">Осколок · альтернатива</div><div class="body"><p class="name">Эффективность аксессуаров +25%</p><p class="why">Можно использовать до высоких этажей.</p></div></div></div><p class="eyebrow" style="margin-top:30px">Украшения</p><div class="gear-grid"><div class="gear" style="grid-column:1/-1"><div class="top">Украшения</div><div class="body"><div class="adorn-list"><div class="adorn-row"><span class="adorn-slot">Вся броня</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/eye-of-ptah/?lang=ru" rel="noopener" target="_blank">Глаз Птаха</a> · Вставка во весь сет брони. Маг 8.</span></div><div class="adorn-row"><span class="adorn-slot">Оружие</span><span class="adorn-text"><a class="item-link" href="https://playorna.com/codex/items/ferocious-bulls-eye/?lang=ru" rel="noopener" target="_blank">Глаз свирепого быка</a> · Мана 60, Атк 12, Маг 12, Крит 4%.</span></div><div class="adorn-row"><span class="adorn-slot">Пепельный рубин ×1</span><span class="adorn-text">HP <span class="v">15</span> · Мана <span class="v">15</span> · Атк <span class="v">6</span> · Маг <span class="v">6</span> · Защ <span class="v">6</span> · Сопр <span class="v">6</span> · Ловк <span class="v">4</span> · Похищ. жизни <span class="v">+2%</span></span></div></div></div></div></div></div><p class="eyebrow" style="margin-top:40px">Источник</p><p style="color:var(--ink-soft);margin-top:-2px">Оригинальный гайд (Google Таблица) — <a class="item-link" href="https://docs.google.com/spreadsheets/d/1unU5LcivK_lO-y5xB8U6rWd2JxbuS99zdKEYNQLp7Us/edit" rel="noopener" target="_blank">открыть таблицу →</a></p></section>
 </main>
 <footer class="site-foot">

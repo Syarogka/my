@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://syarogka.github.io/my/sitemap.xml
